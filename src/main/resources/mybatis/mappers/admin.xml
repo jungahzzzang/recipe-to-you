@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  <mapper namespace="mapper.admin">
+  	
+  	<resultMap type="adminVO" id="adminResult">		<!-- SQL문 실행한 후 반환되는 레코드들을 typeAlias 태그에서 지정한 adminVO 빈에 저장함 -->
+		<result property="adminId" column="admin_id" />
+		<result property="adminPw" column="admin_pw"/>
+		<result property="adminName" column="admin_name"/>
+		<result property="adminPhone" column="admin_phone"/>
+	</resultMap>
+	
+  
+  	<select id="selectAllAdminList" resultMap="adminResult">
+		<![CDATA[
+			select * from TB_ADMIN
+		]]>
+	</select>
+	
+	<select id="loginById" resultType="kr.co.recipetoyou.admin.AdminVO" parameterType="adminVO">
+		<![CDATA[
+			select * from TB_ADMIN
+			where admin_id=#{adminId} and admin_pw=#{adminPw}
+		]]>
+	</select>
+	
+  </mapper>

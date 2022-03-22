@@ -1,0 +1,122 @@
+@charset "UTF-8";
+
+.wrap{
+	width:100%;
+
+}
+
+.needStar{
+	color:#f03f40;
+}
+
+.main{
+	width:1050px;
+	margin:0 auto;
+	display:flex;
+	padding-top:45px;
+}
+
+.content{
+	margin-left:25px;
+	
+}
+
+.content .title{
+	padding-bottom:40px;
+}
+
+.content .title span{
+	font-size:14px;
+}
+.orderTable{
+	border-top:2px solid black;
+	width:820px;
+	border-bottom:1px solid #f4f4f4;
+}
+
+.orderTable table{
+	width:820px;
+	margin-left:20px;
+}
+
+.orderTable table .warning{
+	color:red;
+	font-size:12px;
+}
+.orderTable table tr{
+	display:block;
+	width:820px;
+	margin-top:16px;
+}
+
+.orderTable table .lastTr{
+	padding-bottom:40px;
+}
+
+.orderTable table tr th{
+	width:120px;
+	height:33px;
+	font-size:14px;
+	text-align:left;
+	vertical-align: top;
+}
+
+.orderTable table tr td input{
+	width:200px;
+	height:28px;
+}
+
+.orderTable table tr td label input{
+	width:15px;
+	height:15px;
+}
+
+.orderTable table tr td textarea{
+	width:600px;
+	height:72px;
+	padding:10px;
+	border:1px solid #ddd;
+}
+
+.orderTable table tr sub{
+	font-size:13px;
+}
+
+.agreeDetail{
+	width:820px;
+	border-top: 2px solid #512772;
+	border-bottom:1px solid #f4f4f4;
+	padding:30px 0px 30px 0px;
+}
+
+.infoAgree h2{
+	color:#999;
+}
+
+.agreeDetail strong{
+	font-weight:400;
+	color:#999;
+}
+
+.agreeDetail a{
+	color:#512772;
+}
+
+.QASendBtn{
+	text-align:center;
+	padding:30px 0px 60px 0px;
+}
+
+.QASendBtn a{
+	display:inline-block;
+	width:150px;
+	height:42px;
+	background:#512772;
+	text-align:center;
+	line-height:42px;
+	font-size:15px;
+	color:white;
+}
+
+
+

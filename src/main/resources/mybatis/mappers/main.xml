@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="mapper.main">	<!-- product.xml의 네임스페이스 지정 -->
+
+	<resultMap type="categoryVO" id="mainResult">
+		<result property="prod_code" column="prod_code"/>
+		<result property="cateCode" column="cateCode"/>
+		<result property="prod_name" column="prod_name"/>
+		<result property="prod_content" column="prod_content"/>
+		<result property="prod_price" column="prod_price"/>
+		<result property="prod_discount" column="prod_discount"/>
+		<result property="prod_sell_unit" column="prod_sell_unit"/>
+		<result property="prod_delivery_type" column="prod_delivery_type"/>
+		<result property="prod_wrap_type" column="prod_wrap_type"/>
+		<result property="prod_info" column="prod_info"/>
+		<result property="prod_allergy" column="prod_allergy"/>
+		<result property="prod_vaild_date" column="prod_vaild_date"/>
+		<result property="prod_from" column="prod_from"/>
+		<result property="prod_caution" column="prod_caution"/>
+		<result property="stock_quantity" column="stock_quantity"/>
+		<result property="prod_reg_date" column="prod_reg_date"/>
+		<result property="quantity" column="quantity"/>
+	</resultMap>
+
+	<resultMap type="adGoodsImgVO" id="goodsImgListResult">
+		<result property="fileName" column="fileName"/>
+		<result property="prod_code" column="prod_code"/>
+		<result property="uploadPath" column="uploadPath"/>
+		<result property="uuid" column="uuid"/>
+	</resultMap>
+	
+	<select id="goodsInfo" resultMap="mainResult">
+		<![CDATA[
+			select * from tb_prod order by prod_price DESC
+		]]>
+	</select>
+	
+	   <!-- 이미지 정보 얻기 -->
+    <select id="getGoodsImageList" resultMap="goodsImgListResult">
+        <![CDATA[
+        select tbai.filename, tbai.prod_code, tbai.uuid, tbai.uploadpath from tb_adgoods_Img tbai where prod_code = #{prod_code}
+        ]]>
+    </select>
+    
+    <!-- 이미지 정보 얻기 -->
+    <select id="getBargainList" resultMap="goodsImgListResult">
+        <![CDATA[
+        select tbai.filename, tbai.prod_code, tbai.uuid, tbai.uploadpath from tb_adgoods_Img tbai where prod_code = #{prod_code}
+        ]]>
+    </select>
+    
+    <!-- 이미지 정보 얻기 -->
+    <select id="getGoodsDetailList" resultMap="goodsImgListResult">
+        <![CDATA[
+        select tbai.filename, tbai.prod_code, tbai.uuid, tbai.uploadpath from tb_adgoods_Img tbai where prod_code = #{prod_code}
+        ]]>
+    </select>
+    
+    <!-- 이미지 정보 얻기 -->
+    <select id="getGoodsDetailImage" resultMap="goodsImgListResult">
+        <![CDATA[
+        select tbai.filename, tbai.prod_code, tbai.uuid, tbai.uploadpath from tb_adgoods_Img tbai where prod_code = #{prod_code}
+        ]]>
+    </select>
+   
+	
+	
+	<!-- 이미지 정보 얻기 -->
+	<select id="getNewGoodsList" resultMap="goodsImgListResult">
+		<![CDATA[
+		select tbai.filename, tbai.prod_code, tbai.uuid, tbai.uploadpath from tb_adgoods_Img tbai where prod_code = #{prod_code}
+		]]>
+	</select>
+	
+	<select id="bargain" resultMap="mainResult">
+		<![CDATA[
+			select * from tb_prod 
+			where prod_price < 10000
+			order by prod_price DESC
+		]]>
+	</select>
+	
+    <select id="goodsDetailInfo" resultMap="mainResult">
+       <![CDATA[
+           select * from tb_prod where prod_code = #{prod_code}
+       ]]>
+    </select>
+	
+		<!-- 상품 상세 정보-->
+	 <select id="getGoodsInfo" resultType="categoryVO">
+		<![CDATA[
+		select prod_code, prod_name, (select cateName FROM TB_PROD_CATE WHERE TB_PROD_CATE.CATECODE = tb_prod.CATECODE) cateName,
+				prod_content, prod_price, prod_discount, prod_sell_unit, prod_delivery_type,
+				prod_wrap_type, prod_info, prod_allergy, prod_vaild_date, prod_from, prod_caution, stock_quantity
+		from tb_prod where prod_code = #{prod_code}
+		]]>
+	</select>
+	
+	<!-- <select id="goodsDetailInfo" resultMap="mainResult">
+		<![CDATA[
+			select * from tb_prod where prod_code = #{prod_code}
+		]]>
+	</select> -->
+	
+	<select id="goodsDetail" resultMap="mainResult">
+		<![CDATA[
+			select * from tb_prod 
+		]]>
+	</select>
+	
+	<!-- <select id="listGoods" resultMap="mainResult">
+		<![CDATA[
+			select * from 
+			(select rownum as rn, tp.* FROM tb_prod tp) tp
+  			where rn between #{rowStart} and #{rowEnd} 
+    	]]>
+	</select> -->
+
+	
+	<select id="listNewGoods" resultMap="mainResult">
+		<![CDATA[
+			select * from 
+			(select rownum as rn, prod_name, prod_price, prod_code
+			FROM tb_prod 
+			ORDER by PROD_REG_DATE DESC)
+		]]>
+		<![CDATA[	
+			where rn < 10
+	 		ORDER BY rn 
+	   	]]>
+	</select>
+	
+	<select id="listBestGoods" resultMap="mainResult">
+		<![CDATA[
+			select * from 
+			(select rownum as rn, prod_name, prod_price, prod_code
+			FROM tb_prod 
+			where PROD_SELL_UNIT > 0 and rownum <= #{page} * #{pageSize} 
+			ORDER by PROD_SELL_UNIT DESC)
+		]]>
+		<![CDATA[	
+			where rn > (#{page}-1) * #{pageSize} AND rn <= #{page} * #{pageSize}
+	 		ORDER BY rn
+	   	]]>
+	</select>
+	 
+	<select id="listSaleGoods" resultMap="mainResult">
+		<![CDATA[
+			select * from 
+			(select rownum as rn, prod_name, prod_price, prod_code
+			FROM tb_prod 
+			where PROD_DISCOUNT > 0 and rownum <= #{page} * #{pageSize} 
+			ORDER by PROD_DISCOUNT DESC)
+		]]>
+		<![CDATA[	
+			where rn > (#{page}-1) * #{pageSize} AND rn <= #{page} * #{pageSize}
+	 		ORDER BY rn 
+	   	]]>
+	</select>
+
+	<select id="cateNewCount" resultType="int" >
+		<![CDATA[
+			select count(*) from 
+			(select rownum as rn, prod_name, prod_price, prod_code
+			FROM tb_prod 
+			ORDER by PROD_REG_DATE DESC)
+			where rn < 10
+	 		   	]]>
+	</select>
+	
+		<select id="cateBestCount" resultType="int" >
+		<![CDATA[
+			select count(*) from 
+			(select rownum as rn, prod_name, prod_price, prod_code
+			FROM tb_prod 
+			where prod_sell_unit > 0
+			ORDER by prod_sell_unit DESC)
+			where rn < 10
+	 		   	]]>
+	</select>
+	
+		<select id="cateSaleCount" resultType="int" >
+		<![CDATA[
+			select count(*) from 
+			(select rownum as rn, prod_name, prod_price, prod_code
+			FROM tb_prod 
+			where prod_discount > 0
+			ORDER by prod_discount DESC)
+			where rn < 10
+	 		   	]]>
+	</select>
+</mapper>

@@ -1,0 +1,235 @@
+@charset "UTF-8";
+table td{
+	font-size:14px;
+	color:#333;
+}
+.wrap {
+	max-width: 100%;
+}
+
+.content {
+	width: 1080px;
+	margin: 0 auto;
+}
+
+ .title {
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 35px;
+    text-align: center;
+    margin-top: 40px;
+}
+.box{
+	border-top:2px solid black;
+	text-align:center;
+	border-bottom:1px solid grey;
+	padding:15px;
+}
+.ordContainer{
+	margin-top:60px;
+}
+
+.ordContainer table{
+	border-top:2px solid black;
+	width:1080px;
+}
+
+.basicAddress{
+	display:inline-block;
+	font-size:13px;
+	background:#ddd;
+	border-radius:8px;
+	padding:5px;
+	margin-bottom:5px;
+}
+
+.baaner img{
+	width:1080px;
+	height:100px;
+}
+.pay{
+	width:730px;
+}
+.payProcess table,
+.pay table{
+	width:730px;
+}
+.ordContainer table tr,
+.ordContainer table th,
+.ordContainer table td{
+	padding:10px;
+	
+}
+.orderTable{
+	border-top:2px solid black;
+	width:1080px;
+}
+
+.orderTable tr,
+.orderTable th,
+.orderTable td{
+	padding:10px;
+}
+.orderTable tr{
+	
+}
+.ordContainer table th{
+	text-align: left;
+	vertical-align: top;
+	width:110px;
+}
+
+.deliTitle{
+	display: inline-block;
+}
+
+select{
+	width:400px;
+	height:50px;
+	padding-left:10px;
+}
+
+.deliInfo{
+	float: right;
+	padding-top: 10px;
+}
+
+.txtBox .address,
+.txtBox .deliMethod{
+	padding:10px 0 10px 0;
+}
+
+.payMethod{
+	display:inline-block;
+	margin:0;
+	margin-bottom:15px;;
+}
+.kakaopay{
+	background:white;
+	border:0;
+}
+.ordContainer img{
+	width: 550px;
+    height: 70px;
+}
+.payment button{
+	width:150px;
+	height:50px;
+	background: white;
+	border:1px solid grey;
+}
+
+.portBtn{
+	margin-left: -5px;
+}
+.phoneBtn {
+	margin-left: -4px;
+}
+
+.payChk{
+	float: right;
+}
+.card{
+	display: none;
+}
+
+.cardBtn:hover ,
+.portBtn:hover ,
+.phoneBtn:hover{
+	cursor: pointer;
+	background:#eaeaea;
+}
+.port{
+	display:none;
+}
+.port td label{
+	display:inline-block;
+	width:250px;
+}
+.ordTxt{
+	display:inline-block;
+	width:380px;
+}
+.agree a{
+	color: purple;
+}
+.grey{
+	color:grey;
+}
+.disNone{
+	display:inline-block;
+}
+.personAgree{
+	border-bottom:1px solid grey;
+	padding-bottom:20px;
+	margin-bottom:20px;
+}
+
+.announce{
+	font-size:11px;
+	padding:15px;
+}
+
+.ordBtn{
+	text-align:center;
+	margin:60px 0;
+}
+
+.ordBtn button{
+	width:230px;
+	height:60px;
+	background: #5f0080;
+	color:white;
+	border:0;
+	border-radius: 5px;
+	font-size:16px;
+}
+.cont{
+	font-size:12px;
+}
+.payProcess{
+}
+
+.orderInfo{
+	position:relative;
+}
+
+.bills{
+	position:absolute;
+	top:660px;
+	right:0;
+}
+
+.billBox table {
+	padding:10px;
+	background:#fafafa;
+	border:1px solid #f2f2f2;
+	border-spacing: 0 10px;
+	width:330px;
+}
+
+.billBox table tr{
+	padding-bottom:5px;
+}
+
+.billBox table th{
+	text-align:left;
+	font-size:19px;
+	font-weight:normal;
+}
+.billBox table .sub th,
+.billBox table .sub td{
+	padding-left:5px;
+	font-size:16px;
+	letter-spacing: -0.5px;
+	color: grey;
+}
+.billBox table td{
+	text-align:right;
+	width:100px;
+}
+
+.billBox table tr.totalPayment{
+	border-top:1px solid black;
+}
+

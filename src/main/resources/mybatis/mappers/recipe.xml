@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="mapper.recipe">					
+	
+	<resultMap type="recipeVO" id="recipeResult">
+		<result property="recipe_idx" column="recipe_idx"/>
+		<result property="prod_code" column="prod_code"/>
+		<result property="recipe_title" column="recipe_title"/>
+		<result property="recipe_content" column="recipe_content"/>
+		<result property="recipe_ingre" column="recipe_ingre"/>
+		<result property="recipe_cate_code" column="recipe_cate_code"/>
+		<result property="recipe_img" column="recipe_img"/>
+		<result property="user_id" column="user_id"/>
+		<result property="recipe_reg_date" column="recipe_reg_date"/>
+	</resultMap>
+	
+	<resultMap type="recipeCateVO" id="recipeCateResult">
+		<result property="recipe_cate_code" column="recipe_cate_code"/>
+		<result property="recipe_cate" column="recipe_cate"/>
+		<result property="recipe_cate_parent" column="recipe_cate_parent"/>
+	</resultMap>
+	
+	<resultMap type="recipeReviewVO" id="recipeReviewResult">
+		<result property="recipe_comment_idx" column="recipe_comment_idx"/>
+		<result property="recipe_idx" column="recipe_idx"/>
+		<result property="user_id" column="user_id"/>
+		<result property="reg_date" column="reg_date"/>
+		<result property="content" column="content"/>
+		<result property="recipe_star" column="recipe_star"/>
+		<collection property="recipeVO" resultMap="recipeResult"></collection>
+	</resultMap>
+	
+	
+	
+	<sql id="criteria">
+       <choose>
+           <when test="type == 'T'">
+               recipe_title like '%'||#{keyword}||'%' 
+           </when>
+           <when test="type == 'C'">
+              recipe_content like '%'||#{keyword}||'%' 
+           </when>
+           <when test="type == 'W'">
+               user_id like '%'||#{keyword}||'%' 
+           </when>
+           <when test="type == 'TC'">
+               recipe_title like '%'||#{keyword}||'%' or recipe_content like '%'||#{keyword}||'%' 
+           </when>
+           <when test="type == 'TW'">
+               recipe_title like '%'||#{keyword}||'%' or user_id like '%'||#{keyword}||'%' 
+           </when>
+           <when test="type == 'CW'">
+               recipe_content like '%'||#{keyword}||'%' or user_id like '%'||#{keyword}||'%'
+           </when>
+           <when test="type == 'TCW'">
+               recipe_title like '%'||#{keyword}||'%' or
+               recipe_content like '%'||#{keyword}||'%' or
+               user_id like '%'||#{keyword}||'%' 
+           </when>
+       </choose>
+    </sql>
+ 
+	
+	<select id="selectRecipeList" resultMap="recipeResult">
+	
+		<![CDATA[
+			SELECT * from
+				(SELECT rownum as rn, tr.* FROM (SELECT tr.* FROM tb_recipe tr  ORDER BY RECIPE_REG_DATE DESC
+			) tr
+			]]>
+			<if test="keyword != null">
+					where
+                   <choose>
+		           <when test='type == "T"'>
+		               recipe_title like '%'||#{keyword}||'%' 
+		           </when>
+		           <when test='type == "C"'>
+		              recipe_content like '%'||#{keyword}||'%' 
+		           </when>
+		           <when test='type == "W"'>
+		               user_id like '%'||#{keyword}||'%' 
+		           </when>
+		           <when test='type == "TC"'>
+		               recipe_title like '%'||#{keyword}||'%' or recipe_content like '%'||#{keyword}||'%' 
+		           </when>
+		           <when test='type == "WT"'>
+		               recipe_title like '%'||#{keyword}||'%' or user_id like '%'||#{keyword}||'%' 
+		           </when>
+		           <when test='type == "CW"'>
+		               recipe_content like '%'||#{keyword}||'%' or user_id like '%'||#{keyword}||'%'
+		           </when>
+		           <when test='type == "TCW" || type== null'>
+		               recipe_title like '%'||#{keyword}||'%' or
+		               recipe_content like '%'||#{keyword}||'%' or
+		               user_id like '%'||#{keyword}||'%' 
+		           </when>
+		           
+       			</choose>
+             </if>
+             
+			
+			<if test="cateCode != '' and cateCode != 0 and keyword == null" >
+			<choose>
+				<when test="0 lt cateCode and cateCode lt 10">
+					, (SELECT DISTINCT b.* 
+					FROM tb_recipe_cate a, TB_RECIPE_CATE b 
+					WHERE #{cateCode} = b.recipe_cate_parent) td WHERE td.recipe_cate_code = tr.RECIPE_CATE_CODE
+				</when>
+				
+				<otherwise>
+					where recipe_cate_code = #{cateCode}
+				</otherwise>
+			</choose>
+			</if>
+			
+			<![CDATA[
+			
+			)
+			where rn between #{rowStart} and #{rowEnd}
+		]]>
+			
+	</select>
+	
+  
+ 
+    <select id="recipeCount" resultType="int">
+    	SELECT count(*) FROM TB_RECIPE
+    	<if test="keyword != null">
+			where
+                <choose>
+          <when test='type == "T"'>
+              recipe_title like '%'||#{keyword}||'%' 
+          </when>
+          <when test='type == "C"'>
+             recipe_content like '%'||#{keyword}||'%' 
+          </when>
+          <when test='type == "W"'>
+              user_id like '%'||#{keyword}||'%' 
+          </when>
+          <when test='type == "TC"'>
+              recipe_title like '%'||#{keyword}||'%' or recipe_content like '%'||#{keyword}||'%' 
+          </when>
+          <when test='type == "WT"'>
+              recipe_title like '%'||#{keyword}||'%' or user_id like '%'||#{keyword}||'%' 
+          </when>
+          <when test='type == "CW"'>
+              recipe_content like '%'||#{keyword}||'%' or user_id like '%'||#{keyword}||'%'
+          </when>
+          <when test='type == "TCW" || type== null'>
+              recipe_title like '%'||#{keyword}||'%' or
+              recipe_content like '%'||#{keyword}||'%' or
+              user_id like '%'||#{keyword}||'%' 
+          </when>
+          
+    			</choose>
+          </if>
+    	<if test="cateCode  != null and cateCode != 0">
+    		where recipe_cate_code = #{cateCode}
+    	</if>
+    </select>
+	
+	<select id="selectRecipeCateTitleList" resultMap="recipeCateResult">
+		<![CDATA[
+		SELECT * 
+		FROM TB_RECIPE_CATE
+		WHERE RECIPE_CATE_PARENT IS NULL
+		ORDER BY RECIPE_CATE_CODE
+		]]>
+	</select>
+	
+	<select id="selectRecipeCateDetailList" resultMap="recipeCateResult">
+		<![CDATA[
+			SELECT trc2.* 
+			FROM TB_RECIPE_CATE trc, TB_RECIPE_CATE trc2
+			WHERE trc.RECIPE_CATE_CODE = trc2.RECIPE_CATE_PARENT
+			ORDER BY trc2.RECIPE_CATE_CODE
+		]]>
+	</select>
+	
+	<select id="selectRecipeCateList" resultMap="recipeCateResult">
+		<![CDATA[
+			SELECT * FROM TB_RECIPE_CATE ORDER BY RECIPE_CATE_CODE
+		]]>
+	</select>
+	
+	<insert id="insertRecipe" parameterType="java.util.Map">
+	<choose>
+	<when test="recipe_img != null">
+	<![CDATA[
+		INSERT INTO ADMIN.TB_RECIPE (RECIPE_IDX, PROD_CODE, RECIPE_TITLE, 
+		RECIPE_CONTENT,RECIPE_INGRE, RECIPE_CATE_CODE, RECIPE_IMG, USER_ID)
+		VALUES(recipe_seq.NEXTVAL, #{prod_code}, #{recipe_title}, 
+		#{recipe_content},#{recipe_ingre}, #{recipe_cate_code}, #{recipe_img},#{user_id})
+		]]>
+	</when>
+	<otherwise>
+		INSERT INTO ADMIN.TB_RECIPE (RECIPE_IDX, PROD_CODE, RECIPE_TITLE, 
+		RECIPE_CONTENT,RECIPE_INGRE, RECIPE_CATE_CODE, USER_ID)
+		VALUES(recipe_seq.NEXTVAL, #{prod_code}, #{recipe_title}, 
+		#{recipe_content},#{recipe_ingre}, #{recipe_cate_code},#{user_id})
+	</otherwise>
+	</choose>
+	</insert>
+	
+	<select id="selectRecipeDetail" parameterType="int" resultMap="recipeResult">
+		<![CDATA[
+			SELECT * FROM TB_RECIPE WHERE RECIPE_IDX = #{recipe_idx}
+		]]>
+	</select>
+	
+	<select id="modifyRecipe" parameterType="int" resultMap="recipeResult">
+		<![CDATA[
+			SELECT * FROM TB_RECIPE WHERE RECIPE_IDX = #{recipe_idx}
+		]]>
+	</select>
+	
+	<update id="updateRecipe" parameterType="java.util.Map">
+	<![CDATA[
+		UPDATE ADMIN.TB_RECIPE SET 
+		RECIPE_TITLE = #{recipe_title}, RECIPE_CONTENT = #{recipe_content},
+		RECIPE_INGRE = #{recipe_ingre}, RECIPE_CATE_CODE = #{recipe_cate_code},
+		]]>
+		
+		<if test="recipe_img != null"> RECIPE_IMG = #{recipe_img},</if>
+	<![CDATA[
+		 RECIPE_REG_DATE = sysdate
+		WHERE RECIPE_IDX = #{recipe_idx}
+	]]>
+	</update>
+	
+	<delete id="deleteRecipe" parameterType="int">
+		DELETE FROM ADMIN.TB_RECIPE WHERE RECIPE_IDX = #{recipe_idx} 
+	</delete>
+	
+	<select id="selectRecipeReviewList" resultMap="recipeReviewResult">
+		<![CDATA[
+			SELECT * from
+				(SELECT rownum as rn, tr.* FROM 
+					(SELECT tr.* 
+						FROM TB_RECIPE_REVIEW tr 
+						where recipe_idx = #{recipe_idx} 
+						ORDER BY REG_DATE DESC
+				) tr
+			]]>
+		<![CDATA[
+			
+			)
+			where rn between #{rowStart} and #{rowEnd}
+		]]>
+	</select>
+	
+	<select id="selectRecipeReviewCount" resultType="int">
+    	SELECT count(*)
+		FROM TB_RECIPE_REVIEW 
+		WHERE RECIPE_IDX = #{recipe_idx}
+    </select>
+    
+    <insert id="insertRecipeReview" parameterType="recipeReviewVO">
+		<![CDATA[
+		INSERT INTO ADMIN.TB_RECIPE_REVIEW
+		(RECIPE_COMMENT_IDX, RECIPE_IDX, USER_ID, REG_DATE, CONTENT, RECIPE_STAR)
+		VALUES(TB_RECIPE_REVIEW_SEQ.nextval, #{recipe_idx}, #{user_id}, sysdate 
+		    , #{content},#{recipe_star})
+		]]>
+	</insert>
+    
+    
+</mapper>  

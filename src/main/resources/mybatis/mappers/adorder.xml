@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--   <td>${ord.user_id }</td>
+					<td>${ord.user_name }</td>
+					<td>${ord.user_phone}</td>
+					<td>${ord.user_addr }</td>
+					<td>${ord.prod_name }</td>
+					<td>${ord.prod_content }</td>
+					<td>${ord.quantity }</td>
+					<td>${ord.price }</td>
+					<td>${ord.pay_card_idx }</td>
+					<td>${ord.ord_date }</td> -->
+  <mapper namespace="mapper.adorder">
+  	<resultMap type="adOrderVO" id="orderResult">
+  		<result property="ord_code" column="ord_code" />
+  		<result property="user_id" column="user_id" />
+  		<result property="user_name" column="user_name" />
+  		<result property="user_phone" column="user_phone" />
+  		<result property="user_addr" column="user_addr" />
+    	<result property="prod_name" column="prod_name" />
+  		<result property="prod_content" column="prod_content" />
+  		<result property="quantity" column="quantity" />
+  		<result property="price" column="price" />
+  		<result property="ord_date" column="ord_date" />
+  	</resultMap>
+  
+	<!-- 페이지정보를 10개씩 가져오기 -->
+	<select id="listOrdPage" resultMap="orderResult">
+		<![CDATA[
+			select * 
+			from tb_order 
+			where rownum #{page} <= 10
+		]]>
+	</select> 
+
+	<!-- 페이지정보를 지정한 크기만큼 가져오기 -->
+	<select id="listOrdPaging" resultMap="orderResult">
+		<![CDATA[
+			select *
+			from ( select rownum AS rn, toa.* from 
+				 ( select 
+					toa.ord_code,
+					toa.user_id, 
+					tu.user_name, 
+					tu.user_phone, 
+					tu.user_addr,
+					tp.prod_name, 
+					tp.prod_content, 
+					toa.quantity, 
+					toa.price,  
+					toa.ord_date 
+					from tb_order toa, tb_users tu, tb_prod tp
+					where toa.user_id = tu.user_id 
+					and toa.ord_code = tp.ord_code ) toa
+					]]> 
+					<if test="keyword != null">
+		            	<if test="searchOption == 'I'.toString()">where user_id like '%'||#{keyword}||'%' </if>
+		            	<if test="searchOption == 'N'.toString()">where ord_code like '%'||#{keyword}||'%' </if>
+		             </if>
+					<![CDATA[
+					)
+			where rn between #{rowStart} and #{rowEnd}
+		]]>
+	</select>
+	
+	<!-- 총 주문 수 -->
+	<select id="ordCount" resultType="int">
+		select count(*) from tb_order
+			<if test="keyword != null">
+            	<if test="searchOption == 'I'.toString()">where user_id like '%'||#{keyword}||'%'</if>
+            	<if test="searchOption == 'N'.toString()">where ord_code like '%'||#{keyword}||'%'</if>
+             </if>
+	</select>
+	
+	<!-- 결제 취소  -->
+	<delete id="deleteOrd" parameterType="int">
+		<![CDATA[
+			delete from tb_order toa
+			where toa.ord_code = #{id}
+		]]>
+	</delete>
+</mapper>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  

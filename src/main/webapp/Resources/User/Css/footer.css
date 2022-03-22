@@ -1,0 +1,171 @@
+@charset "UTF-8";
+/* footer */
+.footer{
+	width:100%;
+
+	border-top:1px solid #999;
+}
+
+.innerFooter{
+	width:1050px;
+	margin:0 auto;
+	display:flex;
+	height:365px;
+}
+
+.footerLeft{
+	width:525px;
+	padding-top:28px;
+
+}
+
+.footerRight{
+	width:525px;
+}
+
+.callInfo .callNumber{
+	width:140px;
+	height:40px;
+	margin-right:16px;
+	display:inline-block;
+	font-size:28px;
+}
+.callInfo .callNumber span{
+	display:inline-block;
+	line-height:40px;
+	font-weight:bold;
+}
+
+.callInfo .info{
+	display:inline-block;
+	vertical-align: middle;
+}
+
+.callInfo .info span{
+	display:block;
+	height:22px;
+	font-size:14px;
+}
+
+.callInfo .infoTime{
+	color:#999;
+}
+.faq{
+	padding-top:16px;
+}
+.faqType{
+	display:inline-block;
+	width:140px;
+	height:40px;
+	border:1px solid #e3e3e3;
+	text-align: center;
+	line-height:40px;
+	font-weight:500;
+	font-size:14px;
+	border-radius:3px;
+}
+
+.faq .info{
+	display:inline-block;
+	margin-left:14px;
+	vertical-align: middle;
+}
+
+.faq .info span{
+	display:block;
+	height:22px;
+	font-size:14px;
+}
+
+.faq .infoTime{
+	color:#999;
+}
+
+.footerRight{
+	padding-top:28px;
+}
+
+.footerRight .companyInfo ul{
+	display:flex;
+	padding-left:0px;
+	padding-bottom:28px;
+}
+
+.footerRight .companyInfo ul li{
+	padding-right:16px;
+	font-size:14px;
+	display:inline;
+}
+.companyDetail{
+	font-size:12px;
+	color:#999;
+}
+.companyDetail a{
+	color:purple;
+}
+
+.copyRight{
+	font-size:10px;
+	padding-top:16px;
+	color:#999;
+	
+}
+.footerRight .social ul{
+	width:190px;
+	height:46px;
+	display:flex;
+	padding-top:16px;
+	padding-left:0;
+	margin:0;
+	
+}
+.footerRight .social ul li{
+	padding-right:10px;
+}
+.footerRight .social ul li a img{
+	width:30px;
+	height:30px;
+}
+.footerBottom{
+	width:1050px;
+	margin:0 auto;
+	padding-top:10px;
+	border-top:1px solid #999;
+	font-size:10px;
+}
+
+.footerBottom a{
+	color:#999;
+}
+
+.footerBottom ul{
+	display:flex;
+	height:34px;
+	padding:0;
+}
+
+.footerBottom ul li{
+	width:280px;
+	
+}
+
+.footerBottom ul .kakaoBotLogo{
+	width:428px;
+}
+
+.footerBottom ul li a img{
+	width:34px;
+	height:34px;
+	float:left;
+}
+
+.footerBottom ul li a span{
+	float:left;
+	display:inline-block;
+	margin-left:10px;
+}
+
+.footerBottom ul .kakaoBotLogo img{
+	width:102px;
+	height:34px;
+}

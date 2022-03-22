@@ -1,0 +1,151 @@
+@charset "EUC-KR";
+
+*{
+ 	font-family: ‘Noto Sans KR’, sans-serif;
+ 		 
+}
+
+.wrap{
+	font-size: 16px;
+	width: 1080px;
+	margin: 0 auto;
+}
+
+/* 레시피투유SMS 연동, SMS메시지 설정 타이틀 부분 일괄 적용 */
+.title{
+	border-style: solid;
+	border-width: 0 0 0 8px;
+	padding: 12px;
+	word-bread: break-all;
+	border-color: #1E90FF;
+	background-color: #ffffff;
+	margin-bottom: 10px; 
+	margin-top: 10px;
+	font-size: 13px;
+}
+
+table td{
+	border: 1px solid #DCDCDC;
+}
+
+.infoBox{
+	
+	border-style: solid;
+	border-color: #ffbf8b;
+	background-color: #ffead8;
+}
+
+.smsTable{
+	border-top : 2px solid #1E90FF;
+}
+
+.grayBg{
+	background-color: #e9e9e9;
+	text-align: center;
+}
+.whiteBg{
+	background-color: #ffffff;
+	text-align: left;
+}
+
+.gray{
+	background-color: #e9e9e9;
+	height: 20px;
+	width: 208px;
+
+}
+
+.white{
+	background-color: #ffffff;
+}
+
+.comment{
+	background-color: #ffffff;
+	height: 80px;
+}
+
+/* 테이블 내용 중 하늘색 글씨에만 적용 */
+.skyblueFont{
+	color: #1E90FF;
+	display: inline-block;
+}
+
+/* infoBox 상단 하늘색 구분선에 적용 */
+hr{
+	 background-color: #1E90FF;
+	 height: 1px;
+}
+
+/* 핸드폰 이미지 크기 설정 */
+img{
+	width : 212px;
+	height : 206px;
+}
+
+.messageImg{
+	position: relative;
+	float: left;
+	margin-top: 20px;
+}
+
+/* 회원가입시 */
+#joinText{
+	position: absolute;
+	width: 154px;
+	height: 106px;
+	top: 59px;
+	left: 27px;
+	background-color: transparent;
+	border: solid 1px #ffffff;
+	
+}
+
+/* 회원정보 수정시 */
+#modText{
+	position: absolute;
+	width: 154px;
+	height: 106px;
+	top: 59px;
+	left: 27px;
+	background-color: transparent;
+	border: solid 1px #ffffff;
+	
+}
+
+/* 문의글에 답변등록시 */
+#replyText{
+	position: absolute;
+	width: 154px;
+	height: 106px;
+	top: 59px;
+	left: 27px;
+	background-color: transparent;
+	border: solid 1px #ffffff;
+	
+}
+
+/* 핸드폰 그림 중 4번째 공백 이미지 */
+#tempText{
+	position: absolute;
+	width: 154px;
+	height: 106px;
+	top: 59px;
+	left: 27px;
+	background-color: transparent;
+	border: solid 1px #ffffff;
+	
+}
+
+.flex-container{
+	display: flex;
+	flex-wrap: wrap;
+	width: 900px;
+}
+
+.joinMsg, .modMsg, .replyMsg, .tempMsg{
+	width: 450px;
+}
+
+.joinTable, .modTable, .replyTable, .tempTable{
+	margin-top: 60px;
+}

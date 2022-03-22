@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.1//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_1.dtd">
+       
+<tiles-definitions>
+	<definition name="adminBaseLayout" template="/WEB-INF/Views/Admin/Inc/layout.jsp">
+		<put-attribute name="title" value=""/>
+		<put-attribute name="header" value="/WEB-INF/Views/Admin/Inc/homePage.jsp"/>
+		<put-attribute name="body" value=""/>
+	</definition>
+	
+	<definition name="/admin/adLogin" extends="adminBaseLayout">
+		<put-attribute name="title" value="초기 로그인페이지"/>
+		<put-attribute name="body" value="/WEB-INF/Views/Admin/AdminLogin/homePageadminLogin.jsp"/>
+	</definition>	
+	
+	<definition name="/admin/adMainForm" extends="adminBaseLayout">
+		<put-attribute name="title" value="메인페이지"/>
+		<put-attribute name="body" value="/WEB-INF/Views/Admin/AdminLogin/adminMain.jsp"/>
+	</definition>
+		 
+</tiles-definitions>       

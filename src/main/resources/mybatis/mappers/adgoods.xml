@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="mapper.adgoods">	<!-- product.xml의 네임스페이스 지정 -->
+
+	<resultMap type="adGoodsVO" id="adgoodsResult">
+		<result property="prod_code" column="prod_code"/>
+		<result property="cateCode" column="cateCode"/>
+		<result property="prod_name" column="prod_name"/>
+		<result property="prod_content" column="prod_content"/>
+		<result property="prod_price" column="prod_price"/>
+		<result property="prod_discount" column="prod_discount"/>
+		<result property="prod_sell_unit" column="prod_sell_unit"/>
+		<result property="prod_delivery_type" column="prod_delivery_type"/>
+		<result property="prod_wrap_type" column="prod_wrap_type"/>
+		<result property="prod_info" column="prod_info"/>
+		<result property="prod_allergy" column="prod_allergy"/>
+		<result property="prod_vaild_date" column="prod_vaild_date"/>
+		<result property="prod_from" column="prod_from"/>
+		<result property="prod_caution" column="prod_caution"/>
+		<result property="stock_quantity" column="stock_quantity"/>
+		<result property="prod_reg_date" column="prod_reg_date"/>
+		<result property="quantity" column="quantity"/>
+	</resultMap>
+	
+
+	<resultMap type="adGoodsCateVO" id="prodCateResult">
+		<result property="cateCode" column="cateCode"/>
+		<result property="cateName" column="cateName"/>
+		<result property="cateParent" column="cateParent"/>
+	</resultMap>
+	
+	<resultMap type="adGoodsImgVO" id="goodsImgResult">
+		<result property="fileName" column="fileName"/>
+		<result property="prod_code" column="prod_code"/>
+		<result property="uploadPath" column="uploadPath"/>
+		<result property="uuid" column="uuid"/>
+	</resultMap>
+
+	<!-- 페이지 정보를 10개씩 가져오기 -->
+	<select id="listPage" resultMap="adgoodsResult">
+		<![CDATA[
+			select * 
+			from tb_prod
+			where rownum #{page} <= 10
+		]]>
+	</select>
+	
+	<!-- 페이지정보를 지정한 크기만큼 가져오기 -->
+	<select id="getadGoodsList" resultMap="adgoodsResult">
+		<![CDATA[
+			select * from (
+				select rownum AS rn, prod_name, prod_price, prod_code, cateCode,
+				(SELECT cateName FROM TB_PROD_CATE WHERE TB_PROD_CATE.CATECODE = tb_prod.CATECODE) cateName
+				from tb_prod
+				where
+				
+		]]>
+			<!-- 상품명, 카테고리로 검색 -->
+			<choose>
+					<when test ="keyword != null and cateCode lt '5000'">
+						prod_name like '%'||#{keyword}||'%' and cateCode like '%'||#{cateCode}||'%' and
+					</when>
+					<when test="keyword != null">
+						prod_name like '%'||#{keyword}||'%' and
+					</when>
+					<when test="cateCode != null and cateCode != '100000'">
+						cateCode like '%'||#{cateCode}||'%' and 
+					</when>
+				</choose>
+		<![CDATA[	
+			rownum <= #{page} * #{pageSize} 
+			)			
+			where rn > (#{page}-1) * #{pageSize} AND rn <= #{page} * #{pageSize}
+		]]>	
+	</select>
+	
+	<!-- 총 상품 수 -->
+	<select id="getGoodsCount" parameterType="kr.co.recipetoyou.util.PagingVO" resultType="int">
+			select count(*) from TB_PROD where
+				<!-- <if test="keyword != null">prod_name like '%'||#{keyword}||'%' </if>
+				<if test="cateCode != null and cateCode != '100000'">cateCode like '%'||#{cateCode}||'%' </if> -->
+				<choose>
+					<when test ="keyword != null and cateCode lt '5000'">
+						prod_name like '%'||#{keyword}||'%' and cateCode like '%'||#{cateCode}||'%'
+					</when>
+					<when test="keyword != null">
+						prod_name like '%'||#{keyword}||'%'
+					</when>
+					<when test="cateCode != null and cateCode != '100000'">
+						cateCode like '%'||#{cateCode}||'%' 
+					</when>
+				</choose>
+	</select>
+	
+	<!-- 상품 상세 정보-->
+	 <select id="getadGoodsDetail" resultMap="adgoodsResult">
+		<![CDATA[
+		select prod_code, prod_name, (select cateName FROM TB_PROD_CATE WHERE TB_PROD_CATE.CATECODE = tb_prod.CATECODE) cateName,
+				prod_content, prod_price, prod_discount, prod_sell_unit, prod_delivery_type,
+				prod_wrap_type, prod_info, prod_allergy, prod_vaild_date, prod_from, prod_caution, stock_quantity
+		from tb_prod where prod_code = #{prod_code}
+		]]>
+	</select>
+	
+	<!-- 상품 조회 카테고리 조인 -->
+	 <select id="adGoodsDetail" resultMap="adgoodsResult">
+		<![CDATA[
+		SELECT 
+		tp.PROD_CODE ,tp.PROD_NAME ,tp.PROD_CONTENT ,tp.PROD_PRICE ,tp.PROD_DISCOUNT , tp.PROD_SELL_UNIT ,
+		tp.PROD_DELIVERY_TYPE , tp.PROD_WRAP_TYPE , tp.PROD_INFO ,tp.PROD_ALLERGY , tp.PROD_VAILD_DATE ,tp.PROD_FROM ,
+		tp.PROD_CAUTION ,tp.STOCK_QUANTITY ,tp.PROD_REG_DATE ,tp.CATECODE ,tpc.CATENAME ,tpc.CATEPARENT
+		FROM TB_PROD tp INNER join TB_PROD_CATE tpc 
+		ON tp.CATECODE =tpc.CATECODE 
+		WHERE tp.PROD_CODE = #{prod_code}
+		]]>
+	</select>
+
+	<!-- 상품 등록 -->
+	<insert id="register">
+			insert into tb_prod(prod_code, cateCode, prod_name, prod_content, prod_price, prod_discount, prod_sell_unit, prod_delivery_type,
+								prod_wrap_type, prod_info, prod_allergy, prod_vaild_date, prod_from, prod_caution,stock_quantity)
+			values (prodcode_seq.nextval, #{cateCode}, #{prod_name}, #{prod_content},#{prod_price}, #{prod_discount}, #{prod_sell_unit}, #{prod_delivery_type},
+							#{prod_wrap_type}, #{prod_info}, #{prod_allergy}, #{prod_vaild_date}, #{prod_from}, #{prod_caution}, #{stock_quantity})
+			
+			
+	</insert>
+	
+	<!-- 이미지 등록 -->
+	<insert id="imageUpload" parameterType="adGoodsImgVO">
+	<!-- 	<selectKey resultType="int" keyProperty="prod_code" order="AFTER">
+			select max(prod_code) from tb_prod
+		</selectKey> -->
+			insert into tb_adgoods_Img(fileName, prod_code, uploadPath, uuid)
+			values (#{fileName}, #{prod_code} , #{uploadPath}, #{uuid})
+	</insert>
+	
+	<!-- 이미지 정보 얻기 -->
+	<select id="getImageList" resultMap="goodsImgResult">
+		<![CDATA[
+		select * from tb_adgoods_Img where prod_code = #{prod_code}
+		]]>
+	</select>
+	
+	<!-- 카테고리 호출 -->
+
+	<select id="cateList" resultType="kr.co.recipetoyou.admin.adgoods.category.AdGoodsCateVO">
+		<![CDATA[
+		select level, cateCode, cateName, cateParent
+		from tb_prod_cate 
+		start with cateParent is null connect by prior cateCode = cateParent
+		]]>
+	</select>
+	
+	<!-- 상품 정보 수정 -->
+	<update id="goodsModify">
+		update tb_prod
+			set
+			cateCode = #{cateCode},
+			prod_name = #{prod_name},
+			prod_content = #{prod_content},
+			prod_price = #{prod_price},
+			prod_discount = #{prod_discount},
+			prod_sell_unit = #{prod_sell_unit},
+			prod_delivery_type = #{prod_delivery_type},
+			prod_wrap_type = #{prod_wrap_type},
+			prod_info = #{prod_info},
+			prod_allergy = #{prod_allergy},
+			prod_vaild_date = #{prod_vaild_date},
+			prod_from = #{prod_from},
+			prod_caution = #{prod_caution},
+			stock_quantity = #{stock_quantity},
+			prod_reg_date = sysdate
+		where prod_code = #{prod_code}
+	</update>
+	
+	<!-- 상품 정보 삭제 -->
+	<delete id="goodsDelete" parameterType="int">
+		<![CDATA[
+		delete from tb_prod where prod_code = #{prod_code}
+		]]>
+	</delete>
+	
+	<!-- 지정 상품 이미지 전체 삭제 -->
+	<delete id="removeImageAll" parameterType="int">
+		delete from tb_adgoods_Img where prod_code = #{prod_code}
+	</delete>
+	
+	<!-- 검색어에 맞는 상품 수 구하기 -->
+	<select id="getSearchCount" resultType="int">
+			select count(prod_code) from TB_PROD where 
+			
+				<choose>
+					<!-- 상품명&카테고리로 검색 -->
+					<when test ="keyword != null and cateCode lt '5000'">
+						prod_name like '%'||#{keyword}||'%' and cateCode like '%'||#{cateCode}||'%'
+					</when>
+					<!-- 상품명으로 검색 -->
+					<when test="keyword != null">
+						prod_name like '%'||#{keyword}||'%'
+					</when>
+					<!-- 카테고리로 검색 -->
+					<when test="cateCode != null and cateCode != '100000'">
+						cateCode like '%'||#{cateCode}||'%' 
+					</when>
+				</choose>
+	</select>
+	
+	
+	<!-- 상품 재고 업데이트 -->
+	<update id="updageStock">
+		update tb_prod
+			set stock_quantity = quantity - #{quantity}
+	</update>
+</mapper>

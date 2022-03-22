@@ -1,0 +1,200 @@
+@charset "UTF-8";
+
+.wrap {
+	margin: 0 auto;
+}
+
+.head {
+	width: 1050px;
+	margin-top: 35px;
+	margin-bottom: -42px;
+}
+
+.title {
+	font-size: 24px;
+	color: #333;
+}
+
+.subtitle {
+	font-size: 14px;
+    color: #999;
+    line-height: 10px;
+    margin-top: 40px;
+    margin-bottom:60px;
+}
+
+.review_menu {
+	width: 815px;
+	height: 100px;
+    background-color: #fff;
+    border-collapse:collapse;
+}
+
+.review_menu tr td{
+	text-align:center;
+	height:50px;
+	
+}
+.review_before:hover,
+.review_after:hover{
+	cursor:pointer;
+	background:#eee;
+}
+
+.review_before {
+	width: 410px;
+	border: 1px solid #dddfe1;
+	border-bottom: 2px solid #5f0080;
+	font-size: 14px;
+    font-weight: 700;
+    color: #5f0080;
+    text-align: center;
+}
+
+.review_after {
+	width: 410px;
+	border: 1px solid #dddfe1;
+	border-bottom: 1px solid #5f0080;
+	font-size: 14px;
+    font-weight: 700;
+    color: #666;
+    text-align: center;
+
+}
+
+.review_after_no{
+	display:none;
+}
+
+#thumbnail {
+	width: 60px;
+	height: 78px;
+	margin-right: 20px;
+}
+
+.review_before_main {
+	width: 815px;
+	padding: 24px 20px;
+	border-bottom: 1px solid #dddfe1;
+	font-size: 16px;
+    display: flex;
+}
+
+#thumbnail1 {
+	width: 60px;
+	height: 78px;
+	margin-right: 20px;
+}
+
+#thumbnail2 {
+	width: 60px;
+	height: 78px;
+	padding-left: 20px;
+}
+
+
+.subject {
+	width: 625px;
+}
+
+.btn {
+	margin-top: 27px;
+}
+
+.review_box{
+	padding-bottom:30px;
+	border-bottom:2px solid #ddd;
+}
+
+.review_btn {
+    border-radius: 4px;
+    background-color: #fff;
+    border: 1px solid #5f0080;
+    font-size: 13px;
+    color: #5f0080;
+    line-height: 2;
+    padding: 15px 20px 15px 20px;
+}
+
+.review_prod_name {
+	font-size: 16px;
+    font-weight: 900;
+    padding: 0 0 5px 20px;
+    border-bottom: 1px solid gray;
+}
+
+.review_title {
+	display:inline-block;
+	width:660px;
+	font-size: 14px;
+	font-weight: 700;
+    padding: 15px 0px 15px 0;
+    
+}
+
+.review_content {
+	font-size: 12px;
+	padding-left: 20px;
+	vertical-align: top;
+}
+
+.review_date {
+	display:inline-block;
+	width:100px;
+	font-size: 11px;
+	color: gray;
+	vertical-align: top;
+	padding: 15px 0px 15px 0;
+}
+
+.review_prodName{
+	text-align:left;
+	padding:10px;
+	padding: 20px 0 25px 15px;
+	border-bottom:1px solid #ddd;
+}
+
+.review_prodName span{
+	display:block;
+
+}
+
+.prodSub{
+	font-size:15px;
+	padding:10px;
+}
+
+
+.prod .img{
+  display: inline-block;
+}
+.img img{
+  display: inline-block;
+  width: 86px;
+  height: 100px;
+  vertical-align: middle;
+}
+
+.prodInfo{
+  display: inline-block;
+  line-height:5px;
+}
+
+.review_txtBox,
+.prod{
+	text-align:left;
+	padding-left:20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

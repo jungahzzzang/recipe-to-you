@@ -1,0 +1,407 @@
+@charset "UTF-8";
+* { font-family: ‘Noto Sans KR’, sans-serif;
+}
+/* 메인페이지 CSS */
+
+/* 1번째줄에 나오는 상품목록 CSS */
+.bar{
+	padding: 8px 0px 8px 2px;
+	margin-bottom: 20px;
+	font-size: 17px;
+	font-weight: bold;
+}
+
+
+/* 페이지 상단에서 2번째로 오는 상품등록 상품목록 부분 */
+.sub-menu {
+	background-color: #EEEEEE;
+	padding: 5px 0px 5px 10px;
+	border-bottom: 1px solid #DDDDDD;
+	text-align: center;
+}
+
+.sub-menu ul{
+	display: block;
+	overflow: hidden;
+	width: 760px;
+	margin: 0 auto;
+	padding-top: 5px;
+	text-align: left;
+}
+
+.sub-menu ul li {
+	float: left;
+	height: 25px;
+	line-height: 25px;
+	width: 120px;
+}
+
+
+/* 페이지 전체에 해당 */
+body, td, select, div, textarea, center {
+	color: #202020;
+	font-size: 15px;
+}
+
+
+/* 전체 테이블 안의 div */
+.main-content {
+	width: 100%;
+	margin: 0 auto;
+	padding-top: 15px;
+}
+
+.table {
+	table-layout: fixed;
+	width:100%;
+	border-spacing: 2px;
+	text-align: start;
+}
+
+.table1 {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+.table td {
+	padding: 3px 7px;
+	vertical-align: middle;
+	line-height: 30px;	
+}
+
+.table th {
+	text-align: left;
+	background-color: #F7F7F7;
+	padding: 3px 7px;
+	vertical-align: middle;
+	line-height: 40px;	
+}
+
+/* 2번째 테이블의 상단 부분 */
+.list_top {
+	border-top: 2px solid #6699cc;
+}
+
+/* 테이블 안쪽 부분*/
+.table_line td, .table_line th {
+	border: 1px solid #d7d7d7;
+}
+
+.table thead th {
+	text-align: center;
+}
+
+.table thead td {
+	text-align: left;
+}
+
+.table tbody tr td {
+	text-align: center;
+	padding-left: 10px;
+	vertical-align: middle;
+}
+
+.table tbody tr th {
+	width: 120px;
+	height: 40px;
+	line-height: 40px;
+	text-align: left;
+	padding-left: 10px;
+}
+
+
+/* radio부분 */
+.lbl {
+	margin: 0px 15px 0 px 10;
+	display: inline-block;
+}
+
+
+/* button태그를 감싸는 div부분 */
+.btn-box {	
+	text-align: center;
+	padding: 10px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+
+/* 버튼태그에 사용되는 기능 모음 */
+.btn {
+	border-radius: 3px;
+	padding-bottom: 3px;
+	line-height: 15px;
+	background-color: gray;
+	color: white;
+}
+
+.btn-sm {
+	font-size: 16px;
+	height: 31px;
+	padding-right: 20px;
+	padding-left: 20px;
+}
+
+.btn-blue {
+	background-color: royalblue;
+	color: white;
+}
+
+
+.btn-green {
+	background-color: #40A040;
+	font-weight: normal;
+	border-radius: 5px;
+	font-weight: normal;
+	font-size: 13px;
+	height: 25px;
+}
+
+
+/* 두번째 테이블 상단부분의 CSS 모음 */
+.list-tools {
+	border-top: 1px solid #E3E3E3;
+	padding-top: 10px;
+	float: left;
+	width: 100%;
+}
+
+.list-action {
+	float: left;
+	padding-bottom: 5px;
+}
+
+.summary{	
+	width: 30%;
+	margin-top: 2px;
+	float: right;
+	text-align: right;
+	padding-bottom: 5px;
+}
+
+
+/* 두번째 테이블 상단부분의 <span>태그 부분 */
+.f-bold {
+	font-weight: bold;
+}
+
+.f-red {
+	color: #FF4040;
+}
+
+
+/* 두번째 테이블의 이미지 부분 */
+.img_style {
+	width: 90px;
+	height: 90px;
+	vertical-align: middle;
+	margin-right: 5px;
+	border: 1px solid #E3E3E3;
+}
+
+
+/* 두번째 테이블의 tbody의 td의 <a>태그 부분 */
+.a_style {
+	color: #A6A6A6; 
+	text-decoration: none
+}
+
+
+/* 두번째 테이블의 tbody의 td의 <a>태그안의 <span>태그 */
+.f-small {
+	font-size: 12px;
+}
+
+
+/* 두번째 테이블의 tbody의 td의 각각 하나씩만 가지는 div속성 (
+table태그의 클래스와는 달리 클래스하나만 사용함)  */
+.div_style1 {
+	float: right;
+	margin-right: 5px;
+}
+
+.div_style2 {
+	border-top: 1px solid #EBEBEB;
+	padding-top: 5px;
+	margin-top: 5px;
+}
+
+
+/* 두번째 테이블의 tbody의 td의 div안의 <span>태그의 속성 (태그당 클래스 한개만 사용함) */
+.red_b {
+	font-size: 13px;
+	color: #db1350;
+	font-weight: bold;
+}
+
+.sky_b {
+	font-size: 13px;
+	color: #577abd;
+	font-weight: bold;
+}
+
+
+
+/*  두번째 테이블의 tbody의 td의 파란색 바탕의 글씨를 감싸는 <span>태그 속성 */
+.lable {
+	background-color: #abbac3;
+	border-radius: 0;
+	display: inline-block;
+	color: #fff;
+	text-align: center;
+	vertical-align: baseline;
+	white-space: nowrap;
+}
+
+.label-xs {
+	border-radius: 5px;
+	font-size: 14px;
+	height: 20px;
+	line-height: 20px;
+	padding: 3px;
+}
+
+.lable-blue {
+	background-color: #6699CC;
+}
+
+
+/* 하단의 페이지 선택하는 부분의 기능 */
+#paging {
+	margin-top: 20px;
+	width: 100%;
+	text-align: center;
+	margin: 20px 0;
+}
+
+#paging li {
+	display: inline;
+	line-height: 1em;
+	margin: 0;
+	color: #000000;
+	padding: 0 1px;
+}
+
+#paging .on {
+	font-weight: bold;
+	color: #ff8400;
+}
+
+#paging li.num {
+	padding: 0 5px;
+	font-size: 15px;
+	vertical-align: top;	
+}
+
+
+/* 순서변경버튼 클릭시 나타나는 alert창부분 => html css 미완성. */
+.popUpDiv1 {		/* 최상위 div */
+	border: 1px solid #D7D7D7;
+	background-color: #fff;
+	position: absolute;
+	width: 800px;
+	top:50px;
+	left:50px;
+	margin-top:200px;
+	margin-left:400px;
+	display:block;
+	padding: 10px;	
+}
+
+.popUpDiv2 { /* 테이블 상단의 div 속성 */
+	position: relative;
+	background-color: #FA8B5C;
+	border: 1px solid #F2672C;
+	color: #fff;
+	font-weight: bold;
+	line-height: 30px;
+	padding-left: 10px;
+}
+
+.closeBtn {		/* x버튼의 속성 */
+	display: table;
+	border-collapse: collapse; 
+}
+
+.popUpheight { /* 팝업창 상단을 제외한 부분을 감싸는 div */
+	height: 350px;
+}
+
+.btn-red {		/* 팝업창의 빨간색 버튼 속성 */
+	background-color: #FF4040;
+	font-weight: normal;
+	border-radius: 5px;
+	font-weight: normal;
+	font-size: 13px;
+	height: 25px;
+}
+
+
+.ui-dialog-title {	/* <span>태그 속성 (상품순서변경문장)  */
+	float: left;
+	width: 90%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+/* 수정해야됨 */
+/* .#goods_sortable .sort-item {
+    height: 25px;
+}
+
+li.sort-item {
+    border: 1px solid #E3E3E3;
+    padding: 7px;
+    background-color: #EFEFEF;
+    line-height: 18px;
+    margin-bottom: 5px;
+    cursor: move;
+}
+ */
+
+
+.popup_image {		/* 이미지태그 속성 */
+	width: 25px;
+	height: 25px;
+	vertical-align: middle;
+	margin-right: 5px;
+	border: 5px solid #E3E3E3;
+}
+
+.image_wrap img{
+	display: block;
+	height: 100px;
+	width: 165%;
+}
+
+.page_wrap{
+	text-align: center;
+	margin-top: 20px;
+}
+
+.pagination{
+    list-style : none;
+    display: inline-block;
+    margin: 10px 0 0 10px;      
+}
+
+ .pagination li{
+    float: left;
+    font-size: 15px;
+    margin-left: 10px;
+    padding: 3px;
+    font-weight: 50;
+ }
+
+.next, .prev{
+	border: 1px solid #ccc;
+	padding: 0 10px;
+}
+
+.pageBtn a:link {color: black;}
+.pageBtn_btn a:visited {color: black;}
+.pageBtn_btn a:active {color: black;}
+.pageBtn_btn a:hover {color: black;}
+.next a, .prev a {
+    color: #ccc;
+}

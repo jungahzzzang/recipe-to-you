@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="mapper.aduser">	<!-- user.xml의 네임스페이스 지정 -->
+
+	<resultMap type="adUserVO" id="aduserResult">		<!-- SQL문 실행한 후 반환되는 레코드들을 typeAlias 태그에서 지정한 userVO 빈에 저장함 -->
+		<result property="user_id" column="user_id" />
+		<result property="user_pw" column="user_pw"/>
+		<result property="user_name" column="user_name"/>
+		<result property="user_email" column="user_email"/>
+		<result property="user_phone" column="user_phone"/>
+		<result property="user_addr" column="user_addr"/>
+		<result property="user_gender" column="user_gender"/>
+		<result property="user_birth" column="user_birth"/>
+		<result property="recommendId" column="recommendId"/>
+		<result property="join_event" column="join_event"/>
+		<result property="info_agree" column="info_agree"/>
+		<result property="sms_agree" column="sms_agree"/>
+		<result property="email_agree" column="email_agree"/>
+		<result property="join_date" column="join_date"/>
+		<result property="user_grade" column="user_grade"/>
+		<result property="user_point" column="user_point"/>
+		<result property="cp_code" column="cp_code"/>
+		<result property="toYou_pass" column="toYou_pass"/>
+	</resultMap>
+	
+
+	
+	<!-- 페이지정보를 10개씩 가져오기 -->
+	<select id="listPage" resultMap="aduserResult">
+		<![CDATA[
+			select * 
+			from tb_users
+			where rownum #{page} <= 10 
+		]]>
+	</select> 
+
+	<!-- 페이지정보를 지정한 크기만큼 가져오기 -->
+	<select id="listPaging" resultMap="aduserResult">
+		<![CDATA[
+			select * from 
+			(select rownum as rn, tu.* from 
+			(select tu.* FROM tb_users tu  ORDER BY user_id DESC) tu
+    	]]>            
+
+            <if test="keyword != null">
+            	<if test="searchOption == 'I'.toString()">where user_id like '%'||#{keyword}||'%'</if>
+            	<if test="searchOption == 'N'.toString()">where user_name like '%'||#{keyword}||'%'</if>
+             </if>
+
+    	<![CDATA[
+    		)
+  			where rn between #{rowStart} and #{rowEnd}
+    	]]>
+	</select>
+	
+	<!-- 총 회원 수 -->
+	<select id="userCount" resultType="int" >
+
+			select count(*) from TB_USERS 
+			 <if test="keyword != null">
+            	<if test="searchOption == 'I'.toString()">where user_id like '%'||#{keyword}||'%'</if>
+            	<if test="searchOption == 'N'.toString()">where user_name like '%'||#{keyword}||'%'</if>
+             </if>
+	</select>
+	
+	<!-- 회원정보 삭제  -->
+	<delete id="deleteUser" parameterType="String">
+		<![CDATA[
+			delete from tb_users
+			where user_id = #{id}
+		]]>
+	</delete>
+	
+	<!-- 회원 상세 정보 조회 -->
+	<select id="readUser" resultMap="aduserResult" parameterType="String">
+		<![CDATA[
+			select *
+			from tb_users
+			where user_id = #{id}
+		]]>
+	</select>
+	
+	<!-- 회원 정보 수정 -->
+	<update id="updateUser" parameterType="adUserVO">
+		<![CDATA[
+			update tb_users set
+			user_name = #{user_name},			
+			user_birth = #{user_birth}, 
+			user_gender = #{user_gender},
+			user_pw = #{user_pw}, 
+			user_grade = #{user_grade},
+			user_email = #{user_email},
+			user_phone = #{user_phone},
+			user_addr = #{user_addr}
+			where user_id = #{user_id}
+		]]>
+	</update>
+	
+	
+
+</mapper>	

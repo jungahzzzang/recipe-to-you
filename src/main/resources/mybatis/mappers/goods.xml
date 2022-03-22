@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="mapper.goods">					
+	<resultMap type="goodsVO" id="goodsResult">		<!-- SQL문 실행한 후 반환되는 레코드들을 typeAlias 태그에서 지정한 goodsVO 빈에 저장함 -->
+		<result property="prod_code" column="prod_code" />
+		<result property="prodcatecode" column="prodcatecode"/>
+		<result property="prod_name" column="prod_name"/>
+		<result property="prod_content" column="prod_content"/>
+		<result property="prod_price" column="prod_price"/>
+		<result property="prod_discount" column="prod_discount"/>
+		<result property="prod_sell_unit" column="prod_sell_unit"/>
+		<result property="prod_delivery_type" column="prod_delivery_type"/>
+
+		<result property="prod_wrap_type" column="prod_wrap_type"/>
+		<result property="prod_wrap_type" column="PROD_WRAP_TYPE"/>
+
+		<result property="prod_info" column="prod_info"/>
+		<result property="prod_allergy" column="prod_allergy"/>
+		<result property="prod_vaild_date" column="prod_vaild_date"/>
+		<result property="prod_from" column="prod_from"/>
+		<result property="prod_caution" column="prod_caution"/>
+		<result property="prod_quantity" column="prod_quantity"/>
+		<result property="prod_reg_date" column="prod_reg_date"/>
+		
+	</resultMap>
+	
+	
+	<resultMap type="adGoodsImgVO" id="goodsImgResult">
+		<result property="fileName" column="fileName"/>
+		<result property="prod_code" column="prod_code"/>
+		<result property="uploadPath" column="uploadPath"/>
+		<result property="uuid" column="uuid"/>
+	</resultMap>
+	
+	<select id="selectGoodsList" resultMap="goodsResult">
+		<![CDATA[
+				select prod_name, prod_price, prod_code
+				from tb_prod
+		]]>
+	</select>
+	
+	<!-- 이미지 정보 얻기 -->
+	<select id="goodsImageList" resultMap="goodsImgResult">
+		<![CDATA[
+		select * from tb_adgoods_Img where prod_code = #{prod_code}
+		]]>
+	</select>
+
+	<select id="selectProdCode" resultMap="goodsResult">
+		<!-- <![CDATA[
+			select * from TB_PROD
+			where prod_code=#{prod_code} 	
+		]]> -->
+		 <![CDATA[
+		 select prod_code, prod_name, (select cateName FROM TB_PROD_CATE WHERE TB_PROD_CATE.CATECODE = tb_prod.CATECODE) cateName,
+				prod_content, prod_price, prod_discount, prod_sell_unit, prod_delivery_type,
+				prod_wrap_type, prod_info, prod_allergy, prod_vaild_date, prod_from, prod_caution, stock_quantity
+		from tb_prod where prod_code = #{prod_code}
+		 ]]>
+	</select>
+	
+
+</mapper>  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

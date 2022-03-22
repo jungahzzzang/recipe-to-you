@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+  <mapper namespace="mapper.adpayment">
+  	<resultMap type="adPaymentVO" id="paymentResult">
+  		<result property="pay_code" column="pay_code" />
+  		<result property="pay_method" column="pay_method" />
+  		<result property="pay_date" column="pay_date" />
+  		<result property="pay_price" column="pay_price" />
+  		<result property="user_id" column="user_id" />
+  		<result property="user_name" column="user_name" />
+  		<result property="user_phone" column="user_phone" />
+  		<result property="user_addr" column="user_addr" />
+    	<result property="prod_name" column="prod_name" />
+  		<result property="cp_code" column="cp_code" />
+  		<result property="ord_code" column="ord_code" />
+  	</resultMap>
+  
+	<!-- 페이지정보를 10개씩 가져오기 -->
+	<select id="listPayPage" resultMap="paymentResult">
+		<![CDATA[
+			select * 
+			from tb_payment 
+			where rownum #{page} <= 10
+		]]>
+	</select> 
+
+	<!-- 페이지정보를 지정한 크기만큼 가져오기 -->
+	<select id="listPayPaging" resultMap="paymentResult">
+		<![CDATA[
+			select * from ( select rownum AS rn, tpa.* from
+						  ( select 
+							tpa.pay_code,
+							toa.user_id, 
+							tu.user_name, 
+							tu.user_phone, 
+							tu.user_addr,
+							tp.prod_name, 
+							tpa.pay_price,  
+							tpa.pay_date
+							from tb_payment tpa, tb_order toa, tb_users tu, tb_prod tp
+							where tpa.ord_code = toa.ord_code
+							and toa.user_id = tu.user_id
+							and tpa.ord_code = tp.ord_code) tpa
+		]]> 
+					<if test="keyword != null">
+		            	<if test="searchOption == 'I'.toString()">where user_id like '%'||#{keyword}||'%' </if>
+		            	<if test="searchOption == 'N'.toString()">where pay_code like '%'||#{keyword}||'%' </if>
+		             </if>
+		<![CDATA[
+					)
+			where rn between #{rowStart} and #{rowEnd}
+		]]>
+	</select>
+	
+	<!-- 총 주문 수 -->
+	<select id="payCount" resultType="int">
+		select count(*) from ( select rownum AS rn, tpa.* from
+						  ( select 
+							tpa.pay_code,
+							toa.user_id, 
+							tu.user_name, 
+							tu.user_phone, 
+							tu.user_addr,
+							tp.prod_name, 
+							tpa.pay_price,  
+							tpa.pay_date
+							from tb_payment tpa, tb_order toa, tb_users tu, tb_prod tp
+							where tpa.ord_code = toa.ord_code
+							and toa.user_id = tu.user_id
+							and tpa.ord_code = tp.ord_code) tpa
+			<if test="keyword != null">
+            	<if test="searchOption == 'I'.toString()">where user_id like '%'||#{keyword}||'%'</if>
+            	<if test="searchOption == 'N'.toString()">where pay_code like '%'||#{keyword}||'%'</if>
+             </if>
+             )
+	</select>
+	
+	<!-- 결제 취소  -->
+	<delete id="deletePay" parameterType="int">
+		<![CDATA[
+			delete from tb_payment tpa
+			where tpa.pay_code = #{id}
+		]]>
+	</delete>
+</mapper>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  

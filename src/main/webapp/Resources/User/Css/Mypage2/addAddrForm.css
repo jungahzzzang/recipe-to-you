@@ -1,0 +1,93 @@
+@charset "UTF-8";
+
+.addAddrPopup {
+	text-align: center;
+	padding-top: 50px;
+}
+.popupTitle {
+	text-align: center;
+}
+		
+.popupTitle1 {
+	color: #257cd8;
+	font-size: 22px;
+	font-weight: 600;
+}
+		
+.popupTitle1 span {
+	font-size: 22px;
+	color: black;
+}
+		
+p {
+	font-size: 15px;
+	color: #999;
+}
+
+#zonecode {
+	width: 300px;
+    height: 40px;
+    margin-bottom: 10px;
+} 
+		
+#roadAddress {
+	width: 450px;
+	height: 40px;
+	border: 1px solid black;
+	border-radius: 3px;
+}
+		
+.addressForm a {
+	padding: 11px 20px;
+    margin-left: 10px;
+    border: 1px solid #5f0080;
+    border-radius: 3px;
+    background-color: white;
+    color: #5f0080;
+    font-weight: 800;
+    vertical-align: middle;
+}
+		
+#namugiAddress {
+	width: 450px;
+	height: 40px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	border: 1px solid black;
+	border-radius: 3px;
+}
+
+#addName {
+	width: 450px;
+	height: 40px;
+	margin-bottom: 10px;
+	border: 1px solid black;
+	border-radius: 3px;
+}
+
+#addPhone {
+	width: 450px;
+	height: 40px;
+	margin-bottom: 10px;
+	border: 1px solid black;
+	border-radius: 3px;
+}
+		
+.save {
+	width: 454px;
+	height: 41px;
+	margin-top: 20px;
+	background-color: #5f0080;
+	color: #fff;
+	border: 1px solid #5f0080;
+	border-radius: 3px;
+	cursor: pointer;
+}
+
+
+
+
+
+
+
+

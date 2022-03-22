@@ -1,0 +1,167 @@
+@charset "UTF-8";
+
+.wrap{
+	width:100%;
+}
+
+.main{
+	width:1050px;
+	margin:0 auto;
+	display:flex;
+	padding-top:45px;
+}
+
+.content{
+	width:825px;
+	margin-left:25px;
+	position:relative;
+}
+
+.content .title h2{
+	display:inline-block;
+}
+
+.content .title span{
+	font-size:13px;
+	font-weight:400;
+	padding-left:10px;
+	display:inline-block;
+	height:25px;
+	vertical-align:middle;
+	color:#999
+}
+
+.content .title{
+	position:relative;
+}
+.optional{
+	display:inline-block;
+	z-index:5;
+	position:relative;
+}
+
+.optional .listOff{
+	position:absolute;
+	right:-370px;
+	bottom:-20px;
+	width:150px;
+	height:45px;
+	display:inline-block;
+	font-size:18px;
+	font-weight:400;
+	border:1px solid #f4f4f4;
+	line-height:45px;
+	padding-left:10px;
+	color:#999;
+}
+
+.optional .choiceLayer{
+
+	display:none;
+	position:absolute;
+	right:-370px;
+	top:4px;
+	color:#999;
+}
+.optional .choiceLayer li{
+	font-size:12px;
+	border:1px solid #f4f4f4;
+	width:160px;
+	height:30px;
+	margin-top:-1px;
+	background:white;
+}
+.optional .choiceLayer li a{
+	line-height:30px;
+	padding-left:5px;
+}
+
+.optional a i{
+	padding-left:80px;
+}
+.noticeTable {
+	z-index:1;
+}
+
+.content .noticeTable table{
+	border-top:3px solid purple;
+	font-size:12px;
+	font-weight:400;
+	text-align:center;
+	border-collapse: collapse;
+}
+.content .noticeTable th,td{
+	padding:20px 0 20px 0;
+}
+
+.content .noticeTable .num{
+	width:75px;
+}
+
+.content .noticeTable .cate{
+	width:150px;
+}
+.content .noticeTable .title{
+	width:600px;
+}
+.content .noticeTable .hit{
+	width:50px;
+}
+
+.noticeTable table tr .detail{
+	text-align:left;
+}
+
+.content .noticeTable tr:nth-child(1){
+	border-bottom:1px solid #999;
+}
+
+.content .noticeTable tr{
+	border-top:1px solid #f4f4f4;
+	border-bottom:1px solid #f4f4f4;
+}
+
+.content .noticeTable .titleCont{
+	text-align:left;
+	padding-left:15px;
+}
+
+.content .page{
+	border-bottom:1px solid purple;
+	width:825px;
+}
+
+.content .page ul{
+	display:flex;
+	justify-content: center;
+}
+
+.content .page ul li{
+	width:30px;
+	height:30px;
+	border:1px solid #ddd;
+	line-height:28px;
+	text-align:center;
+	margin-left:-1px;
+}
+
+.content .page ul li:hover{
+	background:#fafafa;
+	transition:0.3s;
+}
+
+.content .page ul li a{
+	font-size:12px;
+}
+
+.noticeTable table .faq88{
+	display:none;
+}
+
+.noticeTable table .cont{
+	text-align:left;
+}
+
+.page{
+	width:700px;
+}

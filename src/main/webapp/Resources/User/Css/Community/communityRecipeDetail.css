@@ -1,0 +1,166 @@
+@charset "UTF-8";
+.recipeBox{
+	padding-top:50px;
+	text-align:center;
+	width:1080px;
+	margin:0 auto;
+}
+.thumbnail{
+	width:600px;
+	height:300px;
+	display:inline-block;
+}
+
+.cookingImg{
+	width:1080px;
+	margin:0 auto;
+	text-align:center;
+	padding:50px !important;
+}
+
+.cookingImg h3 p{
+	width:980px !important;
+	margin:0 auto;
+}
+
+.cookingImg h3 p img{
+	width:980px !important;
+	height: auto !important;
+}
+
+.cookingImg img{
+	width:850px;
+	height:400px;
+}
+
+.relativeItem{
+	width:1080px;
+	margin:0 auto;
+}
+
+.relativeItem ul{
+	padding:0;
+	display:flex;
+	justify-content: space-between;
+}
+
+.relativeItem ul li{
+	padding:10px;
+}
+
+.cookingReview{
+	width:1080px;
+	
+}
+
+.cookingReview h4{
+	margin-bottom:10px;
+	padding-bottom:30px;
+	border-bottom:1px solid #e6e7e8;
+}
+.cookCont{
+	border-bottom:1px solid #e6e7e8;
+	text-align:left;
+	padding:15px 0 15px 10px;
+}
+span.recipeStar{
+	display:inline-block;
+	width:110px;
+}
+span.userID{
+	display:inline-block;
+	width:250px;
+	color:#de4830;
+	font-size:22px;
+}
+span.regDate{
+	width:200px;
+	display:inline-block;
+	color:#999;
+}
+.recipeStar i{
+	color:yellow;
+	margin:0;
+	font-size:17px;
+	line-height:24px;
+}
+span.cookContent{
+	display:inline-block;
+	padding:10px 0 10px 10px;
+}
+
+.page{
+	margin-bottom:30px;
+}
+
+.page ul{
+	display:flex;
+	justify-content: center;
+}
+
+.page ul li{
+	width:30px;
+	height:30px;
+	border:1px solid #ddd;
+	line-height:28px;
+	text-align:center;
+	margin-left:-1px;
+}
+
+.main .page ul li:hover{
+	background:#fafafa;
+	transition:0.3s;
+}
+
+.main .page ul li a{
+	font-size:12px;
+}
+.reviewForm{
+	margin-top:20px;
+}
+.reviewForm input.content{
+	width: 700px;
+    height: 50px;
+}
+
+.reviewForm button{
+	width: 80px;
+    height: 56px;
+}
+
+.star-input>.input,
+.star-input>.input>label:hover,
+.star-input>.input>input:focus+label,
+.star-input>.input>input:checked+label{display: inline-block;vertical-align:middle;background:url('/recipetoyou/Resources/User/Img/Recipe/grade_img.png')no-repeat;}
+.star-input{display:inline-block; white-space:nowrap;width:225px;height:40px;padding:25px;line-height:30px;}
+.star-input>.input{display:inline-block;width:150px;background-size:150px;height:28px;white-space:nowrap;overflow:hidden;position: relative;}
+.star-input>.input>input{position:absolute;width:1px;height:1px;opacity:0;}
+star-input>.input.focus{outline:1px dotted #ddd;}
+.star-input>.input>label{width:30px;height:0;padding:28px 0 0 0;overflow: hidden;float:left;cursor: pointer;position: absolute;top: 0;left: 0;}
+.star-input>.input>label:hover,
+.star-input>.input>input:focus+label,
+.star-input>.input>input:checked+label{background-size: 150px;background-position: 0 bottom;}
+.star-input>.input>label:hover~label{background-image: none;}
+.star-input>.input>label[for="p1"]{width:30px;z-index:5;}
+.star-input>.input>label[for="p2"]{width:60px;z-index:4;}
+.star-input>.input>label[for="p3"]{width:90px;z-index:3;}
+.star-input>.input>label[for="p4"]{width:120px;z-index:2;}
+.star-input>.input>label[for="p5"]{width:150px;z-index:1;}
+.star-input>output{display:inline-block;width:60px; font-size:18px;text-align:right; vertical-align:middle;}
+
+.BtnBox{
+	text-align:center;
+	padding-right:15px;
+	margin:20px 0;
+}
+.BtnBox a{
+	display:inline-block;
+	background:purple;
+	color:white;
+	width:100px;
+	height:40px;
+	text-align:center;
+	line-height:40px;
+	border-radius:5px;
+	font-weight:600;
+}

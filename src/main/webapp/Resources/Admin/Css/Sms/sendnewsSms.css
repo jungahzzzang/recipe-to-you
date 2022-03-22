@@ -1,0 +1,70 @@
+@charset "EUC-KR";
+
+*{
+ 	font-family: ¡®Noto Sans KR¡¯, sans-serif;
+ 		 
+}
+
+.btn_option{
+	background-color: #555555;
+	border: none;
+	color: white;
+}
+		
+.search_btn{
+	background-color: #00498c;
+	border: none;
+	color: white;
+}
+
+.pageTitle{
+	border-style: solid;
+	background-color: #e9e9e9;
+	height: 40px;
+	text-align: center;
+	font-size: 13px;
+}
+
+.wrap{
+	font-size: 16px;
+	width: 1080px;
+	margin: 0 auto;
+}
+		
+.list_head{
+	font-size: 16px;
+	text-align: center;
+	margin: 0 auto;
+}
+		
+.list_head table{
+	font-size: 16px;
+	text-align: center;
+	margin: 0 auto;
+}
+		
+.titleBox{
+	
+	border-style: solid;
+	background-color: #e9e9e9;
+	height: 30px;
+}
+
+.infoBox{
+	
+	border-style: solid;
+	border-color: #ffbf8b;
+	background-color: #ffead8;
+}
+
+.underline{
+	text-decoration: underline;
+	display: inline-block;
+	font-weight: bold;
+}
+
+.boldFont{
+	color: #00498c;
+	font-weight: bold;
+	display: inline-block;
+}

@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="mapper.user">	<!-- user.xml의 네임스페이스 지정 -->
+
+	<resultMap type="userVO" id="userResult">		<!-- SQL문 실행한 후 반환되는 레코드들을 typeAlias 태그에서 지정한 userVO 빈에 저장함 -->
+		<result property="user_id" column="user_id" />
+		<result property="user_pw" column="user_pw"/>
+		<result property="user_name" column="user_name"/>
+		<result property="user_email" column="user_email"/>
+		<result property="user_phone" column="user_phone"/>
+		<result property="user_addr" column="user_addr"/>
+		<result property="user_gender" column="user_gender"/>
+		<result property="user_birth" column="user_birth"/>
+		<result property="recommendId" column="recommendId"/>
+		<result property="join_event" column="join_event"/>
+		<result property="info_agree" column="info_agree"/>
+		<result property="sms_agree" column="sms_agree"/>
+		<result property="email_agree" column="email_agree"/>
+		<result property="join_date" column="join_date"/>
+		<result property="user_grade" column="user_grade"/>
+		<result property="user_point" column="user_point"/>
+		<result property="cp_code" column="cp_code"/>
+		<result property="toYou_pass" column="toYou_pass"/>
+	</resultMap>
+	
+	<!-- 회원가입 -->
+	<insert id="insertUser" parameterType="userVO">
+		<![CDATA[
+			insert into tb_users (user_id, user_pw, user_name, user_email, user_phone, user_addr, user_gender, user_birth,
+			 recommendId, join_event, info_agree, sms_agree, email_agree, join_date)
+			values (#{user_id}, #{user_pw}, #{user_name}, #{user_email}, #{user_phone}, #{user_addr}, #{user_gender}, #{user_birth}, 
+			#{recommendId}, #{join_event}, #{info_agree}, #{sms_agree}, #{email_agree}, sysdate)
+		]]>
+	</insert>
+	 
+	 <!-- 로그인 -->
+	<select id="loginById" resultMap="userResult" parameterType="userVO">
+		<![CDATA[
+			select * from tb_users
+			where user_id=#{user_id} and user_pw=#{user_pw}		
+		]]>
+	</select>
+	
+	<select id="idChk" resultType="int" parameterType="java.lang.String">
+		<![CDATA[
+		SELECT COUNT(*) FROM tb_users
+		WHERE user_id = #{user_id}
+		]]>
+	</select>
+	
+	<select id="mailChk" resultType="int" parameterType="java.lang.String">
+		<![CDATA[
+		SELECT COUNT(*) FROM tb_users
+		WHERE user_email = #{user_email}
+		]]>
+	</select>
+	
+	
+	
+	<!-- 페이지정보를 10개씩 가져오기 -->
+	<select id="listPage" resultMap="userResult">
+		<![CDATA[
+			select * 
+			from tb_users
+			where rownum #{page} <= 10
+		]]>
+	</select> 
+
+	<!-- 페이지정보를 지정한 크기만큼 가져오기 -->
+	<select id="listPaging" resultMap="userResult">
+		<![CDATA[
+			select * from (select rownum AS rn, tb_users.* from tb_users)  where rn between #{pageStart} and #{pageSize}
+		]]>
+	</select>
+	
+	<!-- id : DAO에서 ID를 이용해 해당 SQL문 호출 -->
+	<!-- resultMap : 반환되는 레코드를 userResult에 저장 -->
+	<!-- <select id="selectAllUserList" resultMap="userResult">
+		<![CDATA[
+			select * from TB_USERS
+		]]>
+	</select> -->
+	
+	<!-- 총 회원 수 -->
+	<select id="userCount" resultType="int">
+		select count(*) from TB_USERS
+	</select>
+	
+	<!-- 회원정보 삭제  -->
+	<delete id="deleteUser" parameterType="String">
+		<![CDATA[
+			delete from tb_users
+			where user_id = #{id}
+		]]>
+	</delete>
+	
+	<!-- 회원 상세 정보 조회 -->
+	<select id="readUser" resultMap="userResult" parameterType="String">
+		<![CDATA[
+		select *
+		from tb_users
+		where user_id = #{id}
+		]]>
+	</select>
+	
+	<!-- 회원 정보 수정 -->
+	<!-- ★ jsp 파일의 input 태그에 담긴 데이터를 -> controller를 통해 전달 시에는
+		value=${}에만 담아주면 인식을 못한다.
+		input 안에 name 속성을 넣어줘야 데이터가 전달됨.
+		여기서 name은 쿼리문의 #{}값과 반드시 동일해야함.
+	-->
+	<update id="updateUser" parameterType="userVO">
+
+		update tb_users set
+		user_name = #{user_name},			
+		user_birth = #{user_birth}, 
+		user_gender = #{user_gender},
+		user_pw = #{user_pw}, 
+		user_grade = #{user_grade},
+		user_email = #{user_email},
+		user_phone = #{user_phone},
+		user_addr = #{user_addr}
+		where user_id = #{user_id}
+
+	</update>
+	
+	<!-- 찜하기 목록 조회 -->
+	<resultMap type="pickVO" id="cartPickResult">
+
+		<result property="prod_name" column="prod_name"/>
+		
+		<result property="prod_price" column="prod_price"/>
+		<result property="prod_discount" column="prod_discount"/>
+
+	</resultMap>
+	
+	<!-- 쿠폰 사용 조회 -->
+	<resultMap type="couponVO" id="couponResult">
+		<result property="cp_use_cods" column="cp_use_cods"/>
+		<result property="cp_code" column="cp_code"/>
+		<result property="cp_payment_details" column="cp_payment_details"/>
+	</resultMap>
+	
+	<!-- id : DAO에서 id를 이용해 해당 SQL문을 호출함 -->
+	<!-- resultMap : 반환되는 레코드를 memResult에 저장함  -->
+	<select id="selectAllMemberList" resultMap="userResult">
+		<![CDATA[
+			select * from TB_DBCONNECTEX
+		]]>
+	</select>
+	
+	<!-- 찜하기 목록 조회 -->
+	<select id="selectAllCartPickList" resultMap="cartPickResult">
+		<![CDATA[
+			SELECT tp.PROD_NAME, tp.PROD_PRICE, tp.PROD_DISCOUNT
+			FROM TB_FAV tf JOIN TB_PROD tp
+			ON tf.PROD_CODE = tp.PROD_CODE
+		]]>
+	</select>
+	
+	<!-- 삭제하기 -->
+	<select id="deletePick" parameterType="String">
+		<![CDATA[
+			DELETE FROM TB_PROD
+			WHERE 
+			PROD_NAME = #{PROD_NAME}
+		]]>
+	</select>
+	
+	<select id="selectAllCouponList" resultMap="couponResult">
+		<![CDATA[
+			select * from TB_COUPON_USE
+		]]>
+	</select>
+	
+	<!-- 장바구니 담기  -->
+	<resultMap type="cartAddVO" id="cartAddResult">
+		<result property="cart_code" column="cart_code"/>
+		<result property="prod_code" column="prod_code"/>
+		<result property="prod_quantity" column="prod_quantity"/>
+		<result property="user_id" column="user_id"/>
+	</resultMap>
+	
+	<!-- 장바구니 담기 -->
+	<insert id="insertCartAdd" parameterType="cartAddVO">
+		<![CDATA[
+			insert into tb_cart (cart_code, prod_code, prod_quantity, user_id)
+			values (#{cart_code}, #{prod_code}, #{prod_quantity}, #{user_id}) 
+		]]>
+	</insert>
+	
+	
+	<!-- 찜 담기  -->
+	<resultMap type="favVO" id="favResult">
+		<result property="fav_flag_code" column="fav_flag_code"/>
+		<result property="prod_code" column="prod_code"/>
+		<result property="user_id" column="user_id"/>
+		<result property="fav_flag" column="fav_flag"/>
+	</resultMap>
+	
+	<!-- 찜 담기 -->
+	<insert id="insertFavAdd" parameterType="favVO">
+		<![CDATA[
+			insert into tb_fav (fav_flag_code, prod_code, user_id, fav_flag)
+			values (#{fav_flag_code}, #{prod_code}, #{user_id}, #{fav_flag}) 
+		]]>
+	</insert>
+	
+	<!--  
+	<insert id="insertUser" parameterType="userVO">
+		<![CDATA[
+			insert into tb_users (user_id, user_pw, user_name, user_email, user_phone, user_addr, user_gender, user_birth,
+			 recommendId, join_event, info_agree, sms_agree, email_agree, join_date)
+			values (#{user_id}, #{user_pw}, #{user_name}, #{user_email}, #{user_phone}, #{user_addr}, #{user_gender}, #{user_birth}, 
+			#{recommendId}, #{join_event}, #{info_agree}, #{sms_agree}, #{email_agree}, sysdate)
+		]]>
+	</insert> -->
+	 
+	<!-- <select id="loginById" resultType="userVO" parameterType="userVO">
+		<![CDATA[
+			select * from tb_users
+			where user_id=#{user_id} and user_pw=#{user_pw}		
+		]]>
+	</select> -->
+<!-- 	
+	<select id="idChk" resultType="int">
+		SELECT COUNT(*) FROM tb_users
+		WHERE user_id = #{user_id}
+	</select> -->
+	
+</mapper>	

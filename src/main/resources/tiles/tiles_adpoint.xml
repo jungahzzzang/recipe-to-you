@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.1//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_1.dtd">
+
+<tiles-definitions>
+	<definition name="adminBaseLayout" template="/WEB-INF/Views/Admin/Inc/layout.jsp">
+		<put-attribute name="title" value=""/>
+		<put-attribute name="header" value="/WEB-INF/Views/Admin/Inc/homePage.jsp"/>
+		<put-attribute name="body" value=""/>
+	</definition>
+	
+	
+	<definition name="adpoint/pointRecord" extends="adminBaseLayout">
+		<put-attribute name="title" value="포인트지급기록"/>
+		<put-attribute name="body" value="/WEB-INF/Views/Admin/Point/pointRecord.jsp"/>
+	</definition>	
+	
+	<definition name="adpoint/userPoint" extends="adminBaseLayout">
+		<put-attribute name="title" value="사용자포인트목록"/>
+		<put-attribute name="body" value="/WEB-INF/Views/Admin/Point/userPoint.jsp"/>
+	</definition>
+	
+	
+</tiles-definitions>          
+       
+       

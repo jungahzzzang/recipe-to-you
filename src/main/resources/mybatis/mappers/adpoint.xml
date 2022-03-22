@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  <mapper namespace="mapper.adpoint">
+  
+  <resultMap type="adpointVO" id="adpointResult">
+  	<result property="point_code" column="point_code"/>
+  	<result property="point" column="point"/>
+  	<result property="user_id" column="user_id"/>
+  	<result property="ord_code" column="ord_code"/>
+  	<result property="pay_code" column="pay_code"/>
+  	<collection property="userVO" resultMap="userResult"/>
+  </resultMap>
+  
+  <resultMap type="userVO" id="userResult">
+  	<result property="user_id" column="USER_ID"/>
+  	<result property="user_name" column="USER_NAME"/>
+  	<result property="user_grade" column="USER_GRADE"/>
+  </resultMap>
+  
+  <select id="selectAllPointList" resultMap="adpointResult">
+  	<![CDATA[
+		SELECT tu.USER_ID , tu.USER_NAME , tu.USER_GRADE , sum(tp.POINT) AS POINT 
+		FROM TB_POINT tp , TB_USERS tu 
+		WHERE tu.USER_ID = tp.USER_ID 
+		GROUP BY tu.USER_ID , tu.USER_NAME , tu.USER_GRADE
+		]]>
+  </select>
+  
+<!--   
+  페이지정보를 10개씩 가져오기
+	<select id="listPointPage" resultMap="orderResult">
+		<![CDATA[
+			select * 
+			from TB_POINT 
+			where rownum #{page} <= 10
+		]]>
+	</select> 
+
+	페이지정보를 지정한 크기만큼 가져오기
+	<select id="listPointPaging" resultMap="orderResult">
+		<![CDATA[
+			select *
+			from ( select rownum AS rn, 
+					toa.user_id, 
+					tu.user_name, 
+					tu.user_phone, 
+					tu.user_addr,
+					tp.prod_name, 
+					tp.prod_content, 
+					toi.quantity, 
+					toi.price, 
+					tpc.pay_card_idx, 
+					toa.ord_date 
+					from tb_order toa, 
+						 tb_users tu, 
+						 tb_prod tp, 
+						 tb_ord_ing toi, 
+						 tb_payment_card_reg tpc 
+					where toa.user_id = tu.user_id 
+					and toi.prod_code = tp.prod_code 
+					and toa.ord_code = toi.ord_code 
+					and tu.user_id = tpc.user_id )
+			where rn between #{rowStart} and #{rowEnd}
+		]]>
+	</select>
+  
+   -->
+  
+  
+
+  
+  <delete id="deletePoint" parameterType="int">
+  	<![CDATA[
+			delete from TB_POINT
+			where point_code = #{point_code}
+		]]>
+  </delete>
+  
+  
+  
+  </mapper>

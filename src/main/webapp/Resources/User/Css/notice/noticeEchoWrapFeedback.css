@@ -1,0 +1,138 @@
+@charset "UTF-8";
+
+.wrap{
+	width:100%;
+}
+
+.main{
+	width:1050px;
+	margin:0 auto;
+	display:flex;
+	padding-top:45px;
+}
+
+.content{
+	margin-left:25px;
+}
+
+.content .title{
+	padding-bottom:40px;
+}
+
+.content .title span{
+	font-size:14px;
+}
+
+.echoPackTable table{
+	border-top:3px solid purple;
+	font-size:12px;
+	font-weight:400;
+	text-align:center;
+	border-collapse: collapse;
+}
+.content .echoPackTable th{
+	border:1px solid #999;
+	border-left:0;
+	border-right:0;
+}
+.content .echoPackTable .echoDetail1{
+	text-align:left;
+	
+}
+.content .echoPackTable .echoDetail1 td{
+	padding-left:20px;
+	
+}
+
+.content .echoPackTable th,td{
+	padding:20px 0 20px 0;
+}
+
+.content .echoPackTable .echoTitleTd{
+	text-align:left;
+}
+
+.content .echoPackTable .offerList1 td{
+	cursor:pointer;
+}
+
+.content .echoDetail1{
+	display:none;
+}
+
+
+.content .echoDetail1 .echoBtn{
+	text-align:right;
+	font-size:13px;
+	margin-right:25px;
+	
+}
+
+.content .echoDetail1 button{
+	width:75px;
+	height:30px;
+	border:1px solid #5f0080;
+	background:white;
+
+}
+
+
+.echoPackTable .th .num{
+	width:65px;
+}
+.echoPackTable .th .cate{
+	width:125px;
+}
+.echoPackTable .th .title{
+	width:430px;
+}
+.echoPackTable .th .writer{
+	width:100px;
+}
+.echoPackTable .th .writeDate{
+	width:100px;
+}
+
+
+.content .page{
+	border-bottom:1px solid purple;
+}
+
+.content .page ul{
+	display:flex;
+	justify-content: center;
+}
+
+.content .page ul li{
+	width:30px;
+	height:30px;
+	border:1px solid #ddd;
+	line-height:28px;
+	text-align:center;
+	margin-left:-1px;
+}
+
+.content .page ul li:hover{
+	background:#fafafa;
+	transition:0.3s;
+}
+
+.content .page ul li a{
+	font-size:12px;
+}
+
+.writeBtn{
+	text-align:right;
+	padding:60px 0px 80px 0px;
+}
+
+.writeBtn a{
+	width:100px;
+	height:32px;
+	display:inline-block;
+	text-align:center;
+	line-height:32px;
+	color:white;
+	background:#795b8f;
+	border:1px solid #5f0080;
+}

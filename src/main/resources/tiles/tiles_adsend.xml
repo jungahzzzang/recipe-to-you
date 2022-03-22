@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.1//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_1.dtd">
+       
+<tiles-definitions>
+	<!-- 메인화면 뷰이름 -->
+	<definition name="adminBaseLayout" template="/WEB-INF/Views/Admin/Inc/layout.jsp">
+		<put-attribute name="title" value=""/>
+		<put-attribute name="header" value="/WEB-INF/Views/Admin/Inc/homePage.jsp"/>
+		<put-attribute name="body" value=""/>
+	</definition>			
+			
+	<!-- 발송내역목록  -->
+	<definition name="/adsend/listadSend" extends="adminBaseLayout">
+		<put-attribute name="title" value="발송내역목록"/>
+		<put-attribute name="body" value="/WEB-INF/Views/Admin/AdSms/listSend.jsp"></put-attribute>
+	</definition>				
+	
+	<!-- 회원정보 조회 -->
+	<definition name="/adsend/adSendUserInfo" extends="adminBaseLayout">
+		<put-attribute name="title" value="발송내역목록-회원정보"/>
+		<put-attribute name="body" value="/WEB-INF/Views/Admin/AdSms/aduserSendInfo.jsp"></put-attribute>
+	</definition>	
+	
+		
+	<!-- 주문 내역 목록 조회 -->
+	<definition name="/adsend/adSendOrderInfo" extends="adminBaseLayout">
+		<put-attribute name="title" value="발송내역목록-주문내역목록"/>
+		<put-attribute name="body" value="/WEB-INF/Views/Admin/AdSms/adorderSendInfo.jsp"></put-attribute>
+	</definition>	
+		
+	<!-- 결제 내역 목록 조회 --> 
+	<definition name="/adsend/adSendPaymentInfo" extends="adminBaseLayout">
+		<put-attribute name="title" value="발송내역목록-결제내역목록"/>
+		<put-attribute name="body" value="/WEB-INF/Views/Admin/AdSms/adpaymentSendInfo.jsp"></put-attribute>
+	</definition>	
+		
+	
+	
+	
+	<!-- 뉴스레터발송관리-뉴스레터발송페이지 -->
+	<definition name="ademail/sendnewsSms" extends="adminBaseLayout">
+		<put-attribute name="title" value="뉴스레터발송관리-뉴스레터발송"/>
+		<put-attribute name="body" value="/WEB-INF/Views/Admin/AdSms/sendnewsSms.jsp"></put-attribute>
+	</definition>	
+	
+	<!-- 뉴스레터발송관리-발송내역조회페이지 -->
+	<definition name="ademail/searchList" extends="adminBaseLayout">
+		<put-attribute name="title" value="뉴스레터발송관리-발송내역조회"/>
+		<put-attribute name="body" value="/WEB-INF/Views/Admin/AdSms/searchList.jsp"></put-attribute>
+	</definition>
+	
+	<!-- 뉴스레터발송관리-메일폼설정페이지 -->
+	<definition name="ademail/setmailForm" extends="adminBaseLayout">
+		<put-attribute name="title" value="뉴스레터발송관리-메일폼설정"/>
+		<put-attribute name="body" value="/WEB-INF/Views/Admin/AdSms/setmailForm.jsp"></put-attribute>
+	</definition>
+	
+	<!-- 발송된 이메일 내용페이지 -->
+	<definition name="ademail/emailPopup" extends="adminBaseLayout">
+		<put-attribute name="title" value="발송된 이메일 내용"/>
+		<put-attribute name="body" value="/WEB-INF/Views/Admin/AdSms/emailPopup.jsp"></put-attribute>
+	</definition>
+	
+	
+	
+	
+	<!-- 회원SMS발송페이지 -->
+	<definition name="adsms/senduserSms" extends="adminBaseLayout">
+		<put-attribute name="title" value="회원SMS발송"/>
+		<put-attribute name="body" value="/WEB-INF/Views/Admin/AdSms/senduserSms.jsp"></put-attribute>
+	</definition>	
+	
+	<!-- 발송된 SMS 내용페이지 -->
+	<definition name="adsms/smsPopup" extends="adminBaseLayout">
+		<put-attribute name="title" value="발송된 SMS 내용"/>
+		<put-attribute name="body" value="/WEB-INF/Views/Admin/AdSms/smsPopup.jsp"></put-attribute>
+	</definition>
+	
+	<!-- 문자메시지 전송페이지 -->
+	<definition name="adsms/msgPopup" extends="adminBaseLayout">
+		<put-attribute name="title" value="문자메시지 전송"/>
+		<put-attribute name="body" value="/WEB-INF/Views/Admin/AdSms/msgPopup.jsp"></put-attribute>
+	</definition>
+		
+</tiles-definitions>       

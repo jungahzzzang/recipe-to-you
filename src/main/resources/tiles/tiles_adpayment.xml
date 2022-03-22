@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.1//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_1.dtd">
+       
+<tiles-definitions>
+				<!-- 메인화면 뷰이름 -->
+	<definition name="adminBaseLayout" template="/WEB-INF/Views/Admin/Inc/layout.jsp">
+		<put-attribute name="title" value=""/>
+		<put-attribute name="header" value="/WEB-INF/Views/Admin/Inc/homePage.jsp"/>
+		<put-attribute name="body" value=""/>
+	</definition>	
+			
+				<!-- 전체결제조회 -->
+	<definition name="/adpayment/listadPay" extends="adminBaseLayout">
+		<put-attribute name="title" value="결제목록"/>
+		<put-attribute name="body" value="/WEB-INF/Views/Admin/AdOrder/paymentList.jsp"></put-attribute>
+	</definition>
+				<!-- 주문정보페이지 -->
+	<definition name="/adpayment/adPayInfo" extends="adminBaseLayout">
+		<put-attribute name="title" value="결제정보조회"/>
+		<put-attribute name="body" value="/WEB-INF/Views/Admin/AdOrder/payIngList.jsp"></put-attribute>
+	</definition>
+				<!-- 주문수정페이지 -->
+	<definition name="/adpayment/modPayIngInfo" extends="adminBaseLayout">
+		<put-attribute name="title" value="결제정보수정"/>
+		<put-attribute name="body" value="/WEB-INF/Views/Admin/AdOrder/payIngMod.jsp"></put-attribute>
+	</definition>				
+</tiles-definitions>    

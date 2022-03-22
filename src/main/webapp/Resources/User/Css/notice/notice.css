@@ -1,0 +1,281 @@
+@charset "UTF-8";
+.wrap{
+	width:100%;
+	
+}
+.main{
+	width:1050px;
+	margin:0 auto;
+	display:flex;
+	padding-top:45px;
+}
+.sideMenu ul{
+	padding:0;
+	font-size:14px;
+	color:#666;
+	padding-top:15px;
+}
+.sideMenu ul li a{
+	display:block;
+}
+.sideMenu ul li:hover{
+	background:#fafafa;
+	transition:0.3s;
+}
+.sideMenu ul li{
+	width:180px;
+	height:50px;
+	border:1px solid #F2F2F2;
+	padding-left:15px;
+	line-height:50px;
+	margin-top:-1px;
+	position:relative;
+}
+.sideMenu ul .oneToOneFaq{
+	width:180px;
+	height:45px;
+	line-height:20px;
+	border:0;
+	margin-top:20px;
+	border-radius:0 100px 100px 0;
+	background:#fafafa;
+	padding:6px 0px 6px 15px;
+	vertical-align:middle;
+}
+.sideMenu ul li i{
+	position:absolute;
+	right:15px;
+	top:18px;
+	font-size:15px;
+	color:#666;
+}
+.sideMenu ul .oneToOneFaq i{
+	position:absolute;
+	right:15px;
+	top:21px;
+	
+}
+.content{
+	width:825px;
+	margin-left:25px;
+}
+
+.content .title span{
+	font-size:13px;
+	font-weight:400;
+	padding-left:10px;
+	display:inline-block;
+	height:25px;
+	vertical-align:middle;
+	color:#999
+}
+.Contsearch{
+	text-align :right;
+	font-size:12px;
+	margin-bottom:10px;
+	position:relative;
+	padding-right:27px;
+}
+.Contsearch input{
+	margin-bottom:0;
+}
+
+.Contsearch i {
+	width:27px;
+	height:25px;
+	background:purple;
+	color:white;
+	text-align:center;
+	line-height:25px;
+	margin:0;
+	position:absolute;
+	right:2px;
+}
+.content .noticeTable table{
+	border-top:3px solid purple;
+	font-size:12px;
+	font-weight:400;
+	text-align:center;
+	border-collapse: collapse;
+}
+.content .noticeTable th,td{
+	padding:20px 0 20px 0;
+}
+.content .noticeTable .num{
+	width:50px;
+}
+.content .noticeTable .title{
+	width:550px;
+}
+.content .noticeTable .writer{
+	width:100px;
+}
+.content .noticeTable .writeDate{
+	width:100px;
+}
+.content .noticeTable .hit{
+	width:50px;
+}
+.content .noticeTable tr:nth-child(1){
+	border-bottom:1px solid #999;
+}
+.content .noticeTable tr{
+	border-top:1px solid #F4F4F4;
+	border-bottom:1px solid #F4F4F4;
+}
+.content .noticeTable .titleCont{
+	text-align:left;
+	padding-left:15px;
+}
+.content .page{
+	border-bottom:1px solid purple;
+}
+.content .page ul{
+	display:flex;
+	justify-content: center;
+}
+.content .page ul li{
+	width:30px;
+	height:30px;
+	border:1px solid #ddd;
+	line-height:28px;
+	text-align:center;
+	margin-left:-1px;
+}
+.content .page ul li:hover{
+	background:#fafafa;
+	transition:0.3s;
+}
+.content .page ul li a{
+	font-size:12px;
+}
+/* recipeNotice Page.CSS  */
+.notice_deliver_wrap {
+	width: 1050px;
+	height: 100%;
+	margin: 0 auto;
+}
+.notice_deliver_tit {
+	width: 1050px;
+	margin: 0 auto;
+	padding: 50px 0 70px;
+}
+.notice_deliver_tit h2.tit {
+	font-weight: 700;
+	font-size: 28px;
+	color: #333;
+	line-height: 35px;
+	text-align: center;
+	letter-spacing: -1px;
+}
+.notice_deliver_tit p.sub {
+	text-align: center;
+	color: #666;
+}
+#content {
+	min-width: 1050px;
+	padding-bottom: 60px;
+}
+.main_tb {
+	position: relative;
+	width: 1050px;
+	height: 100%;
+	margin: 0 auto;
+	border-top: 2px solid #000;
+	font-size: 15px;
+}
+.main_tb th {
+	width:110px;
+	padding: 13px 0 13px 20px;
+	background-color: #F7F5F8;
+	text-align: left;
+}
+.main_tb td {
+	padding: 13px 0 13px 23px;
+	border-top: 1px solid #F4F4F4;
+	margin: 0 auto;
+}
+.twos td {
+	padding: 0;
+	margin: 0;
+}
+.twos ul {
+	position: relative;
+	overflow: hidden;
+	width: 100%;
+	border-top: 1px solid #F4F4F4;	
+	margin: 0;
+	padding: 0;
+}
+.twos ul li{
+ 	float: left;
+}
+.twos ul .th {
+	float: left;
+	padding: 13px 0 13px 20px;
+	width: 110px;
+	background-color: #F7F5F8;
+}
+.twos ul .td {
+	float: left;
+	padding: 13px 0 13px 20px;
+	width: 180px;
+}
+.img_noticeview img {
+	width: 100%;
+	height: 1024px;
+	
+}
+img.deliver_img_search {
+	width: 100%;
+	height: 150px;
+	margin-top: -5px;
+	
+}
+img.deliver_img_bottom {
+	width: 100%;
+	height: 350px;
+	margin-top: -5px;
+}
+img.deliver_img_in {
+	margin-top: -5px;
+}
+.list_btn_wrap {
+	width: 100%;
+	
+}
+.list_btn {
+	
+	left:50px;
+	margin: 20px 0 30px 900px;
+	padding: 0;
+}
+button {
+	width: 150px;
+	height: 42px;
+	background-color: #795B8F;
+	color: #fff;
+	border: 1px solid #5F0080;
+	font-size: 15px;
+	cursor: pointer;
+	
+}
+.notice_board {
+	border-top: 2px solid #333;
+	border-bottom: 2px solid #333;
+	margin: 20px 0 130px;
+	font-size: 15px;
+}
+.notice_board ul {
+	margin: 0;
+	padding: 0;	
+}
+.notice_board li {
+	padding: 10px 20px;
+	border: 1px solid #F4F4F4;
+	line-height: 140%;
+	color: #333;
+}
+.board_icons {
+	margin-right: 30px;
+}

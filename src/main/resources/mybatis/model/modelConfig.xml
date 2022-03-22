@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+  
+<configuration>
+	<settings>
+		<!-- <setting name="cacheEnabled" value="false" />
+		<setting name="jdbcTypeForNull" value="NULL"/>  -->
+		<setting name="mapUnderscoreToCamelCase" value="true" />
+	</settings>
+	<typeAliases>
+	
+		<!-- admin -->
+		<typeAlias type="kr.co.recipetoyou.admin.AdminVO" alias="adminVO"/>
+		
+		<typeAlias type="kr.co.recipetoyou.admin.aduser.AdUserVO" alias="adUserVO"/>
+		<typeAlias type="kr.co.recipetoyou.admin.aduser.aduserWithdraw.AdUserDrawVO" alias="adUserDrawVO"/>
+		
+		<typeAlias type="kr.co.recipetoyou.admin.adgoods.AdGoodsVO" alias="adGoodsVO"/>
+		<typeAlias type="kr.co.recipetoyou.admin.adgoods.category.AdGoodsCateVO" alias="adGoodsCateVO"/>
+
+		<typeAlias type="kr.co.recipetoyou.admin.adgoods.AdgoodsImgVO" alias="adGoodsImgVO"/>
+		<typeAlias type="kr.co.recipetoyou.admin.adgoods.Inquiry.AdInquiryVO" alias="adInquiryVO"/>
+		<typeAlias type="kr.co.recipetoyou.admin.adgoods.Inquiry.AdReviewVO" alias="adReviewVO"/>
+		
+		<typeAlias type="kr.co.recipetoyou.admin.adsend.AdSendVO" alias="adSendVO"/>
+		<typeAlias type="kr.co.recipetoyou.admin.adsend.ademail.AdEmailVO" alias="adEmailVO"/>
+		<typeAlias type="kr.co.recipetoyou.admin.adsend.adsms.AdSmsVO" alias="adSmsVO"/>
+		
+		<typeAlias type="kr.co.recipetoyou.admin.adfaq.AdFAQVO" alias="adFAQVO"/>
+		<typeAlias type="kr.co.recipetoyou.admin.adfaq.AdFAQCategoryVO" alias="adFAQCategoryVO"/>
+		<typeAlias type="kr.co.recipetoyou.admin.adfaq.AdNoticeVO" alias="adNoticeVO"/>
+		
+		<typeAlias type="kr.co.recipetoyou.admin.adorder.AdOrderVO" alias="adOrderVO"/>
+		<typeAlias type="kr.co.recipetoyou.admin.adpayment.AdPaymentVO" alias="adPaymentVO"/>
+		<typeAlias type="kr.co.recipetoyou.admin.adrecipe.AdRecipeVO" alias="adRecipeVo"/>
+		
+		<!-- user -->
+		<typeAlias type="kr.co.recipetoyou.user.UserVO" alias="userVO"/>
+		
+		<typeAlias type="kr.co.recipetoyou.user.mypage.vo.CouponVO" alias="couponVO"/>
+		<typeAlias type="kr.co.recipetoyou.user.mypage.vo.CouponUseVO" alias="couponUseVO"/>
+		<typeAlias type="kr.co.recipetoyou.user.mypage.vo.PointUseVO" alias="pointUseVO"/>
+		<typeAlias type="kr.co.recipetoyou.user.mypage.vo.PointVO" alias="pointVO"/>
+		<typeAlias type="kr.co.recipetoyou.user.mypage.vo.QnAVO" alias="qnaVO"/>
+		
+		<typeAlias type="kr.co.recipetoyou.user.mypage.vo.PointUseVO" alias="pointuseVO"/>
+		<typeAlias type="kr.co.recipetoyou.main.cartPick.vo.CartAddVO" alias="cartAddVO"/>
+		<typeAlias type="kr.co.recipetoyou.main.cartPick.vo.FavVO" alias="favVO"/>
+		<typeAlias type="kr.co.recipetoyou.user.mypage.vo.MyOrderVO" alias="myorderVO"/>
+	
+		<typeAlias type="kr.co.recipetoyou.main.cartPick.vo.CartAddVO" alias="cartAddVO"/>
+		<typeAlias type="kr.co.recipetoyou.main.cartPick.vo.FavVO" alias="favVO"/>
+		<typeAlias type="kr.co.recipetoyou.main.cartPick.vo.PickVO" alias="pickVO"/>
+		<typeAlias type="kr.co.recipetoyou.main.cartPick.vo.ProdVO" alias="prodVO"/>
+		<typeAlias type="kr.co.recipetoyou.user.mypage.vo.UserAddrVO" alias="useraddrVO"/>
+		
+		<typeAlias type="kr.co.recipetoyou.main.goods.GoodsVO" alias="goodsVO"/>
+		<typeAlias type="kr.co.recipetoyou.main.goods.PaymentVO" alias="paymentVO"/>
+		<typeAlias type="kr.co.recipetoyou.main.order.OrderVO" alias="orderVO"/>
+		<typeAlias type="kr.co.recipetoyou.util.PagingVO" alias="pagingVO"/>
+		<typeAlias type="kr.co.recipetoyou.main.inqreview.ReviewVO" alias="reviewVO"/>
+		<typeAlias type="kr.co.recipetoyou.main.inqreview.InquiryVO" alias="inquiryVO"/>
+		
+		<typeAlias type="kr.co.recipetoyou.board.recipe.RecipeVO" alias="recipeVO"/>
+		<typeAlias type="kr.co.recipetoyou.board.recipe.RecipeCateVO" alias="recipeCateVO"/>
+		
+		<typeAlias type="kr.co.recipetoyou.admin.adpoint.AdPointVO" alias="adPointVO"/>
+		<typeAlias type="kr.co.recipetoyou.board.recipe.RecipeReviewVO" alias="recipeReviewVO"/>
+		<typeAlias type="kr.co.recipetoyou.board.notice.NoticeVO" alias="noticeVO"/>
+		<typeAlias type="kr.co.recipetoyou.board.notice.NoticeFAQVO" alias="noticeFAQVO"/>
+		<typeAlias type="kr.co.recipetoyou.board.notice.NoticeINQVO" alias="noticeINQVO"/>
+
+		<!-- 메인페이지 -->
+		<typeAlias type="kr.co.recipetoyou.user.category.CategoryVO" alias="categoryVO"/>
+		
+
+	</typeAliases>
+</configuration> 

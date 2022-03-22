@@ -1,0 +1,393 @@
+@charset "UTF-8";
+* { font-family: ‘Noto Sans KR’, sans-serif;
+}
+
+.wrap {
+	width: 1080px;
+	height: 1000px;
+	margin: 0 auto;
+}
+
+
+/* 페이지 가능 윗부분 - 전체테이블 윗부분 */
+.bar{
+	padding: 8px 0px 8px 2px;
+	margin-bottom: 20px;
+	font-size: 17px;
+	font-weight: bold;
+}
+
+
+/* 전체테이블 안의 tbody 안의 div 부분 */
+.main-content {
+	width: 100%;
+	margin: 0 auto;
+}
+
+
+/* body, td, select, div, textarea, center태그에 공통으로 적용되는 기능 */
+body, td, select, div, textarea, center {
+	color: #202020;
+	font-size: 15px;
+}
+
+
+/* 각 테이블태그와 테이블 안에 사용되는 기능모음 */
+.table {
+	table-layout: fixed;
+	width:100%;
+	border-spacing: 2px;
+	text-align: left;
+}
+
+.table1 {
+	border-collapse: collapse;
+	border-spacing: 0;
+	background-color: #ffffff;
+}
+
+.table td {
+	padding: 3px 7px;
+	vertical-align: middle;
+	line-height: 30px;	
+}
+
+.table th {
+	text-align: left;
+	background-color: #F7F7F7;
+	padding: 3px 7px;
+	vertical-align: middle;
+	line-height: 40px;	
+}
+
+.list_top {
+	border-top: 2px solid #6699cc;
+}
+
+.table_line td, .table_line th {
+	border: 1px solid #d7d7d7;
+}
+
+.table thead th {
+	text-align: center;
+}
+
+.table tbody tr td {
+	text-align: center;
+	padding-left: 10px;
+	vertical-align: middle;
+}
+
+.table tbody tr th {
+	width: 120px;
+	height: 40px;
+	line-height: 40px;
+	text-align: left;
+	padding-left: 10px;
+}
+
+
+/* 체크박스에 주는 기능 */
+.lbl {
+	margin-right: 15px;
+	display: inline-block;
+}
+
+
+/* button태그를 감싸는 div부분 */
+.btn-box {
+	text-align: center;
+	padding: 10px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+
+/* 버튼태그에 사용되는 기능 모음 */
+.btn {
+	border-radius: 3px;
+	padding-bottom: 3px;
+	line-height: 15px;
+	background-color: gray;
+	color: white;
+}
+
+.btn-sm {
+	font-size: 16px;
+	height: 31px;
+	padding-right: 20px;
+	padding-left: 20px;
+}
+
+.btn-li_gray {
+	background-color: #A2A2A2;
+	font-weight: normal;
+	font-size: 14px;
+	height: 28px;
+}
+
+.btn-blue {
+	background-color: royalblue;
+	color: white;
+}
+
+.btn-Li_blue {
+	background-color: #4d90fe;
+	border-radius: 5px;
+	font-weight: normal;
+	font-size: 14px;
+	height: 28px;
+}
+
+
+.btn-red {
+	background-color: red;
+	border-radius: 5px;
+	font-weight: normal;
+	font-size: 14px;
+	height: 28px;
+}
+
+.btn-green {
+	background-color: #40A040;
+	font-weight: normal;
+	border-radius: 5px;
+	font-weight: normal;
+	font-size: 14px;
+	height: 28px;
+}
+
+.btn-xs {
+	color: #ffffff;
+	font-size: 14px;
+	background-color: #A2A2A2;
+	padding: 2px 3px;
+	font-weight: normal;
+}
+
+
+/* 두번째 테이블 상단부분의 CSS 모음 */
+.list-tools{
+	border-top: 1px solid #E3E3E3;
+	padding-top: 10px;
+	float: left;
+	width: 100%;
+}
+
+.list-action {
+	float:left;
+	padding-bottom: 5px;	
+}
+
+.summary{
+	width: 30%;
+	margin-top: 2px;
+	float: right;
+	text-align: right;
+	padding-bottom: 5px;
+}
+
+
+/* 두번째 테이블 상단부분의 <span>태그 부분 */
+.f-bold {
+	font-weight: bold;
+}
+
+.f-red {
+	color: #FF4040;
+}
+
+
+/* 두번째 테이블의 tbody td의 파란색 글씨 부분 */
+.blue {
+	color: #3156c1;
+	font-size: 14px;
+}
+
+
+/* 두번째 테이블의 tbody태그 안의  tbody의 td의 <a>태그 안의 <span>태그 속성 */
+.helper {
+	font-size: 13px;
+	color: #008000;
+	line-height: 1em;
+}
+
+
+/* 두번째 테이블의 tbody태그 안의 td의 div태그 속성 */
+.hline{
+	padding: 5px 0 0 0;
+	margin-top: 4px;
+	border-top: 1px dotted #dedede;
+	font-size: 12px;
+}
+
+
+/* 두번째 테이블의 tbody태그 안의 td의 div(.hline)안의 <span>태그 */
+.f-small {
+ 	font-size: 13px;
+}
+
+.f-gray {
+	color: #A2A2A2;
+}
+
+
+/* 하단의 페이지 선택하는 부분의 기능 */
+#paging {
+	margin-top: 20px;
+	width: 100%;
+	text-align: center;
+	margin: 20px 0;
+}
+
+#paging li {
+	display: inline;
+	line-height: 1em;
+	margin: 0;
+	color: #000000;
+	padding: 0 1px;
+}
+
+#paging .on {
+	font-weight: bold;
+	color: #ff8400;
+}
+
+#paging li.num {
+	padding: 0 5px;
+	font-size: 15px;
+	vertical-align: top;	
+}
+
+
+/* 배송정보 업로드버튼 클릭시 나타나는 팝업창 */
+.div_style2 {
+	top: 50%;
+	left: 50%;
+	margin-top: -55px;
+	margin-left: -410px;
+	display: block;
+}	
+
+#csv_upload_fram {
+	display: none;
+	position: absolute;
+	width: 800px;
+	border: 1px solid black;
+	padding: 10px;
+	background-color: #fff;
+	z-index: 51;
+}
+
+.sub_title {/* 테이블 상단의 파란색문장 부분 */
+	height: 18px;
+	font-size: 14px;
+	display: inline-block;
+	padding-right: 5px;
+	padding-bottom: 8px;
+	color: #317cc1;
+}
+
+.table-bordered {
+	border: 1px solid #ddd;
+	border-collapse: collapse;
+	
+}
+
+.file_div {
+	width: 100%;
+	cursor: pointer;
+}
+
+.csv-file {
+	width: 97%;
+	display: inline-block;
+	min-height: 15px;
+	padding: 5px 3px 3px 5px;
+	vertical-align: middle;
+	border: 1px solid #d1d1d1;
+	
+}
+
+
+/* 두번째테이블과 배송정보 업로드버튼 클릭시 나타나는 팝업창의 <lable>태그 부분과 <span>태그 부분 모음  */
+.lable {
+	background-color: #abbac3;
+	border-radius: 0;
+	display: inline-block;
+	color: #fff;
+	text-align: center;
+	vertical-align: baseline;
+	white-space: nowrap;
+}
+
+.pull-right {
+	float: right;
+}
+
+.lable-sm {
+	border-radius: 2px;
+	padding: 0px 7px 2px;
+}
+
+.label-xs {
+	border-radius: 2px;
+	font-size: 13px;
+	height: 14px;
+	line-height: 16px;
+	padding: 0 2px 3px;
+}
+
+.lable-blue {
+	background-color: #6699CC;
+}
+
+
+/* 팝업창의 전체 div의 기능 */
+.popup_div_style{
+	margin-top: 10px;
+	text-align: center;
+}
+
+
+/* 팝업창의 input태그 기능 */
+.file_hidden{
+	width: 100%;
+	cursor: pointer;
+}
+
+
+/* 팝업창에서 버튼밑에 !표로 시작하는 설명란 부분 */
+.tip {
+	color: #3399FF;
+	font-size: 13px;
+	letter-spacing: 0;
+	margin-top: 5px;
+}
+
+
+/* 팝업창테이블에서만 사용하는 버튼기능기능  */
+.btn-lg {
+	font-size: 16px;
+	height: 31px;
+	padding: 1px 20px 3px 20px;
+	border-radius: 5px;
+}
+
+
+/* 팝업창 테이블에서만 사용하는 기능 */
+.table-bordered tbody tr td {
+	text-align: left;
+}
+
+
+
+
+
+
+
+
+
+
+
+

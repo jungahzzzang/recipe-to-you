@@ -1,0 +1,78 @@
+@charset "EUC-KR";
+
+*{
+ 	font-family: ‘Noto Sans KR’, sans-serif;
+ 		 
+}
+
+table{
+	
+	border-collapse: collapse;
+}
+
+table tr td{
+	text-align: center;
+	font-size: 13px;
+}
+
+table td{
+	padding : 5px;
+	border: 1px solid #DCDCDC;
+}
+
+.wrap{
+	font-size: 16px;
+	width: 1080px;
+	margin: 0 auto;
+}
+
+.mainTitle{
+	border-style: solid;
+	border-width: 0 0 0 8px;
+	padding: 12px;
+	word-bread: break-all;
+	border-color: #1E90FF;
+	margin-bottom: 10px; 
+	margin-top: 10px;
+	
+}
+
+#text{
+	width: 300px;
+}
+
+#joinText{
+	width: 700px;
+	height: 130px;
+}
+
+/* 각 항목 제목 부분 - 회색칠 */
+.grayBg{
+	width: 200px;
+	background-color: #e9e9e9;
+}
+
+/* 각 항목 내용 부분 - 흰색칠 */
+.whiteBg{
+	width: 780px;
+	background-color: #ffffff;
+	text-align: left;
+}
+
+#checkIcon {
+	color: #c4342d;
+}
+.skyblueFont{
+	color: #1E90FF;
+	display: inline-block;
+}
+
+.redFont{
+	color: #c4342d;
+}
+
+.passCondition2{
+	color: #fb442c;
+}
+
+

@@ -1,0 +1,264 @@
+@charset "UTF-8";
+
+.wrap {
+	max-width: 100%;
+}
+
+.main{
+	min-width: 100%;
+	margin:0 auto;
+	background-color: #ecf1f1;
+}
+
+#eventView {
+	min-width: 100%;
+	min-height: 100vh;
+}
+
+#eventView .view_main img {
+	width: 100%;
+	height: 1012px;
+}
+
+.view_main .intro {
+	margin-top: -5px;
+}
+
+.view_product {
+	align-items: center;
+	padding: 0;
+	width: 1000px;
+	margin: 0 auto;
+}
+
+.view_product .tit_product {
+	height: 29px;
+	margin: 0 0 0 40px;
+	font-size: 28px;
+	font-weight: 600;
+	padding-bottom: 50px;
+}
+
+.view_product h5 {
+	height: 25px;
+	margin: 0 0 0 40px;
+	padding: 0;
+	font-size: 22px;
+	font-weight: 600;
+	color: #5f0080;
+}
+
+.goodsLists {
+	display: flex;
+	flex-direction:column;
+	justify-content: center;
+    margin: 0 auto;
+}
+
+.goodsLists li {
+	width: 236px;
+	min-height: 460px;
+	padding-top: 30px;
+	height: auto;
+	float: left;
+}
+
+.goodsLists img {
+	width: 210px;
+	height: 290px;
+	transition: all .5s ease-in-out;
+}
+
+.list_products {
+	max-width: 200px;
+	max-height: 100%;
+}
+
+.list_products  span.name {
+	font-size: 17px;
+	font-weight: 400;
+	line-height: 29px;
+	color: #282828;
+}
+
+.list_products span.cost {
+	font-weight: 700;
+	color: #282828;
+}
+
+.btn_box {
+	position: relative;
+	width: 526px;
+	height: 142px;
+	margin: 0 auto;
+	
+}
+.inn_btn {
+	width: 500px;
+	height: 80px;
+	background: #609CBC;
+	border-radius: 8px;
+}
+
+.btn_link {
+	
+	position: absolute;
+	font-size: 32px;
+	font-weight: 500;
+	color: #ffffff;
+	top: 16px;
+	left: 115px;
+	
+}
+
+/* KF365 Page*/
+.kf_main {
+	min-width: 100%;
+	margin:0 auto;
+	background-color:#f1f1f7;
+}
+.kf_main img {
+	width: 100%;
+	height: 680px;
+}
+.kf2_img {
+	margin-top: -10px;
+}
+
+
+.kf_main .kf3_img {
+	width: 1200px;
+	height: 520px;
+	padding-left: 170px;
+}
+
+.btn_safe_result {
+	position: relative;
+	width: 526px;
+	height: 142px;
+	margin: 0 auto;
+}
+
+.inn_safe_btn {
+	width: 500px;
+	height: 80px;
+	border: 2px solid #5f0080;
+	border-radius: 8px;
+}
+
+.btn_safe_link {
+	
+	position: absolute;
+	font-size: 26px;
+	font-weight: 500;
+	color: #5f0080;
+	top: 22px;
+	left: 86px;
+	
+}
+
+.tit_safe_product {
+	position: relative;
+	width: 980px;
+	padding: 150px 35px 150px;
+	
+}
+
+.tit_safe_sub {
+
+	font-size: 20px;
+}
+
+span.tit_safe {
+	
+	font-size: 40px;
+	font-weight: 700;
+}
+
+span.tit_safe_inn {
+	
+	color: #5f0080;
+}
+
+.btn_safe_box {
+	position: relative;
+	width: 526px;
+	height: 142px;
+	margin: 0 auto;
+	
+}
+.inn_safe_btn2 {
+	width: 500px;
+	height: 80px;
+	background: #5f0080;
+	border-radius: 8px;
+}
+
+.btn_link {
+	position: absolute;
+	font-size: 32px;
+	font-weight: 500;
+	color: #ffffff;
+	top: 16px;
+	left: 115px;	
+}
+
+.safe_test_wrap {
+	width: 100%;
+	height: 100%;
+	background-color: #e8e7ec ;
+}
+
+.safe_test_tit {
+	position: relative;
+	top: 120px;
+	padding: 100px 0 60px 0;
+	margin: 0 0 0 260px;
+}
+.unline {
+	width: 980px;
+	border-top: 1px solid #b9b9b9;
+	margin-bottom: -25px;
+}
+
+span.qa {
+	font-size: 30px;
+	font-weight: 600;
+	background-color: #e8e7ec;
+	padding: 0 15px 0 10px;
+} 
+.safe_what {
+	width: 980px;
+	height: 100%;
+	margin: 130px 0 0 260px;
+}
+.safe_what_tit {
+	padding: 20px 0 20px 30px;
+	border-radius: 10px;
+	background-color: #fff;
+}
+.safe_what_inn {
+	font-size: 25px;
+	font-weight: 600;
+	color: #5f0080;
+}
+
+.safe_what_sub {
+	height: 100%;
+	margin: 30px 0 0 25px;
+}
+span.safe_what_sub_inn {
+	font-size: 19px;
+	line-height: 32px;
+}
+
+.safe_what_img {
+	margin: 75px 0 0 0;
+}
+.safe_what_img img {
+	width: 1000px;
+	height: 500px;
+	margin-bottom: -5px;
+}
+
+

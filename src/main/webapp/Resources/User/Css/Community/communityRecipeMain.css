@@ -1,0 +1,190 @@
+@charset "UTF-8";
+
+.main{
+	padding-top:45px;
+}
+
+.main .title h2{
+	display:inline-block;
+}
+
+.main .title span{
+	color:#999;
+}
+
+.disInlineBlock{
+	display:inline-block;
+}
+
+.main .searchBar{
+	text-align:right;
+}
+.main .searchSelect{
+	
+	display:inline-block;
+	padding:0 30px 0 30px;
+}
+
+.main .searchSelect span{
+	color:#999;
+	margin-right:30px;
+    font-size: 14px;
+}
+
+.main .searchInput{
+	display:inline-block;
+	position:relative;
+}
+
+.main .searchInput i{
+	color:white;
+	background:purple;
+	display:inline-block;
+	width:30px;
+	height:25px;
+	border-radius:2px;
+	position:absolute;
+	text-align:center;
+	line-height:25px;
+	right:-1px;
+}
+
+.main .cateList{
+	margin-top: 25px;
+	border:1px solid #f4f4f4;
+}
+
+.main .cateList .cateType{
+	color:#74b243;
+}
+
+.main .cateList .allCate{
+	background:#74b243;
+	height:20px;
+	line-height:20px;
+	border-radius:13px;
+	color:white;
+}
+
+.main .cateList span,
+.main .cateList a{
+	display:inline-block;
+	text-align:center;
+
+}
+.main .cateList .cateRow{
+	height:45px;
+	line-height:45px;
+}
+
+.main .cateList a{
+	padding:7px;
+	font-size:14px;
+}
+
+.main .cateList .cateType{
+	width:100px;
+	font-weight:500;
+	border-right:1px solid #f4f4f4;
+	
+}
+.writeBtn{
+	text-align:right;
+	padding-right:15px;
+	margin-top:10px;
+}
+.writeBtn a{
+	display:inline-block;
+	background:purple;
+	color:white;
+	width:100px;
+	height:40px;
+	text-align:center;
+	line-height:40px;
+	border-radius:5px;
+	font-weight:600;
+}
+
+.recipeList{
+	padding:0 10px 10px 10px;
+	margin-bottom:25px;
+}
+
+.recipeList ul{
+	padding:0;
+	margin-top:5px;
+	
+}
+
+.recipeList ul li{
+	width:189px;
+	padding:10px;
+	display:inline-block;
+	margin:10px;
+}
+
+.recipeList ul li:hover {
+	cursor: pointer;
+}
+
+
+.recipeList ul li img{
+	width:189px;
+	height:150px;
+}
+span.recipeStar{
+	display:inline-block;
+	width:75px;
+	font-size:11px;
+}
+.recipeStar i{
+	color:yellow;
+	margin:0;
+	font-size:11px;
+	line-height:24px;
+}
+span.recipeReview{
+	display:inline-block;
+	width:25px;
+	font-size:11px;
+}
+span.recipeHit{
+	display:inline-block;
+	width:60px;
+	font-size:11px;
+}
+span.recipeHitNumber{
+	font-size:11px;
+}
+
+
+.main .page{
+	margin-bottom:30px;
+}
+
+.main .page ul{
+	display:flex;
+	justify-content: center;
+}
+
+.main .page ul li{
+	width:30px;
+	height:30px;
+	border:1px solid #ddd;
+	line-height:28px;
+	text-align:center;
+	margin-left:-1px;
+}
+
+.main .page ul li:hover{
+	background:#fafafa;
+	transition:0.3s;
+}
+
+.main .page ul li a{
+	font-size:12px;
+}
+.recipeList ul li span.recipeTitle,
+.recipeList ul li span.writeId{
+	font-size:13px;
+}

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+  <mapper namespace="mapper.adnotice">
+  	<resultMap type="adNoticeVO" id="noticeResult">
+  		<result property="notice_idx" column="notice_idx" />
+		<result property="notice_type" column="notice_type" />
+		<result property="notice_title" column="notice_title" />
+		<result property="notice_content" column="notice_content" />
+		<result property="notice_reg_date" column="notice_reg_date" />
+		<result property="admin_id" column="admin_id" />
+		<result property="notice_hit" column="notice_hit" />
+  	</resultMap>
+
+	<!-- 페이지정보를 10개씩 가져오기 -->
+	<select id="listNoticePage" resultMap="noticeResult">
+		<![CDATA[
+			select * 
+			from tb_notice
+			where rownum #{page} <= 10
+		]]>
+	</select> 
+
+	<!-- 페이지정보를 지정한 크기만큼 가져오기 -->
+	<select id="listNoticePaging" resultMap="noticeResult">
+		<![CDATA[
+			select *
+			from ( select rownum AS rn, nt.* from
+				 ( select nt.* from tb_notice nt order by notice_idx DESC) nt
+			]]>            
+            <if test="keyword != null">
+            	<if test="searchOption == 'I'.toString()">where notice_title like '%'||#{keyword}||'%'</if>
+            	<if test="searchOption == 'S'.toString()">where notice_content like '%'||#{keyword}||'%'</if>
+             </if>
+    	<![CDATA[
+    		)
+  			where rn between #{rowStart} and #{rowEnd}
+    	]]>
+	</select>
+	
+	<!-- 총 레시피 게시글 수 -->
+	<select id="noticeCount" resultType="int">
+			select count(*) from tb_notice
+			 <if test="keyword != null">
+            	<if test="searchOption == 'I'.toString()">where notice_title like '%'||#{keyword}||'%'</if>
+            	<if test="searchOption == 'S'.toString()">where notice_content like '%'||#{keyword}||'%'</if>
+             </if>
+	</select>
+	
+	<!-- 레시피 게시글 삭제  -->
+	<delete id="deleteNotice" parameterType="String">
+		<![CDATA[
+			delete from tb_notice nt
+			where nt.notice_idx = #{id}
+		]]>
+	</delete>
+</mapper>

@@ -1,0 +1,175 @@
+
+@charset "UTF-8";
+
+.wrap {
+	margin: 0 auto;
+}
+
+.head {
+   	margin-top: 35px;
+}
+
+.title {
+	font-size: 24px;
+	color: #333;
+}
+
+.couponInfo {
+	padding: 19px 0 14px 29px;
+    border: 1px solid #ddd;
+    width: 815px;
+    height: 100px;
+    margin-top: 38px;
+}
+
+.couponNum {
+	width: 210px;
+    height: 34px;
+    padding: 0 10px;
+    margin-right: 10px;
+    border: 1px solid #514859;
+    font-size: 12px;
+    color: #000;
+}
+
+.addCoupon {
+	width: 140px;
+    height: 34px;
+    background-color: #5f0080;
+    font-size: 12px;
+    color: #fff;
+    border-style: none;
+    cursor: pointer;
+}
+
+.addCouponF {
+	margin: -35px 0 0 255px;
+}
+
+.noticeInfo {
+    font-size: 12px;
+    color: #f03f40;
+}
+
+.notice {
+	margin-top: 30px;
+}
+
+.noticeMain {
+	font-size: 12px;
+	float: left;
+}
+
+.couponAmount {
+	float: right;
+    font-size: 13px;
+    margin-right: 20px;
+}
+
+.couponCate {
+	width: 815px;
+    border-top: 2px solid #333;
+    border-bottom: 1px solid #333;
+    font-size: 14px;
+    padding: 15px 0;
+    margin-top: 60px;
+}
+
+.cateName {
+	width: 380px;
+	text-align: left;
+	padding-left: 10px;
+}
+
+.cateFunction {
+	width: 70px;
+}
+
+.cateBenefit {
+	width: 100px;
+}
+
+.cateVaild {
+	width: 150px;
+}
+
+.cateCheck {
+	width: 100px;
+}
+
+.couponList {
+	border-bottom: 1px solid #f4f4f4;
+}
+.couponName {
+	width: 365px;
+	text-align: left;
+	padding: 10px 10px;
+}
+
+.coupon {
+	font-size: 14px;
+}
+
+.couponList tr th p {
+	font-size: 12px;
+	margin: 5px 0;
+}
+
+.couponList tr th {
+	font-weight: 400;
+	font-size: 14px;
+}
+
+.terms {
+	padding-top: 9px;
+	font-size: 12px;
+    text-decoration: underline;
+    color: #5f0080;
+    cursor: pointer;
+}
+
+.couponFunction {
+	width: 70px;
+}
+
+.couponBenefit {
+	width: 100px;
+}
+
+.couponVaild {
+	width: 150px;
+}
+
+.couponCheck {
+	width: 100px;
+}
+.coupon_view {
+	float: right;
+    width: 815px;
+    padding-top: 12px;
+    padding-bottom: 15px;
+    padding-left: 25px;
+    border-top: 2px solid #333;
+    border-bottom: 1px solid #333;
+}
+
+.title_now {
+	float: left;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.coupon_now {
+	font-size: 16px;
+    font-weight: 700;
+    color: #5f0080;
+    padding-left: 100px;
+}
+
+
+
+
+
+
+
+

@@ -1,0 +1,158 @@
+@charset "UTF-8";
+
+.main {
+	width: 1080px;
+	margin: 0 auto 15px auto;
+}
+
+.main .noticeTitle {
+	text-align: center;
+	padding-bottom:50px;
+}
+
+.main .noticeTitle h2 {
+	margin: 50px 0px 5px 0px;
+}
+.main .noticeTitle span{
+	color:#999;
+}
+
+.detailTable tr td ul{
+	display:flex;
+	padding:0;
+	margin:-2px -4px -2px -1px;  
+}
+
+.detailTable table{
+	width:1080px;
+	border-top : 2px solid black;
+	border-collapse: collapse;
+	
+}
+.detailTable table th,
+.detailTable table td{
+	border:1px solid #f7f5f8;
+	height:45px;
+	font-size:13px;
+}
+.detailTable table th{
+	text-align:left;
+	padding-left:20px;
+	font-weight:400;
+	background:#f7f5f8;
+}
+.detailTable table .td1{
+	width:130px;
+}
+.detailTable table .td2 span{
+	padding-left:20px;
+}
+.detailTable table .td2{
+	width:950px;
+}
+.detailTable table .td3 span{
+	padding-left:20px;
+}
+
+.detailTable table .dateTitle{
+	width:131px;
+	background:#f7f5f8;
+	text-align:left;
+	padding-left:20px;
+}
+
+.detailTable table .writeDate{
+	width:180px;
+	text-align:left;
+}
+
+.detailTable table .writeDate span{
+	padding-left:20px;
+}
+
+.detailTable table .hitTitle{
+	width:130px;
+	background:#f7f5f8;
+	text-align:left;
+	padding-left:20px;
+}
+
+.detailTable table .hit{
+	width:180px;
+	text-align:left;
+}
+.detailTable table .hit span{
+	padding-left:20px;
+}
+
+.detailTable td ul li{
+	border:1px solid #f7f5f8;
+	height:50px;
+	margin-left:-1px;
+	line-height:50px;
+	text-align:center;
+}
+
+.detailTable table .contentRow{
+	border-left:0px;
+	border-right:0px;
+	border-bottom:1px solid #999;
+}
+.detailTable table td.btn{
+	border:0px;
+	text-align:right;
+	padding-top:15px;
+	padding-bottom:15px;
+}
+
+.detailTable table .noticeList{
+	display:inline-block;
+	width:150px;
+	height:42px;
+	border:0;
+	background:#795b8f;
+	color:white;
+	text-align:center;
+	font-size:17px;
+	line-height:42px;
+}
+
+.prevNextBox{
+	font-size:15px;
+}
+
+.prevNextBox ul{
+	padding:0;
+	border:2px solid black;
+	border-left:0;
+	border-right:0;
+	margin-top:-2px;
+}
+
+.prevNextBox ul strong{
+	font-weight:400;
+	height: 40px;
+    width: 130px;
+    display: inline-block;
+    border-right:1px solid #f7f5f8;
+    border-bottom:1px solid #f7f5f8;
+    padding-left:15px;
+}
+.prevNextBox ul strong i{
+	
+}
+
+.prevNextBox ul li a{
+	display:inline-block;
+	height:40px;
+	border-bottom:1px solid #f7f5f8;
+}
+.prevNextBox ul li{
+	height:40px;
+	padding-left:15px;
+	margin-top:-1px;
+	border-left:0;
+	border-right:0;
+	line-height:50px;
+	padding:1px;
+}

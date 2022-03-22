@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.1//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_1.dtd">
+       
+<tiles-definitions>
+				<!-- 메인화면 뷰이름 -->
+	<definition name="adminBaseLayout" template="/WEB-INF/Views/Admin/Inc/layout.jsp">
+		<put-attribute name="title" value=""/>
+		<put-attribute name="header" value="/WEB-INF/Views/Admin/Inc/homePage.jsp"/>
+		<put-attribute name="body" value=""/>
+	</definition>	
+			
+				<!-- 전체회원조회 -->
+	<definition name="/aduser/listadUsers" extends="adminBaseLayout">
+		<put-attribute name="title" value="회원목록"/>
+		<put-attribute name="body" value="/WEB-INF/Views/Admin/AdUser/listadUsers.jsp"></put-attribute>
+	</definition>
+				<!-- 회원정보페이지 -->
+	<definition name="/aduser/aduserInfo" extends="adminBaseLayout">
+		<put-attribute name="title" value="회원정보조회"/>
+		<put-attribute name="body" value="/WEB-INF/Views/Admin/AdUser/aduserInfo.jsp"></put-attribute>
+	</definition>
+				<!-- 회원수정페이지 -->
+	<definition name="/aduser/moduserInfo" extends="adminBaseLayout">
+		<put-attribute name="title" value="회원정보수정"/>
+		<put-attribute name="body" value="/WEB-INF/Views/Admin/AdUser/moduserInfo.jsp"></put-attribute>
+	</definition>
+	
+				<!-- 탈퇴회원정보페이지 -->
+	<definition name="/aduserWithdraw/listadUsersWithdraw" extends="adminBaseLayout">
+		<put-attribute name="title" value="탈퇴회원정보"/>
+		<put-attribute name="body" value="/WEB-INF/Views/Admin/AdUser/listadUsersWithdraw.jsp"></put-attribute>
+	</definition>	
+				<!-- 탈퇴회원정보페이지 -->
+	<definition name="/aduserWithdraw/aduserWithdraw" extends="adminBaseLayout">
+		<put-attribute name="title" value="탈퇴회원정보조회"/>
+		<put-attribute name="body" value="/WEB-INF/Views/Admin/AdUser/aduserWithdrawInfo.jsp"></put-attribute>
+	</definition>				
+</tiles-definitions>       

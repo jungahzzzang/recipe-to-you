@@ -1,0 +1,213 @@
+@charset "UTF-8";
+* { font-family: ‘Noto Sans KR’, sans-serif;
+}
+
+.wrap {
+	width: 1080px;
+	height: 1000px;
+	margin: 0 auto;
+}
+
+
+/* 페이지 가능 윗부분 - 전체테이블 윗부분 */
+.bar{
+	padding: 8px 0px 8px 2px;
+	margin-bottom: 20px;
+	font-size: 17px;
+	font-weight: bold;
+}
+
+
+/* 전체테이블 안의 tbody 안의 div 부분 */
+.main-content {
+	width: 100%;
+	margin: 0 auto;
+}
+
+
+/* 각 테이블 상단의 파란색문장 부분 */
+.sub-title {
+	height: 18px;
+	font-size: 16px;
+	font-weight: bold;
+	display: inline-block;
+	padding-right: 5px;
+	padding-bottom: 8px;
+	color: #317cc1;
+}
+
+
+/* body, td, select, div, textarea, center태그에 공통으로 적용되는 기능 */
+body, td, select, div, textarea, center {
+	color: #202020;
+	font-size: 15px;
+}
+
+/* 각 테이블태그와 테이블 안에 사용되는 기능모음 */
+.table {
+	table-layout: fixed;
+	width:100%;
+	border-spacing: 2px;
+	text-align: left;
+}
+
+.table1 {
+	border-collapse: collapse;
+	border-spacing: 0;
+	background-color: #ffffff;
+}
+
+.table td {
+	padding: 3px 7px;
+	vertical-align: middle;
+	line-height: 30px;	
+}
+
+.table th {
+	text-align: left;
+	background-color: #F7F7F7;
+	padding: 3px 7px;
+	vertical-align: middle;
+	line-height: 40px;	
+}
+
+.list_top {
+	border-top: 2px solid #6699cc;
+}
+
+.table_line td, .table_line th {
+	border: 1px solid #d7d7d7;
+}
+
+.table thead th {
+	text-align: center;
+}
+
+.table tbody tr td {
+	padding-left: 10px;
+	vertical-align: middle;
+}
+
+.table tbody tr th {
+	height: 40px;
+	line-height: 40px;
+	padding-left: 10px;
+}
+
+.table-bordered {
+	border: 1px solid #ddd;
+	border-collapse: collapse;
+	
+}
+
+.table-bordered tbody tr td {
+	text-align: center;
+}
+
+
+/* span태그 기능 */
+.span_style{
+	font-weight: bold;
+	font-size: 15px;
+	color: #FF8080;
+}
+
+
+/* 첫번째 테이블의 tbody안의 td와 td아래의 div에 해당되는 기능 */
+.table_inner_height {
+	height: 40px;
+	line-height: 40px;
+}
+
+
+/* input태그를 감싸는 lable태그 */
+.lbl {
+	margin-right: 15px;
+	display: inline-block;
+}
+
+
+/* button태그를 감싸는 div부분 */
+.btn-box {
+	text-align: center;
+	padding: 10px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+
+/* 버튼태그에 사용되는 기능 모음 */
+.btn {
+	border-radius: 3px;
+	padding-bottom: 3px;
+	line-height: 15px;
+	background-color: gray;
+	color: white;
+}
+
+.btn-red {
+	background-color: red;
+	border-radius: 5px;
+	font-weight: normal;
+	font-size: 14px;
+	height: 28px;
+}
+
+.btn-xs {
+	color: #ffffff;
+	font-size: 14px;
+	background-color: #A2A2A2;
+	padding: 2px 3px;
+	font-weight: normal;
+}
+
+.btn-green {
+	background-color: #40A040;
+	font-weight: normal;
+	border-radius: 5px;
+	font-weight: normal;
+	font-size: 14px;
+	height: 28px;
+}
+
+.btn-lg {
+	font-size: 16px;
+	height: 31px;
+	padding: 1px 20px 3px 20px;
+	border-radius: 5px;
+}
+
+
+/* 하단의 페이지 선택하는 부분의 기능 */
+#paging {
+	margin-top: 20px;
+	width: 100%;
+	text-align: center;
+	margin: 20px 0;
+}
+
+#paging li {
+	display: inline;
+	line-height: 1em;
+	margin: 0;
+	color: #000000;
+	padding: 0 1px;
+}
+
+#paging .on {
+	font-weight: bold;
+	color: #ff8400;
+}
+
+#paging li.num {
+	padding: 0 5px;
+	font-size: 15px;
+	vertical-align: top;	
+}
+
+
+
+
+
+
+

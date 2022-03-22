@@ -1,0 +1,205 @@
+@charset "UTF-8";
+
+.wrap{
+	width:100%;
+}
+
+.main{
+	width:1050px;
+	margin:0 auto;
+	display:flex;
+	padding-top:45px;
+}
+
+.sideMenu ul{
+	padding:0;
+	font-size:14px;
+	color:#666;
+	padding-top:15px;
+}
+
+.sideMenu ul li a{
+	display:block;
+}
+
+.sideMenu ul li:hover{
+	background:#fafafa;
+	transition:0.3s;
+}
+
+.sideMenu ul li{
+	width:180px;
+	height:50px;
+	border:1px solid #f2f2f2;
+	padding-left:15px;
+	line-height:50px;
+	margin-top:-1px;
+	position:relative;
+}
+
+.sideMenu ul .oneToOneFaq{
+	width:180px;
+	height:45px;
+	line-height:20px;
+	border:0;
+	margin-top:20px;
+	border-radius:0 100px 100px 0;
+	background:#fafafa;
+	padding:6px 0px 6px 15px;
+	vertical-align:middle;
+}
+
+.sideMenu ul li i{
+	position:absolute;
+	right:15px;
+	top:18px;
+	font-size:15px;
+	color:#666;
+}
+
+.sideMenu ul .oneToOneFaq i{
+	position:absolute;
+	right:15px;
+	top:21px;
+}
+
+.content{
+	width:825px;
+	margin-left:25px;
+}
+
+.content .title h2{
+	display:inline-block;
+}
+
+.content .title span{
+	font-size:13px;
+	font-weight:400;
+	padding-left:10px;
+	display:inline-block;
+	height:25px;
+	vertical-align:middle;
+	color:#999
+}
+
+.content .title{
+	position:relative;
+}
+.optional{
+	display:inline-block;
+}
+
+
+.optional .listOff{
+	position:absolute;
+	right:0;
+	bottom:10px;
+	width:150px;
+	height:45px;
+	display:inline-block;
+	font-size:18px;
+	font-weight:400;
+	border:1px solid #f4f4f4;
+	line-height:45px;
+	padding-left:10px;
+	color:#999;
+}
+
+.optional .choiceLayer{
+	display:none;
+	position:absolute;
+	right:10px;
+	top:49px;
+	color:#999;
+}
+.optional .choiceLayer li{
+	font-size:12px;
+	border:1px solid #f4f4f4;
+	width:150px;
+	height:30px;
+	margin-top:-1px;
+	
+}
+.optional .choiceLayer li a{
+	line-height:30px;
+	padding-left:5px;
+}
+
+.optional a i{
+	padding-left:80px;
+}
+
+.content .noticeTable table{
+	border-top:3px solid purple;
+
+	font-size:12px;
+	font-weight:400;
+	text-align:center;
+	border-collapse: collapse;
+}
+.content .noticeTable th,td{
+	padding:20px 0 20px 0;
+}
+
+.content .noticeTable .num{
+	width:50px;
+}
+
+.content .noticeTable .title{
+	width:550px;
+}
+
+.content .noticeTable .writer{
+	width:100px;
+}
+.content .noticeTable .writeDate{
+	width:100px;
+}
+.content .noticeTable .hit{
+	width:50px;
+}
+
+.content .noticeTable tr:nth-child(1){
+	border-bottom:1px solid #999;
+}
+
+.content .noticeTable tr{
+	border-top:1px solid #f4f4f4;
+	border-bottom:1px solid #f4f4f4;
+}
+
+.content .noticeTable .titleCont{
+	text-align:left;
+	padding-left:15px;
+}
+
+.content .page{
+	border-bottom:1px solid purple;
+}
+
+.content .page ul{
+	display:flex;
+	justify-content: center;
+}
+
+.content .page ul li{
+	width:30px;
+	height:30px;
+	border:1px solid #ddd;
+	line-height:28px;
+	text-align:center;
+	margin-left:-1px;
+}
+
+.content .page ul li:hover{
+	background:#fafafa;
+	transition:0.3s;
+}
+
+.content .page ul li a{
+	font-size:12px;
+}
+
+.noticeTable table .faq88{
+	display:none;
+}

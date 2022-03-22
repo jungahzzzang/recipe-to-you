@@ -1,0 +1,167 @@
+@charset "UTF-8";
+
+* { font-family: ‘Noto Sans KR’, sans-serif;
+}
+
+.wrap {
+	width: 1080px;
+	height: 1000px;
+	margin: 0 auto;
+}
+
+
+/* 페이지 가능 윗부분 - 전체테이블 윗부분 */
+.bar{
+	padding: 8px 0px 8px 2px;
+	margin-bottom: 20px;
+	font-size: 17px;
+	font-weight: bold;
+}
+
+
+/* 각 테이블 상단의 파란색문장 부분 */
+.sub-title {
+	height: 18px;
+	font-size: 16px;
+	font-weight: bold;
+	display: inline-block;
+	color: #317CC1;
+	margin-right: 5px;
+	padding-bottom: 8px;
+	text-align: left;
+}
+
+
+/* 전체테이블 안의 tbody 안의 div 부분 */
+.main-content {
+	width: 100%;
+	margin: 0 auto;
+}
+
+
+/* body, td, select, div, textarea, center태그에 공통으로 적용되는 기능 */
+body, td, select, div, textarea, center {
+	color: #202020;
+	font-size: 15px;
+}
+
+
+/* 각 테이블태그와 테이블 안에 사용되는 기능모음 */
+.table {
+	table-layout: fixed;
+	width:100%;
+	border-spacing: 2px;
+	text-align: left;
+}
+
+.table1 {
+	border-collapse: collapse;
+	border-spacing: 0;
+	background-color: #ffffff;
+}
+
+.table td {
+	padding: 3px 7px;
+	vertical-align: middle;
+	line-height: 30px;	
+}
+
+.table th {
+	text-align: left;
+	background-color: #F7F7F7;
+	padding: 3px 7px;
+	vertical-align: middle;
+	line-height: 40px;	
+}
+
+.list_top {
+	border-top: 2px solid #6699cc;
+}
+
+.table_line td, .table_line th {
+	border: 1px solid #d7d7d7;
+}
+
+.table thead th {
+	text-align: center;
+}
+
+.table tbody tr td {
+	text-align: left;
+	padding-left: 10px;
+	vertical-align: middle;
+}
+
+.table tbody tr th {
+	width: 120px;
+	height: 40px;
+	line-height: 40px;
+	text-align: left;
+	padding-left: 10px;
+}
+
+
+/* input태그를 감싸는 lable태그 */
+.lbl {
+	margin-right: 15px;
+	display: inline-block;
+}
+
+
+/* input태그에 사용되는 기능 모음 */
+input.input-center {
+	text-align: center;
+}
+
+input.input-mini {
+	width: 50px;
+}
+
+input[type=text], select {
+	border: 1px solid #D7D7D7;
+	height: 22px;
+}
+
+
+/* button태그를 감싸는 div부분 */
+.btn-box {
+	text-align: center;
+	padding: 10px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+
+/* 버튼태그에 사용되는 기능 모음 */
+.btn {
+	border-radius: 3px;
+	padding-bottom: 3px;
+	line-height: 15px;
+	background-color: gray;
+	color: white;
+}
+
+.btn-blue {
+	background-color: royalblue;
+	color: white;
+}
+
+.btn-lg {
+	font-size: 16px;
+	height: 31px;
+	padding: 1px 20px 3px 20px;
+	border-radius: 5px;
+}
+
+
+/* span태그에 사용된 기능 */
+.helper {
+	font-size: 13px;
+	color: #008000;
+	line-height: 1em;
+}
+
+
+
+
+

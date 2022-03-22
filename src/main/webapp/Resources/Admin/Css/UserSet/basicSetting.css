@@ -1,0 +1,136 @@
+@charset "EUC-KR";
+
+*{
+ 	font-family: ¡®Noto Sans KR¡¯, sans-serif;
+ 	font-size: 8px;
+ 		 
+}
+
+.wrap{
+
+	width: 1080px;
+	margin: 0 auto;
+}
+
+.titleBox{
+	
+	border-style: solid;
+	background-color: #e9e9e9;
+	height: 40px;
+	text-align: center;
+	font-size: 13px;
+}
+
+.cateTitle{
+	border-style: solid;
+	border-width: 0 0 0 8px;
+	padding: 12px;
+	word-bread: break-all;
+	border-color: #1E90FF;
+	background-color: #ffffff;
+	margin-bottom: 10px; 
+	margin-top: 10px;
+	font-size: 13px;
+}
+
+.helpBox{
+	
+	border-style: solid;
+	border-color: #ffbf8b;
+	background-color: #ffead8;
+	width: 921px;
+}
+
+.helpBtn{
+	
+	background: #FF7B00;
+	color: #ffffff;
+}
+
+.skyblueFont{
+	color: #1E90FF;
+}
+
+.grayBg{
+	background-color: #e9e9e9;
+}
+.whiteBg{
+	background-color: #ffffff;
+}
+
+.table1 .grayBg{
+	width: 130px;
+}
+
+.table1 .whiteBg{
+	width: 790px;
+}
+
+.table1 td{
+	padding: 5px;
+	border: 1px solid #DCDCDC;
+}
+
+.table1 .skyblueFont{
+	display: inline-block;
+}
+
+.table2 td{
+	padding: 5px;
+	border: 1px solid #DCDCDC;
+	width: 147px;
+}
+
+
+.table3 .whiteBg{
+	text-align: left;
+	font-size: 8px;
+	width: 650px;
+}
+
+.table3 .whiteBg input{
+	width: 50px;
+}
+
+.table3 td{
+	padding: 5px;
+	border: 1px solid #DCDCDC;
+}
+
+.table3 .skyblueFont{
+	display: inline-block;
+}
+
+.table4 .whiteBg{
+	width: 725px;
+}
+
+.table4 .grayBg{
+	width: 200px;
+}
+
+.table4 td{
+	padding: 5px;
+	border: 1px solid #DCDCDC;
+}
+
+table{
+	
+	border-collapse: collapse;
+}
+
+table tr td{
+	text-align: center;
+	font-size: 13px;
+}
+
+.saveBtn{
+	margin: auto;
+	display: block;
+	padding: 5px 5px;
+	margin-top: 10px;
+}
+
+#gradeText{
+	width: 100px;
+}

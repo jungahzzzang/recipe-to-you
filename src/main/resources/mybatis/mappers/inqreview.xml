@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.inqreview">
+
+	<resultMap type="reviewVO" id="reviewResult">
+		<result property="prod_review_code" column="prod_review_code"/>
+		<result property="prod_code" column="prod_code"/>
+		<result property="title" column="title"/>
+		<result property="reg_date" column="reg_date"/>
+		<result property="content" column="content"/>
+		<result property="user_id" column="user_id"/>
+		<result property="review_img" column="review_img"/>
+	</resultMap>
+	
+	<resultMap type="inquiryVO" id="inqResult">
+		<result property="prod_inq_code" column="prod_inq_code"/>
+		<result property="prod_code" column="prod_code"/>
+		<result property="user_id" column="user_id"/>
+		<result property="inq_title" column="inq_title"/>
+		<result property="inq_content" column="inq_content"/>
+		<result property="inq_reg_date" column="inq_reg_date"/>
+		<result property="inq_level" column="int_level"/>
+	</resultMap>
+		
+	<resultMap type="userVO" id="userResult">		
+		<result property="user_id" column="user_id" />
+	</resultMap>
+	
+
+	
+	<!-- 문의 -->
+	
+		<!-- 페이지 정보를 10개씩 가져오기 -->
+	<select id="listinqPage" resultMap="inqResult">
+		<![CDATA[
+			select * 
+			from tb_prod_inq
+			where rownum #{page} <= 5
+		]]>
+	</select>
+	
+	<!-- 총 문의 수 -->
+	<select id="getQnaCount" parameterType="kr.co.recipetoyou.util.PagingVO" resultType="int">
+		select count(*) from tb_prod_inq
+	</select>
+	
+	<!-- 문의 목록 -->
+	<select id="getInquiryList" resultMap="inqResult">
+		<![CDATA[
+		select * from(
+			select rownum AS rn, prod_code, prod_inq_code, inq_title, user_id, inq_reg_date, inq_level
+			from tb_prod_inq
+			where
+		]]>	
+		<![CDATA[
+			rownum <= #{page} * #{pageSize}
+			)
+			where prod_code = #{prod_code}
+			and rn > (#{page}-1) * #{pageSize} AND rn <= #{page} * #{pageSize}
+		]]>	
+	</select>
+	
+	<!-- 문의 등록 -->
+	<insert id="insertInquiry" parameterType="inquiryVO">
+		<![CDATA[
+		insert into tb_prod_inq(prod_inq_code, prod_code, user_id, inq_title, inq_content, inq_reg_date)
+		values (prodinq_seq.nextval ,#{prod_code} ,#{user_id} ,#{inq_title} ,#{inq_content} , sysdate)
+		]]>
+	</insert>
+	
+	<!-- 후기 -->
+	
+		<!-- 페이지 정보를 10개씩 가져오기 -->
+	<select id="listrevPage" resultMap="reviewResult">
+		<![CDATA[
+			select * 
+			from tb_prod_review
+			where rownum #{page} <= 10
+		]]>
+	</select>
+	
+	<!-- 총 후기 수 -->
+	<select id="getReviewCount" parameterType="kr.co.recipetoyou.util.PagingVO" resultType="int">
+		select count(*) from tb_prod_review
+	</select>
+	
+	<!-- 후기 목록 -->
+	<select id="getReviewList" resultMap="reviewResult">
+		<![CDATA[
+		select * from(
+			select rownum AS rn, prod_code, prod_review_code, title, user_id, reg_date
+			from tb_prod_review
+			where
+		]]>	
+		<![CDATA[
+			rownum <= #{page} * #{pageSize}
+			)
+			where prod_code = #{prod_code}
+			and rn > (#{page}-1) * #{pageSize} AND rn <= #{page} * #{pageSize}
+		]]>	
+	</select>
+	
+	<!-- 후기 작성 -->
+	<insert id="insertReview" parameterType="reviewVO">
+		insert into tb_prod_review(prod_review_code, prod_code, user_id, title, content, reg_date)
+		values(prodreview_seq.nextval, #{prod_code} ,#{user_id}, #{title}, #{content}, sysdate)
+	</insert>
+	
+	<!-- 후기 조회 -->
+	<select id="reviewDetail" resultMap="reviewResult">
+		select * from tb_prod_review
+		where prod_review_code = #{prod_review_code}
+	</select>
+	
+	<!-- 후기 작성 전 구매했는지 아이디로 체크 -->
+	<select id="checkOrderUser" parameterType="hashMap" resultType="int">
+		SELECT COUNT(*)
+		FROM TB_ORDER to2 , TB_USERS tu 
+		WHERE tu.USER_ID =to2.USER_ID  AND to2.PROD_CODE = #{prod_code} AND tu.USER_ID =#{user_id}
+	</select>
+</mapper>

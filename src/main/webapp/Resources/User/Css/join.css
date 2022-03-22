@@ -1,0 +1,177 @@
+@charset "UTF-8";
+* {
+	font-family: 'Noto Sans KR', sans-serif;
+}
+
+.content{
+	width:1080px;
+	margin:15px auto 25px auto;
+}
+
+.join {
+	text-align:center;
+	font-size: 24px;
+	color: #333;
+}
+
+.myInfoMain {
+    width: 815px;
+    border-top: 2px solid #333;
+    border-bottom: 1px solid #dddfe1;
+	padding: 13px 0 13px 100px;
+	margin:0 auto;
+}
+
+.myInfoMain th {
+	width: 140px;
+    font-size: 14px;
+    text-align: left;
+    font-weight: 500;
+    display: inline-block;
+    height: 70px;
+    line-height: 70px;
+}
+
+.myInfoMain td {
+	padding: 12px 0;
+}
+
+.myInfoMain td input {
+	width: 332px;
+	height: 44px;
+	border: 1px solid #ccc;
+	border-radius: 3px; 
+    padding: 0 14px;
+    font-size: 14px;
+    color: #333;
+    background: #fff;
+}
+
+.myInfoMain td input[type="radio"] {
+    background-color: #5f0080;
+    width: 55px;
+    height: 24px;
+    margin-right: 12px;
+    vertical-align: -7px;
+}
+table tr td button{
+	text-align: center;
+	border: 1px solid #5f0080;
+	border-radius: 3px;
+	width: 120px;
+	height: 44px;
+    background-color: #fff;
+    color: #5f0080;
+    margin-left: 5px;
+    display: inline-block;
+    line-height: 42px;
+}
+
+.email td a {
+	text-align: center;
+	border: 1px solid #5f0080;
+	border-radius: 3px;
+	width: 120px;
+	height: 44px;
+    background-color: #fff;
+    color: #5f0080;
+    margin-left: 5px;
+    display: inline-block;
+    line-height: 42px;
+}
+
+.phone td a {
+	text-align: center;
+	border: 1px solid #5f0080;
+	border-radius: 3px;
+	width: 120px;
+	height: 44px;
+    background-color: #fff;
+    color: #5f0080;
+    margin-left: 5px;
+    display: inline-block;
+    line-height: 42px;
+}
+
+td .birth input {
+	width: 85px;
+	border: 0;
+	text-align:center;
+	margin-top: 0px;
+}
+
+.birth {
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	width: 360px;
+}
+
+.myInfoMain input[type="checkbox"] {
+	width:20px;
+	height:20px;
+}
+
+.myInfoMain tr td span {
+	vertical-align: 4px;
+}
+
+.select {
+	color: #999;
+}
+
+table{
+	border-collapse: collapse;
+}
+
+table .added div{
+	margin-top:5px;
+}
+
+table .recommend{
+	display:none;
+}
+
+table .eventName{
+	display:none;
+}
+
+table tr.privacyContract{
+	border-top:1px solid black;
+}
+
+.view_contract {
+	color: #5f0080;
+	margin-left: 46px;
+}
+
+.form_footer {
+	width:1080px;
+	margin:30px auto 0 auto;
+	text-align:center;
+}
+
+.form_footer a,
+.form_footer button {
+	display: inline-block;
+    width: 120px;
+    margin-left: 5px;
+    text-align: center;
+    padding: 0;
+    vertical-align: top;
+    font-size: 14px;
+}
+
+.form_footer button {
+	height: 47px;
+    border: 1px solid #5f0081;
+    border-radius: 3px;
+    background-color: #5f0080;
+    color: #fff;	
+    cursor: pointer;
+}
+.btn:hover{
+	cursor: pointer;
+	background: #f4f4f4;
+}
+
+

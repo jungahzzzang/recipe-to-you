@@ -1,0 +1,83 @@
+@charset "UTF-8";
+
+.wrap {
+	margin: 0 auto;
+}
+
+.head {
+	width: 1050px;
+	margin-top: 35px;
+	margin-bottom: -42px;
+}
+
+.title {
+	font-size: 24px;
+	color: #333;
+}
+
+.subtitle {
+	width: 820px;
+	font-size: 14px;
+	color: #999;
+	padding-left: 11px;
+	vertical-align: 4px;
+}
+
+.data_year {
+	width: 157px;
+	height: 44px;
+	border: 1px solid #ddd;
+	font-size: 14px;
+	color: #666;
+	position: relative;
+	top: -63px;
+    left: 658px;
+}
+
+.pick_list ul {
+	width: 815px;
+	padding: 149px 0;
+	border-top: 2px solid #333;
+	border-bottom: 1px solid #dddfe1;
+	text-align: center;
+}
+
+.pick_list ul img {
+    width: 50px;
+    height: 45px;
+}
+
+.pick_list ul li {
+    color: #b5b5b5;
+    font-size: 16px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.view_best {
+	width: 150px;
+	height: 44px;
+	align-items: center;
+	background-color: rgb(95, 0, 128);
+	color: white;
+	font-size: 14px;
+	border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

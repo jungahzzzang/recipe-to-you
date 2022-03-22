@@ -1,0 +1,73 @@
+@charset "UTF-8";
+
+.wrap {
+	margin: 0 auto;
+}
+
+.head {
+	width: 1050px;
+   	margin-top: 35px;
+	margin-bottom: -25px;
+}
+
+.title {
+	font-size: 24px;
+	color: #333;
+}
+
+.subtitle {
+	width: 820px;
+	font-size: 14px;
+	color: #999;
+	padding-left: 11px;
+	vertical-align: 4px;
+}
+
+.data_year {
+	width: 157px;
+	height: 44px;
+	border: 1px solid #ddd;
+	font-size: 14px;
+	color: #666;
+	position: relative;
+	top: -63px;
+    left: 658px;
+}
+
+.gift_list ul {
+	width: 815px;
+    padding: 156px 0;
+    border-top: 2px solid #333;
+    border-bottom: 1px solid #dddfe1;
+    text-align: center;
+}
+
+.gift_list img {
+    width: 60px;
+    height: 60px;
+	margin-bottom: 10px;
+}
+
+.gift_list li {
+    color: #666;
+    font-size: 16px;
+    text-align: center;
+}
+
+.gift_list p {
+	font-size: 13px;
+	color: #b5b5b5;
+	text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+

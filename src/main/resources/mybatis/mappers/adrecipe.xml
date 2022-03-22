@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+  <mapper namespace="mapper.adrecipe">
+  	<resultMap type="adRecipeVO" id="recipeResult">
+  		<result property="recipe_idx" column="recipe_idx" />
+  		<result property="prod_code" column="prod_code" />
+  		<result property="recipe_title" column="recipe_title" />
+  		<result property="recipe_content" column="recipe_content" />
+  		<result property="recipe_ingre" column="recipe_ingre" />
+  		<result property="recipe_cate_code" column="recipe_cate_code" />
+  		<result property="recipe_img" column="recipe_img" />
+  		<result property="recipe_reg_date" column="recipe_reg_date" />
+  		<result property="user_id" column="user_id" />
+  	</resultMap>
+  
+	<!-- 페이지정보를 10개씩 가져오기 -->
+	<select id="listRecipePage" resultMap="recipeResult">
+		<![CDATA[
+			select * 
+			from tb_recipe 
+			where rownum #{page} <= 10
+		]]>
+	</select> 
+
+	<!-- 페이지정보를 지정한 크기만큼 가져오기 -->
+	<select id="listRecipePaging" resultMap="recipeResult">
+		<![CDATA[
+			select *
+			from ( select rownum AS rn, tr.* from
+				(select tr.* from tb_recipe tr order by recipe_idx DESC) tr
+		]]>            
+            <if test="keyword != null">
+            	<if test="searchOption == 'I'.toString()">where user_id like '%'||#{keyword}||'%'</if>
+            	<if test="searchOption == 'S'.toString()">where recipe_idx like '%'||#{keyword}||'%'</if>
+            	<if test="searchOption == 'O'.toString()">where recipe_title like '%'||#{keyword}||'%'</if>
+             </if>
+    	<![CDATA[
+    		)
+  			where rn between #{rowStart} and #{rowEnd}
+    	]]>
+	</select>
+	
+	<!-- 총 레시피 게시글 수 -->
+	<select id="recipeCount" resultType="int">
+		select count(*) from tb_recipe
+			 <if test="keyword != null">
+            	<if test="searchOption == 'I'.toString()">where user_id like '%'||#{keyword}||'%'</if>
+            	<if test="searchOption == 'S'.toString()">where recipe_idx like '%'||#{keyword}||'%'</if>
+            	<if test="searchOption == 'O'.toString()">where recipe_title like '%'||#{keyword}||'%'</if>
+             </if>
+	</select>
+	
+	<!-- 레시피 게시글 삭제  -->
+	<delete id="deleteRecipe" parameterType="String">
+		<![CDATA[
+			delete from tb_recipe tr
+			where tr.recipe_idx = #{id}
+		]]>
+	</delete>
+</mapper>

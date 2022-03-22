@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.1//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_1.dtd">
+       
+<tiles-definitions>
+				<!-- 메인화면 뷰이름 -->
+	<definition name="adminBaseLayout" template="/WEB-INF/Views/Admin/Inc/layout.jsp">
+		<put-attribute name="title" value=""/>
+		<put-attribute name="header" value="/WEB-INF/Views/Admin/Inc/homePage.jsp"/>
+		<put-attribute name="body" value=""/>
+	</definition>	
+			
+				<!-- 전체레시피게시글조회 -->
+	<definition name="/adrecipe/listadRecipe" extends="adminBaseLayout">
+		<put-attribute name="title" value="레시피게시글목록"/>
+		<put-attribute name="body" value="/WEB-INF/Views/Admin/AdRecipe/recipeList.jsp"></put-attribute>
+	</definition>
+				<!-- 레시피게시글정보페이지 -->
+<!-- 	<definition name="/adrecipe/adRecipeInfo" extends="adminBaseLayout">
+		<put-attribute name="title" value="레시피게시글정보조회"/>
+		<put-attribute name="body" value="/WEB-INF/Views/Admin/AdRecipe/.jsp"></put-attribute>
+	</definition> -->
+				<!-- 레시피수정페이지 -->
+<!-- 	<definition name="/adrecipe/modReicpeInfo" extends="adminBaseLayout">
+		<put-attribute name="title" value="레시피게시글정보수정"/>
+		<put-attribute name="body" value="/WEB-INF/Views/Admin/AdRecipe/recipeMod.jsp"></put-attribute>
+	</definition>		 -->		
+</tiles-definitions>           

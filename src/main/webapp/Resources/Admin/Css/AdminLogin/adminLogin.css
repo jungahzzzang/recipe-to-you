@@ -1,0 +1,61 @@
+@charset "UTF-8";
+ 
+.homePageMain{
+	width:100%;
+	height:10vh;
+	position:relative;
+	background-image: url("/recipetoyou/Resources/Admin/Img/AdminLogin/recipetoyouAdminBg.jpg");
+	background-repeat:no-repeat;
+	background-size:100% 100vh;
+}
+
+.main-content {
+	padding: 20px;
+	width: 100%;
+	margin: 0 auto;
+}
+
+.loginForm form{
+	position:absolute;
+	top:35%;
+	width:100%;
+}
+.loginForm table {
+	width:400px;
+	border-spacing: 2px;
+	margin:auto;
+	background:#eeeff1;
+	border-radius: 15px;
+}
+
+.loginForm .loginTable tr td{
+    font-size: 18px;
+    width: 150px;
+    height: 50px;
+    line-height: 50px;
+}
+
+.loginForm td input{
+	font-size: 14px;
+    width: 150px;
+    border: 1px solid grey;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.loginForm .loginTable .title td{
+	font-size:30px;
+	text-align: center;
+	padding:20px 0 20px 0;
+}
+
+.submit-btn {
+    font-size: 14px;
+    background-color: purple;
+    color: white;
+    width: 400px;
+    border-radius: 5px;
+    padding: 10px;
+}
+

@@ -1,0 +1,147 @@
+@charset "UTF-8";
+* { font-family: ‘Noto Sans KR’, sans-serif;
+}
+
+
+/* 페이지 가능 윗부분 - 전체테이블 윗부분 */
+.bar{
+	padding: 8px 0px 8px 2px;
+	margin-bottom: 20px;
+	font-size: 17px;
+	font-weight: bold;
+}
+
+
+/* 전체테이블 안의 tbody 안의 div 부분 */
+.main-content {
+	width: 100%;
+	margin: 0 auto;
+}
+
+
+/* body, td, select, div, textarea, center태그에 공통으로 적용되는 기능 */
+body, td, select, div, textarea, center {
+	color: #202020;
+	font-size: 15px;
+}
+
+
+/* 테이블 상단의 파란색문장 부분 */
+.sub-title {
+	height: 18px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #317CC1;
+    margin-right: 5px;
+    padding-bottom: 8px;
+    text-align: left;
+}
+
+
+/* 테이블태그와 테이블 안에 사용되는 기능모음 */
+table {
+	margin: 0 auto;
+	width: 100%;
+	box-sizing: border-box;
+	text-align: start;
+}
+
+.table1 {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+.table td, .table th {
+	padding: 3px 7px;
+	line-height: 38px;
+	text-align: center;
+}
+
+.line_top {
+	border-top: 2px solid #6699cc;
+}
+
+.table_line td, .table_line th {
+	border: 1px solid #d7d7d7;
+}
+
+.table1 tr th{
+	color: #202020;
+	background : #F7F7F7;
+	padding: 4px 8px;
+	text-align: justify;
+	vertical-align: middle;
+	padding-left: 10px;
+	line-height: 40px;
+}
+
+.table1 tr td {
+	color: #202020;
+	padding: 4px 8px;
+	text-align: justify;
+	padding-left: 10px;
+	line-height: 40px;
+}
+
+
+/* 테이블의 tbody의 td의 첫번째 이미지의 속성 */
+.img-style {
+	width: 100px;
+	height: 100px;
+	margin-right: 10px;
+	border: 1px solid #E3E3E3;
+	
+}
+
+
+/* 테이블의 tbody의 td의 첫번째 이미지 다음에 오는 div 속성 */
+.img-info {
+	margin-left: 100px;
+	line-height: 30px;
+	margin-top: 10px;
+	vertical-align: middle;
+}
+
+
+/* 테이블의 tbody의 td의 두번째 이미지를 감싸는 div 속성 */
+.img-diary {
+	display:block;
+	text-align: center;
+	margin: 5px;
+	
+}
+
+
+/* 테이블의 tbody의 td의 두번째 이미지의 속성 */
+.img-style2 {
+	width: 90%;
+	height: 60%;
+}
+
+
+/* button태그를 감싸는 div부분 */
+.btn-box {
+	text-align: center;
+	padding: 10px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+
+/* 버튼태그에 사용되는 기능 모음 */
+.btn {
+	border-radius: 3px;
+	padding-bottom: 3px;
+	line-height: 15px;
+	background-color: gray;
+	color: white;
+}
+
+.btn-lg {
+	font-size: 16px;
+	height: 31px;
+	padding-right: 20px;
+	padding-left: 20px;
+	border-radius: 3px;
+}
+

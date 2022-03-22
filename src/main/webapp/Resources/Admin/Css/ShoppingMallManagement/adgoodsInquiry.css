@@ -1,0 +1,255 @@
+@charset "UTF-8";
+* { font-family: ‘Noto Sans KR’, sans-serif;
+}
+
+
+/* 페이지 가능 윗부분 - 전체테이블 윗부분 */
+.bar{
+	padding: 8px 0px 8px 2px;
+	margin-bottom: 20px;
+	font-size: 17px;
+	font-weight: bold;
+}
+
+
+/* 전체테이블 안의 tbody 안의 div 부분 */
+.main-content {
+	width: 100%;
+	margin: 0 auto;
+}
+
+
+/* body, td, select, div, textarea, center태그에 공통으로 적용되는 기능 */
+body, td, select, div, textarea, center {
+	color: #202020;
+	font-size: 14px;
+}
+
+
+/* 각 테이블태그와 테이블 안에 사용되는 기능모음 */
+.table {
+	table-layout: fixed;
+	width:100%;
+	border-spacing: 2px;
+	text-align: start;
+	display: table;
+}
+
+.table1 {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+.table td, .table th {
+	padding: 3px 7px;
+	line-height: 38px;
+	text-align: center;
+}
+
+.table tbody tr th {
+	width: 120px;
+	height: 40px;
+	line-height: 40px;
+	text-align: left;
+	padding-left: 10px;
+}
+
+.table_line td, .table_line th {
+	border: 1px solid #d7d7d7;
+}
+
+.table thead th {
+	text-align: center;
+}
+
+.table tbody td {
+	text-align: center;
+}
+
+.table th {
+	text-align: left;
+	background-color: #F7F7F7;
+}
+
+.list_top {
+	border-top: 2px solid #6699cc;
+}
+
+
+/* 모든 테이블의 td에 해당되는 기능 */
+table td {
+	vertical-align: middle;
+}
+
+
+/* input태그를 감싸는 lable태그 */
+.lbl {
+	margin-right: 15px;
+	display: inline-block;
+}
+
+
+/* button태그를 감싸는 div부분 */
+.btn-box {		
+	text-align: center;
+	padding: 10px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+
+/* 버튼태그에 사용되는 기능 모음 */
+.btn {
+	border-radius: 3px;
+	padding-bottom: 3px;
+	line-height: 15px;
+	background-color: gray;
+	color: white;
+}
+
+.btn-sm {
+	font-size: 16px;
+	height: 31px;
+	padding-right: 20px;
+	padding-left: 20px;
+}
+
+.btn-blue {
+	background-color: royalblue;;
+	color: white;
+}
+
+.btn-red {
+	background-color: red;
+	border-radius: 5px;
+	font-weight: bold;
+	font-size: 14px;
+	height: 28px;
+}
+
+
+/* 두번째 테이블 상단부분의 CSS 모음 */
+.list-tools{
+	border-top: 1px solid #E3E3E3;
+	padding-top: 10px;
+	float: left;
+	width: 100%;
+}
+
+.list-action {
+	float:left;
+	padding-bottom: 5px;	
+}
+
+.summary{
+	width: 30%;
+	margin-top: 2px;
+	float: right;
+	text-align: right;
+	padding-bottom: 5px;
+}
+
+
+/* 두번째 테이블 상단부분의 <span>태그 부분 */
+.f-bold {
+	font-weight: bold;
+}
+
+.f-red {
+	color: #FF4040;
+}
+
+.f-num {
+	width: 21px;
+	height: 11px;
+	font: 11px;
+}
+
+.split {
+	width: 3px;
+	height: 11px;
+	color: #202020;
+	font: 11px;
+}
+
+
+/* span태그에 사용된 기능 */
+.lable {
+	border-radius: 2px;
+	font-size: 14px;
+	height: 13px;
+	line-height: 15px;
+	padding: 0 2px 3px;
+	background-color: #FF4040;
+	color: white;
+	text-align: center;
+	vertical-align: baseline;
+}
+
+
+/* 두번째 테이블의 tbody의 td의 <a>태그에 적용 */
+.helper-col {
+	font: 11px;
+	line-height: 1em;
+	color: #40A040;
+}
+
+
+/* 하단의 페이지 선택하는 부분의 기능 */
+#paging {
+	margin-top: 20px;
+	width: 100%;
+	text-align: center;
+	margin: 20px 0;
+}
+
+#paging li {
+	display: inline;
+	line-height: 1em;
+	margin: 0;
+	color: #000000;
+	padding: 0 1px;
+}
+
+#paging .on {
+	font-weight: bold;
+	color: #ff8400;
+}
+
+#paging li.num {
+	padding: 0 5px;
+	font-size: 15px;
+	vertical-align: top;	
+}
+
+.page_wrap{
+	text-align: center;
+	margin-top: 20px;
+}
+
+.pagination{
+    list-style : none;
+    display: inline-block;
+    margin: 10px 0 0 10px;      
+}
+
+ .pagination li{
+    float: left;
+    font-size: 15px;
+    margin-left: 10px;
+    padding: 3px;
+    font-weight: 50;
+ }
+
+.next, .prev{
+	border: 1px solid #ccc;
+	padding: 0 10px;
+}
+
+.pageBtn a:link {color: black;}
+.pageBtn_btn a:visited {color: black;}
+.pageBtn_btn a:active {color: black;}
+.pageBtn_btn a:hover {color: black;}
+.next a, .prev a {
+    color: #ccc;
+}

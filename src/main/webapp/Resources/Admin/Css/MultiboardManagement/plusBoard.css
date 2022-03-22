@@ -1,0 +1,99 @@
+@charset "UTF-8";
+
+*{
+  font-family: ‘Noto Sans KR’, sans-serif;
+}
+
+.wrap { 
+	width:1080px;
+	margin : 0 auto;	
+}
+
+.sub_title b{
+	font-size: 20px;
+}
+
+.plusboard {
+	width:1080px;
+	margin : 0 auto;
+	border: 1px solid;
+	font-size: 12px;
+	text-align: center;
+}
+
+.plusboard td{
+	height: 30px;
+}
+
+.sub_title {
+    font-size: 12px;
+    margin: 10px 0 10px 0;
+}
+
+.col {
+	background-color: #f7f7f7;
+    width: 120px;
+    font-size: 12px;
+   	border: 1px solid;
+}
+
+.doubcheck {
+	cursor: pointer;
+}
+
+
+.tip {
+    color: #3399FF;
+    font-size: 11px;
+}
+
+.tip2 {
+    color: #ff6633;
+    font-size: 11px;
+}
+
+.tipb {
+	color: #FF6633;
+	font-weight: bold;
+	font-size: 11px;
+}
+
+.modern {
+	background-color: black;
+	color: white;
+}
+
+.simple {
+	background-color: black;
+	color: white;
+}
+
+.basic {
+	background-color: black;
+	color: white;
+}
+
+.pure {
+	background-color: black;
+	color: white;
+}
+
+.color {
+	background-color: black;
+	color: white;
+}
+
+table td{
+	border: 1px solid;
+	vertical-align: middle;
+}
+
+.lgText{
+	color: blue;
+	font-size: 13px;
+}
+
+
+
+
+

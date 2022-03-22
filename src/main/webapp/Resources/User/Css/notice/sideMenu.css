@@ -1,0 +1,54 @@
+@charset "UTF-8";
+
+.sideMenu ul{
+	padding:0;
+	font-size:14px;
+	color:#666;
+	padding-top:15px;
+}
+
+.sideMenu ul li a{
+	display:block;
+}
+
+.sideMenu ul li:hover{
+	background:#fafafa;
+	transition:0.3s;
+}
+
+.sideMenu ul li{
+	width:180px;
+	height:50px;
+	border:1px solid #f2f2f2;
+	padding-left:15px;
+	line-height:50px;
+	margin-top:-1px;
+	position:relative;
+}
+
+.sideMenu ul .oneToOneFaq{
+	width:180px;
+	height:45px;
+	line-height:20px;
+	border:0;
+	margin-top:20px;
+	border-radius:0 100px 100px 0;
+	background:#fafafa;
+	padding:6px 0px 6px 15px;
+	vertical-align:middle;
+}
+
+.sideMenu ul li i{
+	position:absolute;
+	right:15px;
+	top:18px;
+	font-size:15px;
+	color:#666;
+}
+
+.sideMenu ul .oneToOneFaq i{
+	position:absolute;
+	right:15px;
+	top:21px;
+	
+}

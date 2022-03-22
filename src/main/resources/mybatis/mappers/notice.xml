@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="mapper.notice">					
+	
+	<resultMap type="noticeVO" id="noticeResult">
+		<result property="notice_idx" column="notice_idx"/>
+		<result property="notice_type" column="notice_type"/>
+		<result property="notice_title" column="notice_title"/>
+		<result property="notice_content" column="notice_content"/>
+		<result property="notice_reg_date" column="notice_reg_date"/>
+		<result property="admin_id" column="admin_id"/>
+		<result property="notice_hit" column="notice_hit"/>
+	</resultMap>
+	
+	<resultMap type="noticeFAQVO" id="noticeFAQResult">
+		<result property="faq_code" column="faq_code"/>
+		<result property="faq_title" column="faq_title"/>
+		<result property="faq_info" column="faq_info"/>
+		<result property="faq_cate_code" column="faq_cate_code"/>
+		<result property="faq_reg_date" column="faq_reg_date"/>
+		<result property="faq_reply" column="faq_reply"/>
+	</resultMap>
+	
+	<resultMap type="noticeINQVO" id="noticeINQVOResult">
+		<result property="inq_idx" column="inq_idx"/>
+		<result property="rn" column="rn"/>
+		<result property="inq_title_code" column="inq_title_code"/>
+		<result property="ord_code" column="ord_code"/>
+		<result property="user_mail" column="user_mail"/>
+		<result property="user_mail_send_agree" column="user_mail_send_agree"/>
+		<result property="user_phone" column="user_phone"/>
+		<result property="user_phone_send_agree" column="user_phone_send_agree"/>
+		<result property="inq_content" column="inq_content"/>
+		<result property="inq_date" column="inq_date"/>
+		<result property="user_id" column="user_id"/>
+		<result property="inq_title" column="inq_title"/>
+	</resultMap>
+	
+	
+	
+	<sql id="criteria">
+       <choose>
+           <when test='type == "T"'>
+               notice_title like '%'||#{keyword}||'%' 
+           </when>
+           <when test='type == "C"'>
+              notice_content like '%'||#{keyword}||'%' 
+           </when>
+           <when test='type == "W"'>
+               admin_id like '%'||#{keyword}||'%' 
+           </when>
+           <when test='type == "TC"'>
+               notice_title like '%'||#{keyword}||'%' or notice_content like '%'||#{keyword}||'%' 
+           </when>
+           <when test='type == "TW"'>
+               notice_title like '%'||#{keyword}||'%' or admin_id like '%'||#{keyword}||'%' 
+           </when>
+           <when test='type == "CW"'>
+               notice_content like '%'||#{keyword}||'%' or admin_id like '%'||#{keyword}||'%'
+           </when>
+           <when test='type == "TCW"'>
+               notice_title like '%'||#{keyword}||'%' or
+               notice_content like '%'||#{keyword}||'%' or
+               admin_id like '%'||#{keyword}||'%' 
+           </when>
+       </choose>
+    </sql>
+	
+	<select id="getNoticeCount" resultType="int">
+		SELECT count(*)
+		FROM TB_NOTICE tn
+	</select>	
+	
+	<select id="getNoticeList" resultMap="noticeResult">
+		<![CDATA[
+		SELECT * from
+				(SELECT rownum as rn, tn.* FROM 
+					(SELECT tn.* FROM TB_NOTICE tn  
+					
+		]]>
+			<if test="keyword != null">
+			where
+				<include refid="criteria"></include>
+			</if>
+		<![CDATA[		
+					ORDER BY NOTICE_REG_DATE DESC
+					) 
+				tn )
+			where rn between #{rowStart} and #{rowEnd}
+		]]>
+	</select>
+	
+	<select id="selectNoticeFrequencyCount" resultType="int">
+		SELECT count(*)
+		
+		FROM TB_FAQ
+		
+		<if test="faq_cate_code != null and faq_cate_code != 0">
+			where faq_cate_code = #{faq_cate_code}
+		</if>
+	</select>	
+	
+	<select id="selectNoticeFrequencyList" resultMap="noticeFAQResult">
+		<![CDATA[
+		SELECT decode(faq_code,1,'배송/포장/상품',2,'선물하기'
+				,3,'주문/결제/대량주문',4,'취소/교환/환불',
+				5,'이벤트/쿠폰/적립금',6,'회원',7,'서비스이용') as faq_code,
+				faq_title, faq_info, faq_cate_code, faq_reg_date, faq_reply from
+				(SELECT rownum as rn, tn.* FROM 
+					(SELECT * FROM TB_FAQ tn 
+		]]>
+				<if test="faq_cate_code != null and faq_cate_code != 0">
+					where faq_cate_code = #{faq_cate_code}
+				</if>
+		<![CDATA[
+					ORDER BY FAQ_REG_DATE DESC
+					) 
+				tn )
+			where rn between #{rowStart} and #{rowEnd}
+		]]>
+	</select>		
+	
+	<select id="selectOneToOneCount" resultType="int">
+		SELECT count(*) 
+		from TB_ONETOONE_INQ 
+		where user_id = #{user_id}
+	</select>
+	
+	<select id="selectOneToOneList" resultMap="noticeINQVOResult">
+		<![CDATA[
+			SELECT rn, decode(inq_title_code,1,'배송/포장/상품',2,'선물하기'
+				,3,'주문/결제/대량주문',4,'취소/교환/환불',
+				5,'이벤트/쿠폰/적립금',6,'회원',7,'서비스이용',
+				8,'이벤트/쿠폰/적립금',9,'회원',10,'서비스이용',
+				11,'이벤트/쿠폰/적립금') as inq_title_code,
+				inq_title,user_id,inq_date,inq_content from
+				(SELECT rownum as rn, tn.* FROM 
+					(SELECT * FROM TB_ONETOONE_INQ tn 
+					where user_id = #{user_id}
+					ORDER BY inq_date DESC
+					) 
+				tn )
+			where rn between #{rowStart} and #{rowEnd}
+		]]>
+	</select>		
+	
+	<select id="selectNoticeDetail" resultMap="noticeResult">
+		SELECT * 
+		from TB_NOTICE tn
+		WHERE notice_idx = #{notice_idx}
+	</select>	
+    
+    <insert id="insertINQ" parameterType="noticeINQVO">
+    	INSERT INTO ADMIN.TB_ONETOONE_INQ
+		(INQ_IDX, INQ_TITLE_CODE, ORD_CODE, USER_MAIL, USER_MAIL_SEND_AGREE, 
+		USER_PHONE, USER_PHONE_SEND_AGREE, INQ_CONTENT, INQ_DATE, USER_ID, INQ_TITLE)
+		VALUES(TB_ONETOONE_INQ_SEQ.nextval, #{inq_title_code} , 0, #{user_mail}, 
+		#{user_mail_send_agree} , #{user_phone}, #{user_phone_send_agree}, 
+		#{inq_content}, SYSDATE , #{user_id}, #{inq_title})
+    	
+    </insert>
+</mapper>  

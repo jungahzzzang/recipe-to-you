@@ -1,0 +1,44 @@
+@charset "UTF-8";
+/*전체 CSS 적용부분  */
+.FAQ{
+	margin: 0 auto;
+	width: 1080px;
+}
+
+.subtitle {
+  border-collapse: collapse;
+  text-align: left;
+  line-height: 1.5;
+  width: 1080px;
+}
+
+.subtitle p{
+	border-style: solid;
+    background-color: #e9e9e9;
+    height: 30px;
+}
+
+.subtitle th {
+  width: 50px;
+  padding: 10px;
+  font-weight: bold;
+  vertical-align: top;
+  border-bottom: 1px solid #ccc;
+  background: #f3f6f7;
+}
+
+.subtitle td {
+  width: 350px;
+  padding: 10px;
+  vertical-align: top;
+  border-bottom: 1px solid #ccc;
+}
+
+.ck.ck-editor {
+   max-width: 500px;
+}
+
+.ck-editor__editable {
+	min-height: 300px;
+}
+

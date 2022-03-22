@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.1//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_1.dtd">
+       
+<tiles-definitions>
+	<definition name="mainLayout" template="/WEB-INF/Views/User/Inc2/mainpageLayout.jsp">
+		<put-attribute name="title" value=""/>
+		<put-attribute name="header" value="/WEB-INF/Views/User/Inc2/header.jsp"/>		
+		<put-attribute name="body" value=""/>
+		<put-attribute name="footer" value="/WEB-INF/Views/User/Inc2/footer.jsp"/>		
+	</definition>
+	
+	<definition name="mainSideNoLayout" template="/WEB-INF/Views/User/Inc2/mainpageLayout.jsp">
+		<put-attribute name="title" value=""/>
+		<put-attribute name="header" value="/WEB-INF/Views/User/Inc2/headerSideNo.jsp"/>		
+		<put-attribute name="body" value=""/>
+		<put-attribute name="footer" value="/WEB-INF/Views/User/Inc2/footer.jsp"/>		
+	</definition>
+	
+	
+	
+	<definition name="main" extends="mainLayout">
+		<put-attribute name="title" value="메인페이지"/>
+		<put-attribute name="body" value="/WEB-INF/Views/User/mainPage.jsp"/>	
+	</definition>
+	
+	<definition name="join/regist" extends="mainSideNoLayout">
+		<put-attribute name="title" value="회원가입"/>
+		<put-attribute name="body" value="/WEB-INF/Views/User/join.jsp"/>	
+	</definition>
+	
+	<definition name="login/login" extends="mainSideNoLayout">
+		<put-attribute name="title" value="로그인"/>
+		<put-attribute name="body" value="/WEB-INF/Views/User/login.jsp"/>	
+	</definition>
+	
+	<definition name="user/benefitPage" extends="mainLayout">
+		<put-attribute name="title" value="혜택"/>
+		<put-attribute name="body" value="/WEB-INF/Views/User/benefitPage.jsp"/>	
+	</definition>
+	
+	<definition name="/user/bestGoodsPage" extends="mainLayout">
+		<put-attribute name="title" value="베스트"/>
+		<put-attribute name="body" value="/WEB-INF/Views/User/bestGoodsPage.jsp"/>	
+	</definition>
+	
+	<definition name="user/kf365Page" extends="mainLayout">
+		<put-attribute name="title" value="알뜰쇼핑"/>
+		<put-attribute name="body" value="/WEB-INF/Views/User/kf365Page.jsp"/>	
+	</definition>
+	
+	<definition name="user/kf365TestPage" extends="mainLayout">
+		<put-attribute name="title" value="알뜰쇼핑 테스트 페이지"/>
+		<put-attribute name="body" value="/WEB-INF/Views/User/kf365Test.jsp"/>	
+	</definition>
+	
+	<definition name="/user/newGoodsPage" extends="mainLayout">
+		<put-attribute name="title" value="신상품"/>
+		<put-attribute name="body" value="/WEB-INF/Views/User/newGoodsPage.jsp"/>	
+	</definition>
+	
+	<definition name="user/saleEventPage" extends="mainLayout">
+		<put-attribute name="title" value="특가혜택"/>
+		<put-attribute name="body" value="/WEB-INF/Views/User/saleEventPage.jsp"/>	
+	</definition>
+	
+	<definition name="/user/saleGoodsPage" extends="mainLayout">
+		<put-attribute name="title" value="특가혜택"/>
+		<put-attribute name="body" value="/WEB-INF/Views/User/saleGoodsPage.jsp"/>	
+	</definition>
+	
+	<definition name="/user/goodsView" extends="mainLayout">
+		<put-attribute name="title" value="상품상세 페이지"/>
+		<put-attribute name="body" value="/WEB-INF/Views/User/goodsView.jsp"/>	
+	</definition>
+	
+	<definition name="/goods/moveReview" extends="mainLayout">
+		<put-attribute name="title" value="상품 후기 작성"/>
+		<put-attribute name="body" value="/WEB-INF/Views/User/Mypage/reviewWrite.jsp"/>	
+	</definition>
+	
+	<definition name="order/order" extends="mainLayout">
+		<put-attribute name="title" value="주문페이지"/>
+		<put-attribute name="body" value="/WEB-INF/Views/User/order.jsp"/>	
+	</definition>
+	
+	
+</tiles-definitions>       

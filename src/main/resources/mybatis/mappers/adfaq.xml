@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="mapper.adfaq">	<!-- user.xml의 네임스페이스 지정 -->
+
+	<!-- FAQ -->
+	<resultMap type="adFAQVO" id="FAQResult">		
+		<result property="faq_code" column="faq_code" />
+		<result property="faq_cate" column="faq_cate"/>
+		<result property="faq_title" column="faq_title"/>
+		<result property="faq_info" column="faq_info"/>
+		<result property="faq_cate_code" column="faq_cate_code" />
+		<result property="faq_reg_date" column="faq_reg_date"/>
+	</resultMap>
+	
+	<!-- FAQ  cate-->
+	<resultMap type="adFAQCategoryVO" id="FAQCateResult">		
+		<result property="faq_cate_code" column="faq_cate_code" />
+		<result property="faq_cate" column="faq_cate"/>
+	</resultMap>
+	
+	<!-- 페이지정보를 10개씩 가져오기 -->
+	<select id="FAQListPage" resultMap="FAQResult">
+		<![CDATA[
+			select * 
+			from tb_faq
+			where rownum #{page} <= 10
+		]]>
+	</select> 
+
+	<!-- 페이지정보를 지정한 크기만큼 가져오기 -->
+	<select id="FAQListPaging" resultMap="FAQResult">
+		<![CDATA[
+			select * 
+			from (select rownum AS rn, fa.* from
+				(select fa.faq_code, fc.faq_cate, fa.faq_title, 
+					   fa.faq_info, fa.faq_reg_date 
+				from tb_faq fa, tb_faq_cate fc 
+				where fa.faq_cate_code = fc.faq_cate_code) fa 
+				]]> 
+					<if test="keyword != null">
+		            	<if test="searchOption == 'I'.toString()">where faq_title like '%'||#{keyword}||'%' </if>
+		            	<if test="searchOption == 'N'.toString()">where faq_info like '%'||#{keyword}||'%' </if>
+		             </if>
+				<![CDATA[
+				) 
+			where rn between #{rowStart} and #{rowEnd}
+		]]>
+		
+	</select>
+
+	<select id="FAQListCount" resultType="int">
+			select count(*) from TB_faq
+			<if test="keyword != null">
+            	<if test="searchOption == 'I'.toString()">where faq_title like '%'||#{keyword}||'%'</if>
+            	<if test="searchOption == 'N'.toString()">where faq_info like '%'||#{keyword}||'%'</if>
+             </if>
+	</select>
+	
+	<!-- FAQ 정보 삭제  -->
+	<delete id="deleteFAQ" parameterType="String">
+		<![CDATA[
+			delete from tb_faq
+			where faq_code = #{id}
+		]]>
+	</delete>
+	
+	<!-- FAQ 상세 정보 조회 & 카테고리 테이블과 조인 -->
+	<select id="readFAQ" resultMap="FAQResult">
+		<![CDATA[
+			select fa.faq_code, fc.faq_cate, fa.faq_title, fa.faq_info, fa.faq_reg_date
+			from tb_faq fa
+			join tb_faq_cate fc 
+			on fa.faq_cate_code = fc.faq_cate_code 
+			where fa.faq_cate_code = #{faq_cate_code} 
+		]]>
+	</select>
+
+	<!-- 상품 등록 -->
+	<insert id="registerFAQ" >
+		<![CDATA[
+			insert into tb_faq (faq_code, faq_title, faq_info, faq_cate_code, faq_reg_date) 
+			values (faq2_seq.nextval, #{faq_title}, #{faq_info}, #{faq_cate_code}, sysdate)
+		]]>
+	</insert> 
+	
+	<!-- 카테고리 호출 -->
+	<select id="cateFAQList" resultType="kr.co.recipetoyou.admin.adfaq.AdFAQCategoryVO">
+		<![CDATA[
+			select faq_cate_code, faq_cate
+			from tb_faq_cate 
+		]]>
+	</select>
+</mapper>	

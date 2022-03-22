@@ -1,0 +1,420 @@
+* {
+	font-family: 'Noto Sans KR', sans-serif;
+}
+
+body{
+	z-index:299;
+}
+
+.wrap {
+	max-width: 100%;
+}
+
+.header{
+	position:relative;
+    width: 1080px;
+    margin: 0 auto;
+}
+
+.topBar {			
+	width: 100%;
+	position: relative;
+	text-align: center;
+	line-height: 42px;
+	font-size: 14px;
+	padding-bottom: 10px;
+}
+
+.topBar a{
+	width: 100%;
+	text-decoration:none;
+	display: block;
+	height: 42px;
+	background-color: #5f0080;
+	color: white; 
+}
+
+#userMenu {			
+	width: 1050px;
+	margin: 0;
+}
+
+#userMenu * {
+	font-size: 12px;
+	letter-spacing: -.3px;
+	text-decoration: none;
+}
+
+.list_menu a {
+	float: right;
+	height: 32px;
+	padding: 0 5px;
+	line-height: 10px;
+	white-space: nowrap;
+	color: #333333;
+}
+
+.fas {			
+	margin-left: 5px;
+}
+
+.delivery {		
+	float: left;
+	height: 32px;
+	padding: 0 5px;
+	line-height: 10px;
+	white-space: nowrap;
+}
+
+.delivery img {
+	 width:116px;
+	 height: 22px;
+}
+
+.logo img {		
+	position: absolute;
+    left: 460px;
+    width: 165px;
+    height: 42px;
+    bottom: 60px;
+}
+
+#catagoryMenu ul {			
+	display: flex;	
+	width: 100%;
+	float: none;
+	padding: 10px 0 10px 0;
+}
+
+#catagoryMenu li {
+	margin: 50px 45px 0px 0px;
+	font-size: 16px;
+}
+
+#side_search {		
+	position: relative;
+}
+
+#side_search .inp_search {
+	position: absolute;
+	width: 225px;
+	height: 35px;
+	padding: 0 50px 0 14px;
+	border: 1px solid #f7f7f6;
+	border-radius: 18px;
+	background-color: #f7f7f7;
+	font-size: 12px;
+	color: #666;
+	line-height: 16px;
+	outline: none;
+	top: -55px;
+	right: 175px;
+}
+
+.search i {
+	position:absolute;
+	right: 170px;
+	top: -46px;
+	width: 35px;
+	height: 35px;	
+}
+
+.icons {		
+	position: relative;
+	
+}
+.icons i:hover {
+	color: #5f0080;
+}
+
+.location_set i {
+	position:absolute;
+	right: 117px;
+	top: -55px;
+	width: 35px;
+	font-size: 26px;
+	color: #4445;
+}
+
+.pick_set i {
+	position:absolute;
+	right: 70px;
+	top: -55px;
+	width: 35px;
+	font-size: 26px;
+	color: #4445;
+}
+
+.cart_set i {
+	position:absolute;
+	right: 25px;
+	top: -55px;
+	width: 35px;
+	font-size: 26px;
+	color: #4445;
+}
+
+/* mainPage body */
+.main {
+	
+	width: 1080px;
+	margin: 0 auto;
+}
+img {
+	
+	height: 370px;
+	width: 100%;	
+}
+
+.item1 {
+	padding: 65px 0px 40px;
+}
+
+.item2 {
+	padding: 65px 0px 40px;
+	top: 250px;
+}
+.item_how {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 50px;
+	font-size: 30px;
+	padding: 0;
+}
+
+.item_price {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 50px;
+	font-size: 30px;
+	padding: 0;
+}
+
+.how_goods, .price_goods {
+	width: 1050px;
+}
+.how_goods img, .price_goods img {
+	height: 320px;
+	width: 250px;
+}
+
+.goods_info {
+	margin: 10px;
+}
+
+span.name {
+	display: block;
+	overflow: hidden;
+	max-height: 58px;
+	font-size: 16px;
+	color: #333;
+	
+}
+
+span.cost {
+	font-size: 14px;
+	font-weight: 800;
+	color: #333;
+}
+
+span.mean {
+	display: block;
+	padding-top: 11px;
+	font-size: 13px;
+	color: #999;
+	line-height: 19px;
+}
+
+.beef {
+	position: relative;
+	padding: 0;
+}
+
+.beef img {
+	position: absolute;
+	padding-top: 40px;
+	padding-bottom: 40px;
+	height: 140px;
+	width: 1050px;
+}
+ 
+ /* 페이징 기능 */
+
+.item1, .item2 {
+	position:relative;
+}
+
+.arrowSlider .prev {
+		position: absolute;
+		top:300px;
+		left:-40px;
+		cursor: pointer;
+}
+					
+.arrowSlider .next {
+		position: absolute;
+		top:300px;
+		right:-10px;
+		cursor: pointer;
+}
+.arrowSlider2 .prev3 {
+		position: absolute;
+		top:162px;
+		left:-17px;
+		cursor: pointer;
+}
+					
+.arrowSlider2 .next3{
+		position: absolute;
+		top:162px;
+		right:-12px;
+		cursor: pointer;
+}
+							
+.arrowSlider .fas {
+	font-size: 60px;
+	color: #5f0080;
+}					
+					
+.arrowSlider2 .fas {
+	font-size: 45px;
+	color: #999;
+}					
+		
+ /* 새벽 광고 */
+.dawn_delivery {
+	position: relative;
+	padding: 50px 0;
+	top: 255px;
+}
+
+.dawn_delivery img {
+	height: 140px;
+	width: 1050px;
+}
+
+.review {
+	position: relative;
+	width: 1050px;
+	padding: 0;
+	margin-top: 300px;
+	margin-bottom: 100px;
+}
+
+.review_list {
+	
+	margin-top: 27px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+span.customer_review {
+	color: rgb(51, 51, 51);
+	font-size: 28px;
+	line-height: 1.15;
+	letter-spacing: -0.26px;
+	font-weight: 600;
+}
+
+span.review_more {
+	font-size: 16px;
+	line-height: 1.45;
+	letter-spacing: -0.2px;
+	color: rgb(153, 153, 153);
+	margin: 15px 0 20px 0;
+}
+
+.move {
+	margin-top: 50px;
+	text-align: center;
+	line-height: 2.1;
+}
+
+.review_more2 {
+	font-size: 16px;
+	font-weight: 400;
+	color: rgb(153, 153, 153);
+}
+
+.move_comu a {
+	font-size: 16px;
+	font-weight: 700;
+	color: rgb(51, 51, 51);
+}
+
+.review_photo {
+	display: flex;
+	width: 1050px;
+}
+
+.review_photo img {
+	width: 250px;
+	height: 200px;
+} 
+
+		
+#allCate{
+	height:420px;
+	position:absolute;
+	left:0;
+	top:120px;
+	z-index:300;
+	background:white;
+}
+
+#allCate ul{
+	height:420px;
+	display:none;
+	margin:0;
+	padding-top:0;
+	overflow:hidden;
+	border:1px solid #e9ecef;
+	background:white;
+}
+
+#allCate ul li{
+	margin:0;
+	padding:0;
+	width:180px;
+	height:30px;
+	font-size:15px;
+	line-height:30px;
+	
+}
+#allCate ul li a{
+	padding:5px 5px 5px 25px;
+	display:inline-block;
+}
+#allCate ul li:hover{
+	cursor: pointer;
+	background:#e9ecef;
+	padding:5px;
+}
+.cateImg{
+	width:20px;
+	height:20px;
+	vertical-align: middle;
+} 
+#allCate .vegetables, #allCate .sul,
+#allCate .seafood,#allCate .meat,
+#allCate .meal,#allCate .salad,
+#allCate .noodle,#allCate .snack,
+#allCate .bakery,#allCate .health,
+#allCate .liquor, #allCate .fruit{
+	position:absolute;
+	top:0;
+	left:180px;
+	display:none;
+	background:#f1f3f5;
+}
+
+#allCate ul li{
+	padding:5px;
+	
+}

@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.1//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_1.dtd">
+       
+<tiles-definitions>
+	<definition name="mypagelayout" template="/WEB-INF/Views/User/Inc2/mypageLayout.jsp">
+		<put-attribute name="title" value=""/>
+		<put-attribute name="header" value="/WEB-INF/Views/User/Inc2/header.jsp"/>
+		<put-attribute name="side" value="/WEB-INF/Views/User/Inc2/mypageSideMenu.jsp"/>			
+		<put-attribute name="body" value=""/>
+		<put-attribute name="footer" value="/WEB-INF/Views/User/Inc2/footer.jsp"/>
+		<put-attribute name="mypageInfo" value="/WEB-INF/Views/User/Inc2/mypageInfo.jsp" />		
+	</definition>
+	
+	<definition name="mypageCartlayout" template="/WEB-INF/Views/User/Inc2/cartLayout.jsp">
+		<put-attribute name="title" value=""/>
+		<put-attribute name="header" value="/WEB-INF/Views/User/Inc2/header.jsp"/>
+		<put-attribute name="side" value=""/>			
+		<put-attribute name="body" value=""/>
+		<put-attribute name="footer" value="/WEB-INF/Views/User/Inc2/footer.jsp"/>
+		<put-attribute name="mypageInfo" value="" />		
+	</definition>
+	
+	<definition name="mypageAddrlayout" template="/WEB-INF/Views/User/Mypage/addAddrForm.jsp">	
+		<put-attribute name="body" value="/WEB-INF/Views/User/Mypage/addAddrForm.jsp"/>
+	</definition>
+	
+	<definition name="orderList" extends="mypagelayout">
+		<put-attribute name="title" value="주문내역"/>		
+		<put-attribute name="body" value="/WEB-INF/Views/User/Mypage/orderList2.jsp"/>
+	</definition>
+	
+	<definition name="orderDetail" extends="mypagelayout">
+		<put-attribute name="title" value="주문내역상세"/>		
+		<put-attribute name="body" value="/WEB-INF/Views/User/Mypage/orderDetail.jsp"/>
+	</definition>
+	
+	<definition name="giftList" extends="mypagelayout">
+		<put-attribute name="title" value="선물내역"/>		
+		<put-attribute name="body" value="/WEB-INF/Views/User/Mypage/giftList2.jsp"/>
+	</definition>
+	
+	<definition name="picklist_add" extends="mypagelayout">
+		<put-attribute name="title" value="찜한 상품"/>		
+		<put-attribute name="body" value="/WEB-INF/Views/User/Mypage/pickListAdd2.jsp"/>
+	</definition>
+	
+	<definition name="addresslist" extends="mypagelayout">
+		<put-attribute name="title" value="배송지관리"/>		
+		<put-attribute name="body" value="/WEB-INF/Views/User/Mypage/addressList2.jsp"/>
+	</definition>
+	
+	<definition name="review" extends="mypagelayout">
+		<put-attribute name="title" value="상품 후기"/>		
+		<put-attribute name="body" value="/WEB-INF/Views/User/Mypage/review2.jsp"/>
+	</definition>
+	
+		<definition name="reviewWrite" extends="mypagelayout">
+		<put-attribute name="title" value="상품 후기"/>		
+		<put-attribute name="body" value="/WEB-INF/Views/User/Mypage/reviewWrite.jsp"/>
+	</definition> 
+	
+	<definition name="QnA" extends="mypagelayout">
+		<put-attribute name="title" value="상품 문의"/>		
+		<put-attribute name="body" value="/WEB-INF/Views/User/Mypage/QnA.jsp"/>
+	</definition>
+	
+	<!-- <definition name="modifyQnA" extends="mypagelayout">
+		<put-attribute name="title" value="상품 문의 수정"/>		
+		<put-attribute name="body" value="/WEB-INF/Views/User/Mypage/modifyQnA.jsp"/>
+	</definition> -->
+	
+	<definition name="point" extends="mypagelayout">
+		<put-attribute name="title" value="적립금"/>		
+		<put-attribute name="body" value="/WEB-INF/Views/User/Mypage/point2.jsp"/>
+	</definition>
+	
+	<definition name="coupon" extends="mypagelayout">
+		<put-attribute name="title" value="쿠폰"/>		
+		<put-attribute name="body" value="/WEB-INF/Views/User/Mypage/coupon2.jsp"/>
+	</definition>
+	
+	<definition name="mypageUserInfoPwdCheck" extends="mypagelayout">
+		<put-attribute name="title" value="비밀번호 재확인"/>		
+		<put-attribute name="body" value="/WEB-INF/Views/User/Mypage/mypageUserInfoPwdCheck.jsp"/>
+	</definition>
+	
+	<!-- 개인정보수정 -->
+	<definition name="mypageUserInfo" extends="mypagelayout">
+		<put-attribute name="title" value="개인 정보 수정"/>	
+		<put-attribute name="body" value="/WEB-INF/Views/User/Mypage/mypageUserInfo.jsp"/>
+	</definition>
+	
+	<definition name="login" extends="mypagelayout">
+		<put-attribute name="title" value="로그인"/>		
+		<put-attribute name="body" value="/WEB-INF/Views/User/main/login.jsp"/>
+	</definition>
+	
+	<definition name="listUser" extends="mypagelayout">
+		<put-attribute name="title" value="사용자 리스트"/>		
+		<put-attribute name="body" value="/WEB-INF/Views/User/listUser.jsp"/>
+	</definition>
+	
+	<definition name="cart" extends="mypageCartlayout">
+		<put-attribute name="title" value="장바구니"/>		
+		<put-attribute name="body" value="/WEB-INF/Views/User/Mypage/cart.jsp"/>
+	</definition>
+	
+	<definition name="addAddress" extends="mypageAddrlayout">
+		<put-attribute name="title" value="배송지 추가"/>
+		<put-attribute name="body" value="/WEB-INF/Views/User/Mypage/addAddrForm.jsp"/>
+	</definition>
+	
+</tiles-definitions>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

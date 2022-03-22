@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.1//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_1.dtd">
+       
+<tiles-definitions>
+
+	<definition name="adminBaseLayout" template="/WEB-INF/Views/Admin/Inc/layout.jsp">
+		<put-attribute name="title" value=""/>
+		<put-attribute name="header" value="/WEB-INF/Views/Admin/Inc/homePage.jsp"/>
+		<put-attribute name="body" value=""/>
+	</definition>
+	
+	<!-- FAQ관리환경설정 -->			
+	<definition name="/adfaq/faqEnvironmentSetting" extends="adminBaseLayout">
+		<put-attribute name="title" value="FAQ관리환경설정"/>
+		<put-attribute name="body" value="/WEB-INF/Views/Admin/FAQEnvironmentSetting/faqEnvironmentSetting.jsp"/>
+	</definition>
+	<!-- ====================================== -->	
+	<!-- FAQ관리환경설정 -->	
+	<definition name="/adfaq/faqAdManagement" extends="adminBaseLayout">
+		<put-attribute name="title" value="FAQ관리"/>
+		<put-attribute name="body" value="/WEB-INF/Views/Admin/FAQManagement/faqManagement.jsp"></put-attribute>
+	</definition>
+		
+	<!-- ====================================== -->	
+	<!-- FAQ게시물등록 -->	
+	<definition name="/adfaq/moveRegister" extends="adminBaseLayout">
+		<put-attribute name="title" value="FAQ게시물등록"/>
+		<put-attribute name="body" value="/WEB-INF/Views/Admin/FAQRegistration/faqRegistration.jsp"></put-attribute>
+	</definition>
+
+	<!-- notice 조회  -->
+	<definition name="/adnotice/listadNotice" extends="adminBaseLayout">
+		<put-attribute name="title" value="공지사항관리"/>
+		<put-attribute name="body" value="/WEB-INF/Views/Admin/FAQManagement/noticeList.jsp"></put-attribute>
+	</definition>
+
+</tiles-definitions>     

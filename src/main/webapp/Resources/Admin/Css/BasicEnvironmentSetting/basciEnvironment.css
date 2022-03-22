@@ -1,0 +1,72 @@
+@charset "UTF-8";
+.wrap{
+	margin: 0 auto;
+	width: 1080px;
+	height: 100vh;
+}
+main-content {
+	padding: 20px;
+	width: 100%;
+	margin: 0 auto;
+	/* display: flex;
+	flex-direction: column; */
+}
+body, td, select, div, textarea, center {
+	color: #202020;
+	font-size: 14px;
+}
+/* subtitle 테이블에 적용 */
+.subtitle {
+	table-layout: fixed;
+	width:100%;
+	border-spacing: 2px;
+}
+/*admin_change  테이블 제목  */
+.admin_change caption {
+	height: 18px;
+	font-size: 16px;
+	font-weight: bold;
+	color: #317CC1;
+	margin-right: 5px;
+	padding-bottom: 8px;
+	text-align: left;
+	
+	/* 표 상단의 파란 구분선 */
+	border-bottom: 2px solid #6699cc;
+
+} 
+caption {
+	height: 18px;
+	font-size: 16px;
+	font-weight: bold;
+	color: #317CC1;
+	margin-right: 5px;
+	padding-bottom: 8px;
+	text-align: left;
+	
+	/* 표 상단의 파란 구분선 */
+	border-bottom: 2px solid #6699cc;
+
+
+}
+.subtitle td, .subtitle th {
+	border: 1px solid #d7d7d7;
+}
+.subtitle tr th{
+	color: #202020;
+	background : #F7F7F7;
+	padding: 4px 8px;
+	text-align: justify;
+	vertical-align: middle;
+	padding-left: 10px;
+	padding-bottom: 10px;
+	line-height: 35px;
+	
+	
+}
+
+#kakaoMap {
+    width: auto;
+    height: 350px;
+    border: 2px solid #00cc00;
+}
